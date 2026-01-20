@@ -3,19 +3,22 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Scientific Nature Theme</title>
+  <title>Dark Science & Nature</title>
 
-  <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --science-blue: #0f2a44;
-      --nature-green: #4caf8f;
-      --soft-green: #cfeee4;
-      --bg-gradient: linear-gradient(135deg, #0f2a44, #1f6f5c);
-      --glass-bg: rgba(255, 255, 255, 0.12);
-      --border-light: rgba(255, 255, 255, 0.25);
+      --bg-main: #070b0f;
+      --bg-gradient: radial-gradient(circle at top, #0c1f1a, #070b0f 70%);
+      --science-accent: #1dd3a7;
+      --science-soft: #7de5c8;
+      --text-main: #e6f4f1;
+      --text-muted: #9fbfb7;
+
+      --glass-bg: rgba(20, 40, 35, 0.45);
+      --border-light: rgba(120, 255, 220, 0.15);
+      --grid-line: rgba(255,255,255,0.04);
     }
 
     * {
@@ -28,32 +31,38 @@
     body {
       min-height: 100vh;
       background: var(--bg-gradient);
-      color: #eaf6f3;
+      color: var(--text-main);
       line-height: 1.6;
     }
 
+    /* Scientific grid */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(var(--grid-line) 1px, transparent 1px),
+        linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+      background-size: 48px 48px;
+      z-index: -1;
+    }
+
     header {
-      padding: 4rem 2rem;
+      padding: 5rem 2rem 4rem;
       text-align: center;
     }
 
     header h1 {
-      font-size: 3rem;
+      font-size: 3.2rem;
       font-weight: 600;
       letter-spacing: 1px;
+      color: var(--science-soft);
     }
 
     header p {
-      max-width: 600px;
-      margin: 1rem auto 0;
-      color: #cde7e0;
-    }
-
-    .grid {
-      background-image:
-        linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
-      background-size: 40px 40px;
+      max-width: 620px;
+      margin: 1.2rem auto 0;
+      color: var(--text-muted);
     }
 
     main {
@@ -62,88 +71,100 @@
 
     .cards {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2.2rem;
       max-width: 1100px;
       margin: auto;
     }
 
     .card {
       background: var(--glass-bg);
-      backdrop-filter: blur(10px);
+      backdrop-filter: blur(14px);
       border: 1px solid var(--border-light);
-      border-radius: 20px;
-      padding: 2rem;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border-radius: 22px;
+      padding: 2.2rem;
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
     }
 
     .card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+      transform: translateY(-8px);
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
     }
 
     .card h3 {
-      margin-bottom: 0.5rem;
-      color: var(--soft-green);
+      margin-bottom: 0.6rem;
+      color: var(--science-accent);
+      font-weight: 500;
     }
 
     .card p {
       font-size: 0.95rem;
-      color: #e1f2ed;
+      color: var(--text-muted);
     }
 
     .highlight {
-      margin-top: 4rem;
+      margin-top: 5rem;
       text-align: center;
-      padding: 3rem 2rem;
-      background: radial-gradient(circle at top, rgba(79, 209, 164, 0.3), transparent);
+      padding: 4rem 2rem;
+      background: radial-gradient(
+        circle at center,
+        rgba(29, 211, 167, 0.15),
+        transparent 65%
+      );
     }
 
     .highlight h2 {
-      font-size: 2.2rem;
+      font-size: 2.3rem;
       margin-bottom: 1rem;
+      color: var(--science-soft);
+    }
+
+    .highlight p {
+      color: var(--text-muted);
+      max-width: 600px;
+      margin: auto;
     }
 
     footer {
       text-align: center;
-      padding: 2rem;
+      padding: 2.5rem;
       font-size: 0.85rem;
-      color: #b7dbd2;
+      color: #6fa59a;
     }
   </style>
 </head>
 
-<body class="grid">
+<body>
 
   <header>
     <h1>Science & Nature</h1>
-    <p>Exploring data, ecosystems, and innovation through a harmonious scientific lens.</p>
+    <p>Deep exploration of ecosystems, data, and technology in a low-light scientific environment.</p>
   </header>
 
   <main>
     <section class="cards">
       <div class="card">
-        <h3>Research</h3>
-        <p>Clean, structured data-driven insights inspired by natural systems.</p>
+        <h3>Research Systems</h3>
+        <p>Structured experimentation inspired by biological efficiency and data precision.</p>
       </div>
       <div class="card">
-        <h3>Ecology</h3>
-        <p>Understanding biodiversity using modern scientific methods.</p>
+        <h3>Living Ecosystems</h3>
+        <p>Analyzing natural balance through computational and environmental science.</p>
       </div>
       <div class="card">
-        <h3>Technology</h3>
-        <p>Where innovation meets sustainability and natural balance.</p>
+        <h3>Future Technology</h3>
+        <p>Dark-mode interfaces designed for sustainable innovation.</p>
       </div>
     </section>
 
     <section class="highlight">
-      <h2>Designed for Discovery</h2>
-      <p>Minimal, elegant, and inspired by both laboratories and landscapes.</p>
+      <h2>Engineered for Focus</h2>
+      <p>Reduced light. Enhanced clarity. Built for scientists, researchers, and explorers.</p>
     </section>
   </main>
 
   <footer>
-    © 2026 • Scientific Nature Theme
+    © 2026 • Dark Scientific Nature Interface
   </footer>
 
 </body>
