@@ -9,7 +9,6 @@
 
   <style>
     :root {
-      --bg-main: #070b0f;
       --bg-gradient: radial-gradient(circle at top, #0c1f1a, #070b0f 70%);
       --science-accent: #1dd3a7;
       --science-soft: #7de5c8;
@@ -131,6 +130,42 @@
       font-size: 0.85rem;
       color: #6fa59a;
     }
+
+    /* =========================
+       🎵 MUSIC BUTTON (THEMED)
+       ========================= */
+    .music-btn {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: rgba(20, 40, 35, 0.55);
+      border: 1px solid rgba(120, 255, 220, 0.25);
+      backdrop-filter: blur(14px);
+      color: var(--science-soft);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .music-btn:hover {
+      transform: scale(1.08);
+    }
+
+    .music-btn.playing {
+      animation: pulse 2.2s infinite ease-in-out;
+    }
+
+    @keyframes pulse {
+      0%   { box-shadow: 0 0 10px rgba(29,211,167,0.4); }
+      50%  { box-shadow: 0 0 24px rgba(29,211,167,0.7); }
+      100% { box-shadow: 0 0 10px rgba(29,211,167,0.4); }
+    }
   </style>
 </head>
 
@@ -163,10 +198,17 @@
     </section>
   </main>
 
-  <!-- background Music -->
+  <footer>
+    © 2026 • Dark Scientific Nature Interface
+  </footer>
+
+  <!-- 🎵 Background Music -->
   <audio id="bgMusic" src="Naiilang.mp3" loop></audio>
 
-  <button class="music-btn" id="musicToggle">▶ Play Music</button>
+  <!-- 🎵 Music Toggle Button -->
+  <button class="music-btn" id="musicToggle" aria-label="Toggle background music">
+    ▶
+  </button>
 
   <script>
     const music = document.getElementById("bgMusic");
@@ -177,10 +219,12 @@
     button.addEventListener("click", () => {
       if (!isPlaying) {
         music.play();
-        button.textContent = "⏸ Pause Music";
+        button.textContent = "⏸";
+        button.classList.add("playing");
       } else {
         music.pause();
-        button.textContent = "▶ Play Music";
+        button.textContent = "▶";
+        button.classList.remove("playing");
       }
       isPlaying = !isPlaying;
     });
@@ -188,6 +232,3 @@
 
 </body>
 </html>
-
-
-
