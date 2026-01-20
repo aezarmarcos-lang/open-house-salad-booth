@@ -27,6 +27,10 @@
       font-family: 'Inter', sans-serif;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       min-height: 100vh;
       background: var(--bg-gradient);
@@ -76,12 +80,20 @@
       margin: auto;
     }
 
+    /* link wrapper so cards act as buttons */
+    .card-link {
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+
     .card {
       background: var(--glass-bg);
       backdrop-filter: blur(14px);
       border: 1px solid var(--border-light);
       border-radius: 22px;
       padding: 2.2rem;
+      cursor: pointer;
       transition: transform 0.35s ease, box-shadow 0.35s ease;
     }
 
@@ -132,7 +144,7 @@
     }
 
     /* =========================
-  MUSIC BUTTON (STRICTLY DO NOT TOUCH
+       MUSIC BUTTON (STRICTLY DO NOT TOUCH)
        ========================= */
     .music-btn {
       position: fixed;
@@ -177,31 +189,55 @@
   </header>
 
   <main>
+    <!-- CLICKABLE CARDS -->
     <section class="cards">
-      <div class="card">
-        <h3>reproductive system thingy</h3>
-        <p>description</p>
-      </div>
-      <div class="card">
-        <h3>pwede dito ung anekdota kung gusto nyo</h3>
-        <p>Adescriptiomn</p>
-      </div>
-      <div class="card">
-        <h3>pwede dito din ung CAT kung gusto nyo</h3>
-        <p>description</p>
-      </div>
+      <a href="#reproductive" class="card-link">
+        <div class="card">
+          <h3>reproductive system thingy</h3>
+          <p>description</p>
+        </div>
+      </a>
+
+      <a href="#anekdota" class="card-link">
+        <div class="card">
+          <h3>pwede dito ung anekdota kung gusto nyo</h3>
+          <p>Adescriptiomn</p>
+        </div>
+      </a>
+
+      <a href="#cat" class="card-link">
+        <div class="card">
+          <h3>pwede dito din ung CAT kung gusto nyo</h3>
+          <p>description</p>
+        </div>
+      </a>
     </section>
 
-    <section class="highlight">
-      <h2>idk</h2>
-      <p>blah blah something</p>
+    <!-- TARGET SECTIONS -->
+    <section id="reproductive" class="highlight">
+      <h2>Reproductive System</h2>
+      <p>Detailed content about the reproductive system goes here.</p>
+    </section>
+
+    <section id="anekdota" class="highlight">
+      <h2>Anekdota</h2>
+      <p>This section can contain stories, explanations, or examples.</p>
+    </section>
+
+    <section id="cat" class="highlight">
+      <h2>CAT</h2>
+      <p>Information related to CAT goes here.</p>
     </section>
   </main>
+
+  <footer>
+    © 2026 • Dark Scientific Nature Interface
+  </footer>
 
   <!-- Background Music -->
   <audio id="bgMusic" src="Naiilang.mp3" loop></audio>
 
-  <!--  Music Toggle Button -->
+  <!-- Music Toggle Button -->
   <button class="music-btn" id="musicToggle" aria-label="Toggle background music">
     ▶
   </button>
@@ -228,6 +264,3 @@
 
 </body>
 </html>
-
-
-
