@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Scientific Nature Theme</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --science-blue: #0f2a44;
+      --nature-green: #4caf8f;
+      --soft-green: #cfeee4;
+      --bg-gradient: linear-gradient(135deg, #0f2a44, #1f6f5c);
+      --glass-bg: rgba(255, 255, 255, 0.12);
+      --border-light: rgba(255, 255, 255, 0.25);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      background: var(--bg-gradient);
+      color: #eaf6f3;
+      line-height: 1.6;
+    }
+
+    header {
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+
+    header p {
+      max-width: 600px;
+      margin: 1rem auto 0;
+      color: #cde7e0;
+    }
+
+    .grid {
+      background-image:
+        linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+      background-size: 40px 40px;
+    }
+
+    main {
+      padding: 2rem;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .card {
+      background: var(--glass-bg);
+      backdrop-filter: blur(10px);
+      border: 1px solid var(--border-light);
+      border-radius: 20px;
+      padding: 2rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+    }
+
+    .card h3 {
+      margin-bottom: 0.5rem;
+      color: var(--soft-green);
+    }
+
+    .card p {
+      font-size: 0.95rem;
+      color: #e1f2ed;
+    }
+
+    .highlight {
+      margin-top: 4rem;
+      text-align: center;
+      padding: 3rem 2rem;
+      background: radial-gradient(circle at top, rgba(79, 209, 164, 0.3), transparent);
+    }
+
+    .highlight h2 {
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.85rem;
+      color: #b7dbd2;
+    }
+  </style>
+</head>
+
+<body class="grid">
+
+  <header>
+    <h1>Science & Nature</h1>
+    <p>Exploring data, ecosystems, and innovation through a harmonious scientific lens.</p>
+  </header>
+
+  <main>
+    <section class="cards">
+      <div class="card">
+        <h3>Research</h3>
+        <p>Clean, structured data-driven insights inspired by natural systems.</p>
+      </div>
+      <div class="card">
+        <h3>Ecology</h3>
+        <p>Understanding biodiversity using modern scientific methods.</p>
+      </div>
+      <div class="card">
+        <h3>Technology</h3>
+        <p>Where innovation meets sustainability and natural balance.</p>
+      </div>
+    </section>
+
+    <section class="highlight">
+      <h2>Designed for Discovery</h2>
+      <p>Minimal, elegant, and inspired by both laboratories and landscapes.</p>
+    </section>
+  </main>
+
+  <footer>
+    © 2026 • Scientific Nature Theme
+  </footer>
+
+</body>
+</html>
