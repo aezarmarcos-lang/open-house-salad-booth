@@ -163,7 +163,31 @@
     </section>
   </main>
 
+  <!-- background Music -->
+  <audio id="bgMusic" src="Naiilang.mp3" loop></audio>
+
+  <button class="music-btn" id="musicToggle">▶ Play Music</button>
+
+  <script>
+    const music = document.getElementById("bgMusic");
+    const button = document.getElementById("musicToggle");
+
+    let isPlaying = false;
+
+    button.addEventListener("click", () => {
+      if (!isPlaying) {
+        music.play();
+        button.textContent = "⏸ Pause Music";
+      } else {
+        music.pause();
+        button.textContent = "▶ Play Music";
+      }
+      isPlaying = !isPlaying;
+    });
+  </script>
+
 </body>
 </html>
+
 
 
