@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>My Science & Fun Site</title>
+  <title>TITLE HERE</title>
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+  <!-- Google Fonts for titles -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
   <style>
     :root {
@@ -21,11 +21,24 @@
       --grid-line: rgba(255,255,255,0.04);
     }
 
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
-    html { scroll-behavior: smooth; }
-    body { min-height: 100vh; background: var(--bg-gradient); color: var(--text-main); line-height: 1.6; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
 
-    /* Grid background */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+      background: var(--bg-gradient);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+
     body::before {
       content: "";
       position: fixed;
@@ -42,10 +55,21 @@
       text-align: center;
     }
 
-    header h1 { font-size: 3.2rem; font-weight: 600; color: var(--science-soft); }
-    header p { max-width: 620px; margin: 1.2rem auto 0; color: var(--text-muted); }
+    header h1 {
+      font-size: 3.2rem;
+      font-weight: 600;
+      color: var(--science-soft);
+    }
 
-    main { padding: 2rem; }
+    header p {
+      max-width: 620px;
+      margin: 1.2rem auto 0;
+      color: var(--text-muted);
+    }
+
+    main {
+      padding: 2rem;
+    }
 
     .cards {
       display: grid;
@@ -55,7 +79,12 @@
       margin: auto;
     }
 
-    .card-link { text-decoration: none; color: inherit; }
+    .card-link {
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+
     .card {
       background: var(--glass-bg);
       backdrop-filter: blur(14px);
@@ -63,20 +92,31 @@
       border-radius: 22px;
       padding: 2.2rem;
       cursor: pointer;
-      transition: transform 0.35s ease, box-shadow 0.35s ease;
+      transition: transform 0.35s ease;
     }
 
     .card:hover {
       transform: translateY(-8px);
-      box-shadow: 0 25px 60px rgba(0,0,0,0.6);
+      /* shadow removed */
     }
 
-    .card h3 { color: var(--science-accent); font-family: 'Orbitron', sans-serif; text-align: center; }
+    .card h3 {
+      color: var(--science-accent);
+    }
 
-    .highlight { margin-top: 5rem; padding: 4rem 2rem; text-align: center; }
+    .highlight {
+      margin-top: 5rem;
+      padding: 4rem 2rem;
+      text-align: center;
+    }
 
-    /* Section title font */
-    .highlight h2 { font-family: 'Orbitron', sans-serif; font-size: 2.5rem; color: var(--science-soft); margin-bottom: 2rem; }
+    /* Section titles with appealing font */
+    .highlight h2 {
+      font-family: 'Roboto Slab', serif;
+      font-size: 2.5rem;
+      color: var(--science-soft);
+      margin-bottom: 2rem;
+    }
 
     .content-box {
       max-width: 1000px;
@@ -85,7 +125,11 @@
       gap: 2.5rem;
     }
 
-    .text-group p { margin-bottom: 1rem; color: var(--text-muted); font-size: 0.95rem; }
+    .text-group p {
+      margin-bottom: 1rem;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
 
     .image-grid {
       display: grid;
@@ -93,11 +137,16 @@
       gap: 1rem;
     }
 
-    .image-grid img { width: 100%; border-radius: 14px; border: 1px solid var(--border-light); }
+    .image-grid img {
+      width: 100%;
+      border-radius: 14px;
+      border: 1px solid var(--border-light);
+    }
 
-    /* Buttons */
-    .music-btn, .top-btn {
+    .music-btn {
       position: fixed;
+      bottom: 24px;
+      right: 24px;
       width: 56px;
       height: 56px;
       border-radius: 50%;
@@ -106,116 +155,120 @@
       color: var(--science-soft);
       font-size: 1.4rem;
       cursor: pointer;
+      z-index: 1000;
       display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .top-btn {
+      position: fixed;
+      bottom: 24px;
+      left: 24px;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: rgba(20, 40, 35, 0.55);
+      border: 1px solid rgba(120, 255, 220, 0.25);
+      color: var(--science-soft);
+      font-size: 1.2rem;
+      cursor: pointer;
+      display: none;
       align-items: center;
       justify-content: center;
       z-index: 1000;
     }
-
-    .music-btn { bottom: 24px; right: 24px; }
-    .top-btn { bottom: 24px; left: 24px; display: none; font-size: 1.2rem; }
   </style>
 </head>
 
 <body>
 
 <header>
-  <h1>Welcome to My Site</h1>
-  <p>Explore the Reproductive System, fun Anekdota, and the CAT section!</p>
+  <h1>something here</h1>
+  <p>description</p>
 </header>
 
 <main>
 
-  <!-- Cards -->
-  <section class="cards">
-    <a href="#reproductive" class="card-link"><div class="card"><h3>Reproductive System</h3></div></a>
-    <a href="#anekdota" class="card-link"><div class="card"><h3>Anekdota</h3></div></a>
-    <a href="#cat" class="card-link"><div class="card"><h3>CAT</h3></div></a>
-  </section>
+<!-- CLICKABLE CARDS -->
+<section class="cards">
+  <a href="#reproductive" class="card-link"><div class="card"><h3>Reproductive System</h3></div></a>
+  <a href="#anekdota" class="card-link"><div class="card"><h3>Anekdota</h3></div></a>
+  <a href="#cat" class="card-link"><div class="card"><h3>CAT</h3></div></a>
+</section>
 
-  <!-- Reproductive System -->
-  <section id="reproductive" class="highlight">
-    <h2>Reproductive System</h2>
-    <div class="content-box">
-      <div class="text-group">
-        <p>BLAH BLAH BLAH</p><p>BLAH BLAH BLAH</p><p>BLAH BLAH BLAH</p><p>BLAH BLAH BLAH</p><p>BLAH BLAH BLAH</p>
-      </div>
-      <div class="image-grid">
-        <img src="crok.jpg"><img src="crok.jpg"><img src="crok.jpg"><img src="crok.jpg"><img src="crok.jpg">
-      </div>
+<!-- REPRODUCTIVE -->
+<section id="reproductive" class="highlight">
+  <h2>Reproductive System</h2>
+  <div class="content-box">
+    <div class="text-group">
+      <p>BLAH BLAH BLAH</p><p>BLAH BLAH BLAH</p><p>BLAH BLAH BLAH</p><p>BLAH BLAH BLAH</p><p>BLAH BLAH BLAH</p>
     </div>
-  </section>
+    <div class="image-grid">
+      <img src="crok.jpg"><img src="crok.jpg"><img src="crok.jpg"><img src="crok.jpg"><img src="crok.jpg">
+    </div>
+  </div>
+</section>
 
-  <!-- Anekdota -->
-  <section id="anekdota" class="highlight">
-    <h2>Anekdota</h2>
-    <div class="content-box">
-      <div class="text-group">
-        <p>BLAH BLAH BLAH</p><p>BLAH BLAH BLAH</p><p>BLAH BLAH BLAH</p><p>BLAH BLAH BLAH</p><p>BLAH BLAH BLAH</p>
-      </div>
-      <div class="image-grid">
-        <img src="huh.jpg"><img src="huh.jpg"><img src="huh.jpg"><img src="huh.jpg"><img src="huh.jpg">
-      </div>
+<!-- ANEKDOTA -->
+<section id="anekdota" class="highlight">
+  <h2>Anekdota</h2>
+  <div class="content-box">
+    <div class="text-group">
+      <p>BLAH BLAH BLAH</p><p>BLAH BLAH BLAH</p><p>BLAH BLAH BLAH</p><p>BLAH BLAH BLAH</p><p>BLAH BLAH BLAH</p>
     </div>
-  </section>
+    <div class="image-grid">
+      <img src="huh.jpg"><img src="huh.jpg"><img src="huh.jpg"><img src="huh.jpg"><img src="huh.jpg">
+    </div>
+  </div>
+</section>
 
-  <!-- CAT -->
-  <section id="cat" class="highlight">
-    <h2>CAT Section</h2>
-    <div class="content-box">
-      <div class="text-group">
-        <p>BLAH BLAH BLAH</p><p>BLAH BLAH BLAH</p><p>BLAH BLAH BLAH</p><p>BLAH BLAH BLAH</p><p>BLAH BLAH BLAH</p>
-      </div>
-      <div class="image-grid">
-        <img src="struggling-cat.jpg"><img src="struggling-cat.jpg"><img src="struggling-cat.jpg"><img src="struggling-cat.jpg"><img src="struggling-cat.jpg">
-      </div>
+<!-- CAT -->
+<section id="cat" class="highlight">
+  <h2>CAT</h2>
+  <div class="content-box">
+    <div class="text-group">
+      <p>BLAH BLAH BLAH</p><p>BLAH BLAH BLAH</p><p>BLAH BLAH BLAH</p><p>BLAH BLAH BLAH</p><p>BLAH BLAH BLAH</p>
     </div>
-  </section>
+    <div class="image-grid">
+      <img src="struggling-cat.jpg"><img src="struggling-cat.jpg"><img src="struggling-cat.jpg"><img src="struggling-cat.jpg"><img src="struggling-cat.jpg">
+    </div>
+  </div>
+</section>
 
 </main>
 
-<!-- Audio & Buttons -->
+<!-- Background Music -->
 <audio id="bgMusic" src="Naiilang.mp3" loop></audio>
+
+<!-- Buttons -->
 <button class="music-btn" id="musicToggle">▶</button>
 <button class="top-btn" id="topBtn">↑</button>
 
 <script>
-  const music = document.getElementById("bgMusic");
-  const musicBtn = document.getElementById("musicToggle");
-  const topBtn = document.getElementById("topBtn");
-  let isPlaying = false;
+const music = document.getElementById("bgMusic");
+const btn = document.getElementById("musicToggle");
+const topBtn = document.getElementById("topBtn");
+let play = false;
 
-  // Music button
-  musicBtn.addEventListener("click", () => {
-    if(!isPlaying){
-      music.play();
-      musicBtn.textContent = "⏸";
-    } else {
-      music.pause();
-      musicBtn.textContent = "▶";
-    }
-    isPlaying = !isPlaying;
-  });
+// Music toggle
+btn.onclick = () => {
+  play ? music.pause() : music.play();
+  btn.textContent = play ? "▶" : "⏸";
+  play = !play;
+};
 
-  // Back-to-top button
-  window.addEventListener("scroll", () => {
-    topBtn.style.display = window.scrollY > 300 ? "flex" : "none";
-  });
-  topBtn.addEventListener("click", () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
+// Show top button on scroll
+window.addEventListener("scroll", () => {
+  topBtn.style.display = window.scrollY > 300 ? "flex" : "none";
+});
 
-  // Smooth scroll for cards
-  document.querySelectorAll('.card-link').forEach(link => {
-    link.addEventListener('click', e => {
-      e.preventDefault();
-      const target = document.querySelector(link.getAttribute('href'));
-      if(target){
-        target.scrollIntoView({ behavior: 'smooth' });
-      }
-    });
-  });
+// Scroll to top
+topBtn.onclick = () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+};
 </script>
 
 </body>
 </html>
+
