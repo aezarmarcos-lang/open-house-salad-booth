@@ -106,7 +106,6 @@
       text-align: center;
     }
 
-    /* ===== CONTENT STYLES ===== */
     .content-box {
       max-width: 1000px;
       margin: 3rem auto 0;
@@ -132,7 +131,6 @@
       border: 1px solid var(--border-light);
     }
 
-    /* MUSIC BUTTON — DO NOT TOUCH */
     .music-btn {
       position: fixed;
       bottom: 24px;
@@ -148,7 +146,6 @@
       z-index: 1000;
     }
 
-    /* ===== BACK TO TOP BUTTON ===== */
     .top-btn {
       position: fixed;
       bottom: 24px;
@@ -158,19 +155,13 @@
       border-radius: 50%;
       background: rgba(20, 40, 35, 0.55);
       border: 1px solid rgba(120, 255, 220, 0.25);
-      backdrop-filter: blur(14px);
       color: var(--science-soft);
       font-size: 1.2rem;
       cursor: pointer;
       display: none;
       align-items: center;
       justify-content: center;
-      transition: transform 0.3s ease;
       z-index: 1000;
-    }
-
-    .top-btn:hover {
-      transform: scale(1.08);
     }
   </style>
 </head>
@@ -190,62 +181,41 @@
   <a href="#cat" class="card-link"><div class="card"><h3>CAT</h3></div></a>
 </section>
 
+<!-- REPRODUCTIVE -->
 <section id="reproductive" class="highlight">
   <h2>Reproductive System</h2>
   <div class="content-box">
     <div class="text-group">
-      <p>BLAH BLAH BLAH</p>
-      <p>BLAH BLAH BLAH</p>
-      <p>BLAH BLAH BLAH</p>
-      <p>BLAH BLAH BLAH</p>
-      <p>BLAH BLAH BLAH</p>
+      <p>BLAH BLAH BLAH</p><p>BLAH BLAH BLAH</p><p>BLAH BLAH BLAH</p><p>BLAH BLAH BLAH</p><p>BLAH BLAH BLAH</p>
     </div>
     <div class="image-grid">
-      <img src="repro1.jpg">
-      <img src="repro2.jpg">
-      <img src="repro3.jpg">
-      <img src="repro4.jpg">
-      <img src="repro5.jpg">
+      <img src="crok.jpg"><img src="crok.jpg"><img src="crok.jpg"><img src="crok.jpg"><img src="crok.jpg">
     </div>
   </div>
 </section>
 
+<!-- ANEKDOTA -->
 <section id="anekdota" class="highlight">
   <h2>pwede dito Anekdota</h2>
   <div class="content-box">
     <div class="text-group">
-      <p>BLAH BLAH BLAH</p>
-      <p>BLAH BLAH BLAH</p>
-      <p>BLAH BLAH BLAH</p>
-      <p>BLAH BLAH BLAH</p>
-      <p>BLAH BLAH BLAH</p>
+      <p>BLAH BLAH BLAH</p><p>BLAH BLAH BLAH</p><p>BLAH BLAH BLAH</p><p>BLAH BLAH BLAH</p><p>BLAH BLAH BLAH</p>
     </div>
     <div class="image-grid">
-      <img src="anek1.jpg">
-      <img src="anek2.jpg">
-      <img src="anek3.jpg">
-      <img src="anek4.jpg">
-      <img src="anek5.jpg">
+      <img src="huh.jpg"><img src="huh.jpg"><img src="huh.jpg"><img src="huh.jpg"><img src="huh.jpg">
     </div>
   </div>
 </section>
 
+<!-- CAT -->
 <section id="cat" class="highlight">
   <h2>pwede din naman ung map reading sa CAT dito</h2>
   <div class="content-box">
     <div class="text-group">
-      <p>BLAH BLAH BLAH</p>
-      <p>BLAH BLAH BLAH</p>
-      <p>BLAH BLAH BLAH</p>
-      <p>BLAH BLAH BLAH</p>
-      <p>BLAH BLAH BLAH</p>
+      <p>BLAH BLAH BLAH</p><p>BLAH BLAH BLAH</p><p>BLAH BLAH BLAH</p><p>BLAH BLAH BLAH</p><p>BLAH BLAH BLAH</p>
     </div>
     <div class="image-grid">
-      <img src="cat1.jpg">
-      <img src="cat2.jpg">
-      <img src="cat3.jpg">
-      <img src="cat4.jpg">
-      <img src="cat5.jpg">
+      <img src="struggling-cat.jpg"><img src="struggling-cat.jpg"><img src="struggling-cat.jpg"><img src="struggling-cat.jpg"><img src="struggling-cat.jpg">
     </div>
   </div>
 </section>
@@ -260,7 +230,6 @@
 const music = document.getElementById("bgMusic");
 const btn = document.getElementById("musicToggle");
 const topBtn = document.getElementById("topBtn");
-
 let play = false;
 
 btn.onclick = () => {
@@ -280,5 +249,3 @@ topBtn.onclick = () => {
 
 </body>
 </html>
-
-
