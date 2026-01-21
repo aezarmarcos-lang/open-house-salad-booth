@@ -106,7 +106,7 @@
       text-align: center;
     }
 
-    /* ===== NEW CONTENT STYLES ===== */
+    /* ===== CONTENT STYLES ===== */
     .content-box {
       max-width: 1000px;
       margin: 3rem auto 0;
@@ -132,13 +132,6 @@
       border: 1px solid var(--border-light);
     }
 
-    footer {
-      text-align: center;
-      padding: 2.5rem;
-      font-size: 0.85rem;
-      color: #6fa59a;
-    }
-
     /* MUSIC BUTTON — DO NOT TOUCH */
     .music-btn {
       position: fixed;
@@ -152,6 +145,32 @@
       color: var(--science-soft);
       font-size: 1.4rem;
       cursor: pointer;
+      z-index: 1000;
+    }
+
+    /* ===== BACK TO TOP BUTTON ===== */
+    .top-btn {
+      position: fixed;
+      bottom: 24px;
+      left: 24px;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: rgba(20, 40, 35, 0.55);
+      border: 1px solid rgba(120, 255, 220, 0.25);
+      backdrop-filter: blur(14px);
+      color: var(--science-soft);
+      font-size: 1.2rem;
+      cursor: pointer;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.3s ease;
+      z-index: 1000;
+    }
+
+    .top-btn:hover {
+      transform: scale(1.08);
     }
   </style>
 </head>
@@ -171,7 +190,6 @@
   <a href="#cat" class="card-link"><div class="card"><h3>CAT</h3></div></a>
 </section>
 
-<!-- REPRODUCTIVE -->
 <section id="reproductive" class="highlight">
   <h2>Reproductive System</h2>
   <div class="content-box">
@@ -192,12 +210,11 @@
   </div>
 </section>
 
-<!-- ANEKDOTA -->
 <section id="anekdota" class="highlight">
   <h2>pwede dito Anekdota</h2>
   <div class="content-box">
     <div class="text-group">
-     <p>BLAH BLAH BLAH</p>
+      <p>BLAH BLAH BLAH</p>
       <p>BLAH BLAH BLAH</p>
       <p>BLAH BLAH BLAH</p>
       <p>BLAH BLAH BLAH</p>
@@ -213,12 +230,11 @@
   </div>
 </section>
 
-<!-- CAT -->
 <section id="cat" class="highlight">
   <h2>pwede din naman ung map reading sa CAT dito</h2>
   <div class="content-box">
     <div class="text-group">
-     <p>BLAH BLAH BLAH</p>
+      <p>BLAH BLAH BLAH</p>
       <p>BLAH BLAH BLAH</p>
       <p>BLAH BLAH BLAH</p>
       <p>BLAH BLAH BLAH</p>
@@ -238,16 +254,27 @@
 
 <audio id="bgMusic" src="Naiilang.mp3" loop></audio>
 <button class="music-btn" id="musicToggle">▶</button>
+<button class="top-btn" id="topBtn">↑</button>
 
 <script>
 const music = document.getElementById("bgMusic");
 const btn = document.getElementById("musicToggle");
+const topBtn = document.getElementById("topBtn");
+
 let play = false;
 
 btn.onclick = () => {
   play ? music.pause() : music.play();
   btn.textContent = play ? "▶" : "⏸";
   play = !play;
+};
+
+window.addEventListener("scroll", () => {
+  topBtn.style.display = window.scrollY > 300 ? "flex" : "none";
+});
+
+topBtn.onclick = () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
 };
 </script>
 
