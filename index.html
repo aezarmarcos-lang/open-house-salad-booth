@@ -38,7 +38,6 @@
       line-height: 1.6;
     }
 
-    /* scientific grid thingy */
     body::before {
       content: "";
       position: fixed;
@@ -58,7 +57,6 @@
     header h1 {
       font-size: 3.2rem;
       font-weight: 600;
-      letter-spacing: 1px;
       color: var(--science-soft);
     }
 
@@ -80,12 +78,181 @@
       margin: auto;
     }
 
-    /* link wrapper so cards act as buttons */
     .card-link {
       text-decoration: none;
       color: inherit;
-      display: block;
     }
+
+    .card {
+      background: var(--glass-bg);
+      backdrop-filter: blur(14px);
+      border: 1px solid var(--border-light);
+      border-radius: 22px;
+      padding: 2.2rem;
+      transition: transform 0.35s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+    }
+
+    .card h3 {
+      color: var(--science-accent);
+    }
+
+    .highlight {
+      margin-top: 5rem;
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+
+    /* ===== NEW CONTENT STYLES ===== */
+    .content-box {
+      max-width: 1000px;
+      margin: 3rem auto 0;
+      display: grid;
+      gap: 2.5rem;
+    }
+
+    .text-group p {
+      margin-bottom: 1rem;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    .image-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 1rem;
+    }
+
+    .image-grid img {
+      width: 100%;
+      border-radius: 14px;
+      border: 1px solid var(--border-light);
+    }
+
+    footer {
+      text-align: center;
+      padding: 2.5rem;
+      font-size: 0.85rem;
+      color: #6fa59a;
+    }
+
+    /* MUSIC BUTTON — DO NOT TOUCH */
+    .music-btn {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: rgba(20, 40, 35, 0.55);
+      border: 1px solid rgba(120, 255, 220, 0.25);
+      color: var(--science-soft);
+      font-size: 1.4rem;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>something here</h1>
+  <p>description</p>
+</header>
+
+<main>
+
+<section class="cards">
+  <a href="#reproductive" class="card-link"><div class="card"><h3>Reproductive System</h3></div></a>
+  <a href="#anekdota" class="card-link"><div class="card"><h3>Anekdota</h3></div></a>
+  <a href="#cat" class="card-link"><div class="card"><h3>CAT</h3></div></a>
+</section>
+
+<!-- REPRODUCTIVE -->
+<section id="reproductive" class="highlight">
+  <h2>Reproductive System</h2>
+  <div class="content-box">
+    <div class="text-group">
+      <p>The reproductive system enables humans to reproduce.</p>
+      <p>It includes organs responsible for producing sex cells.</p>
+      <p>Hormones regulate growth and reproductive functions.</p>
+      <p>Both males and females have unique systems.</p>
+      <p>Maintaining health is important for proper function.</p>
+    </div>
+    <div class="image-grid">
+      <img src="repro1.jpg">
+      <img src="repro2.jpg">
+      <img src="repro3.jpg">
+      <img src="repro4.jpg">
+      <img src="repro5.jpg">
+    </div>
+  </div>
+</section>
+
+<!-- ANEKDOTA -->
+<section id="anekdota" class="highlight">
+  <h2>Anekdota</h2>
+  <div class="content-box">
+    <div class="text-group">
+      <p>An anekdota is a short narrative.</p>
+      <p>It often contains humor or insight.</p>
+      <p>Anekdotas are used in literature.</p>
+      <p>They reflect real-life experiences.</p>
+      <p>The purpose is to entertain readers.</p>
+    </div>
+    <div class="image-grid">
+      <img src="anek1.jpg">
+      <img src="anek2.jpg">
+      <img src="anek3.jpg">
+      <img src="anek4.jpg">
+      <img src="anek5.jpg">
+    </div>
+  </div>
+</section>
+
+<!-- CAT -->
+<section id="cat" class="highlight">
+  <h2>CAT</h2>
+  <div class="content-box">
+    <div class="text-group">
+      <p>CAT means Citizenship Advancement Training.</p>
+      <p>It builds discipline and leadership.</p>
+      <p>Students learn teamwork and respect.</p>
+      <p>Activities include drills and exercises.</p>
+      <p>The program prepares responsible citizens.</p>
+    </div>
+    <div class="image-grid">
+      <img src="cat1.jpg">
+      <img src="cat2.jpg">
+      <img src="cat3.jpg">
+      <img src="cat4.jpg">
+      <img src="cat5.jpg">
+    </div>
+  </div>
+</section>
+
+</main>
+
+<audio id="bgMusic" src="Naiilang.mp3" loop></audio>
+<button class="music-btn" id="musicToggle">▶</button>
+
+<script>
+const music = document.getElementById("bgMusic");
+const btn = document.getElementById("musicToggle");
+let play = false;
+
+btn.onclick = () => {
+  play ? music.pause() : music.play();
+  btn.textContent = play ? "▶" : "⏸";
+  play = !play;
+};
+</script>
+
+</body>
+</html>
 
     .card {
       background: var(--glass-bg);
@@ -260,5 +427,6 @@
 
 </body>
 </html>
+
 
 
