@@ -5,8 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>TITLE HERE</title>
 
-  <!-- Google Fonts for titles -->
-  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
 
   <style>
     :root {
@@ -82,7 +81,6 @@
     .card-link {
       text-decoration: none;
       color: inherit;
-      display: block;
     }
 
     .card {
@@ -91,13 +89,8 @@
       border: 1px solid var(--border-light);
       border-radius: 22px;
       padding: 2.2rem;
-      cursor: pointer;
-      transition: transform 0.35s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-8px);
-      /* shadow removed */
+      /* removed all hover effects */
+      transition: none;
     }
 
     .card h3 {
@@ -108,14 +101,13 @@
       margin-top: 5rem;
       padding: 4rem 2rem;
       text-align: center;
+      font-family: 'Roboto Slab', serif; /* Appealing font for section titles */
     }
 
-    /* Section titles with appealing font */
     .highlight h2 {
-      font-family: 'Roboto Slab', serif;
-      font-size: 2.5rem;
+      font-size: 2.3rem;
       color: var(--science-soft);
-      margin-bottom: 2rem;
+      margin-bottom: 1rem;
     }
 
     .content-box {
@@ -140,7 +132,10 @@
     .image-grid img {
       width: 100%;
       border-radius: 14px;
-      border: 1px solid var(--border-light);
+      border: 3px solid var(--science-accent);
+      padding: 2px;
+      /* no hover effects */
+      transition: none;
     }
 
     .music-btn {
@@ -156,9 +151,6 @@
       font-size: 1.4rem;
       cursor: pointer;
       z-index: 1000;
-      display: flex;
-      align-items: center;
-      justify-content: center;
     }
 
     .top-btn {
@@ -190,7 +182,6 @@
 
 <main>
 
-<!-- CLICKABLE CARDS -->
 <section class="cards">
   <a href="#reproductive" class="card-link"><div class="card"><h3>Reproductive System</h3></div></a>
   <a href="#anekdota" class="card-link"><div class="card"><h3>Anekdota</h3></div></a>
@@ -238,10 +229,7 @@
 
 </main>
 
-<!-- Background Music -->
 <audio id="bgMusic" src="Naiilang.mp3" loop></audio>
-
-<!-- Buttons -->
 <button class="music-btn" id="musicToggle">▶</button>
 <button class="top-btn" id="topBtn">↑</button>
 
@@ -251,19 +239,16 @@ const btn = document.getElementById("musicToggle");
 const topBtn = document.getElementById("topBtn");
 let play = false;
 
-// Music toggle
 btn.onclick = () => {
   play ? music.pause() : music.play();
   btn.textContent = play ? "▶" : "⏸";
   play = !play;
 };
 
-// Show top button on scroll
 window.addEventListener("scroll", () => {
   topBtn.style.display = window.scrollY > 300 ? "flex" : "none";
 });
 
-// Scroll to top
 topBtn.onclick = () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
 };
@@ -271,4 +256,6 @@ topBtn.onclick = () => {
 
 </body>
 </html>
+
+
 
