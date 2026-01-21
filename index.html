@@ -5,178 +5,97 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>TITLE HERE</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-
   <style>
-    :root {
-      --bg-gradient: radial-gradient(circle at top, #0c1f1a, #070b0f 70%);
-      --science-accent: #1dd3a7;
-      --science-soft: #7de5c8;
-      --text-main: #e6f4f1;
-      --text-muted: #9fbfb7;
-
-      --glass-bg: rgba(20, 40, 35, 0.45);
-      --border-light: rgba(120, 255, 220, 0.15);
-      --grid-line: rgba(255,255,255,0.04);
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Inter', sans-serif;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
     body {
-      min-height: 100vh;
-      background: var(--bg-gradient);
-      color: var(--text-main);
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0f1f1c;
+      color: #e6f4f1;
       line-height: 1.6;
     }
 
-    /* scientific grid thingy */
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      background-image:
-        linear-gradient(var(--grid-line) 1px, transparent 1px),
-        linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
-      background-size: 48px 48px;
-      z-index: -1;
-    }
-
     header {
-      padding: 5rem 2rem 4rem;
       text-align: center;
+      padding: 3rem 1rem;
     }
 
     header h1 {
-      font-size: 3.2rem;
-      font-weight: 600;
-      letter-spacing: 1px;
-      color: var(--science-soft);
+      margin-bottom: 0.5rem;
+      color: #7de5c8;
     }
 
     header p {
-      max-width: 620px;
-      margin: 1.2rem auto 0;
-      color: var(--text-muted);
+      color: #9fbfb7;
     }
 
     main {
       padding: 2rem;
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 2.2rem;
-      max-width: 1100px;
+      max-width: 1000px;
       margin: auto;
     }
 
-    /* link wrapper so cards act as buttons */
-    .card-link {
-      text-decoration: none;
-      color: inherit;
-      display: block;
+    /* Cards */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
     }
 
     .card {
-      background: var(--glass-bg);
-      backdrop-filter: blur(14px);
-      border: 1px solid var(--border-light);
-      border-radius: 22px;
-      padding: 2.2rem;
-      cursor: pointer;
-      transition: transform 0.35s ease, box-shadow 0.35s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
+      background: #142823;
+      padding: 1.5rem;
+      border-radius: 12px;
+      text-decoration: none;
+      color: inherit;
     }
 
     .card h3 {
-      margin-bottom: 0.6rem;
-      color: var(--science-accent);
-      font-weight: 500;
+      color: #1dd3a7;
+      margin-bottom: 0.5rem;
     }
 
     .card p {
-      font-size: 0.95rem;
-      color: var(--text-muted);
+      color: #9fbfb7;
+      font-size: 0.9rem;
     }
 
-    .highlight {
-      margin-top: 5rem;
+    /* Sections */
+    section.content {
+      margin-top: 4rem;
       text-align: center;
-      padding: 4rem 2rem;
-      background: radial-gradient(
-        circle at center,
-        rgba(29, 211, 167, 0.15),
-        transparent 65%
-      );
     }
 
-    .highlight h2 {
-      font-size: 2.3rem;
-      margin-bottom: 1rem;
-      color: var(--science-soft);
+    section.content h2 {
+      color: #7de5c8;
+      margin-bottom: 0.5rem;
     }
 
-    .highlight p {
-      color: var(--text-muted);
+    section.content p {
       max-width: 600px;
       margin: auto;
+      color: #9fbfb7;
     }
 
     footer {
       text-align: center;
-      padding: 2.5rem;
-      font-size: 0.85rem;
+      padding: 2rem;
+      font-size: 0.8rem;
       color: #6fa59a;
     }
 
-    /* =========================
-       MUSIC BUTTON (STRICTLY DO NOT TOUCH)
-       ========================= */
+    /* Music Button */
     .music-btn {
       position: fixed;
-      bottom: 24px;
-      right: 24px;
-      width: 56px;
-      height: 56px;
+      bottom: 20px;
+      right: 20px;
+      width: 50px;
+      height: 50px;
       border-radius: 50%;
-      background: rgba(20, 40, 35, 0.55);
-      border: 1px solid rgba(120, 255, 220, 0.25);
-      backdrop-filter: blur(14px);
-      color: var(--science-soft);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.4rem;
+      background: #142823;
+      color: #7de5c8;
+      border: none;
+      font-size: 1.2rem;
       cursor: pointer;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .music-btn:hover {
-      transform: scale(1.08);
-    }
-
-    .music-btn.playing {
-      animation: pulse 2.2s infinite ease-in-out;
-    }
-
-    @keyframes pulse {
-      0%   { box-shadow: 0 0 10px rgba(29,211,167,0.4); }
-      50%  { box-shadow: 0 0 24px rgba(29,211,167,0.7); }
-      100% { box-shadow: 0 0 10px rgba(29,211,167,0.4); }
     }
   </style>
 </head>
@@ -184,78 +103,63 @@
 <body>
 
   <header>
-    <h1>something here</h1>
-    <p>description</p>
+    <h1>Something Here</h1>
+    <p>Description</p>
   </header>
 
   <main>
-    <!-- CLICKABLE CARDS -->
-    <section class="cards">
-      <a href="#reproductive" class="card-link">
-        <div class="card">
-          <h3>reproductive system thingy</h3>
-          <p>description</p>
-        </div>
+    <div class="cards">
+      <a href="#reproductive" class="card">
+        <h3>Reproductive System</h3>
+        <p>Description</p>
       </a>
 
-      <a href="#anekdota" class="card-link">
-        <div class="card">
-          <h3>pwede dito ung anekdota kung gusto nyo</h3>
-          <p>Adescriptiomn</p>
-        </div>
+      <a href="#anekdota" class="card">
+        <h3>Anekdota</h3>
+        <p>Description</p>
       </a>
 
-      <a href="#cat" class="card-link">
-        <div class="card">
-          <h3>pwede dito din ung CAT kung gusto nyo</h3>
-          <p>description</p>
-        </div>
+      <a href="#cat" class="card">
+        <h3>CAT</h3>
+        <p>Description</p>
       </a>
-    </section>
+    </div>
 
-    <!-- TARGET SECTIONS -->
-    <section id="reproductive" class="highlight">
+    <section id="reproductive" class="content">
       <h2>Reproductive System</h2>
-      <p>Detailed things about the reproductive system goes here.</p>
+      <p>Detailed things about the reproductive system go here.</p>
     </section>
 
-    <section id="anekdota" class="highlight">
+    <section id="anekdota" class="content">
       <h2>Anekdota</h2>
-      <p>This section can contain stories, explanations</p>
+      <p>This section can contain stories or explanations.</p>
     </section>
 
-    <section id="cat" class="highlight">
+    <section id="cat" class="content">
       <h2>CAT</h2>
       <p>Information related to CAT goes here.</p>
     </section>
   </main>
 
-  <!-- Background Music -->
+  <!-- Music -->
   <audio id="bgMusic" src="Naiilang.mp3" loop></audio>
-
-  <!-- Music Toggle Button -->
-  <button class="music-btn" id="musicToggle" aria-label="Toggle background music">
-    ▶
-  </button>
+  <button class="music-btn" id="musicToggle">▶</button>
 
   <script>
     const music = document.getElementById("bgMusic");
     const button = document.getElementById("musicToggle");
+    let playing = false;
 
-    let isPlaying = false;
-
-    button.addEventListener("click", () => {
-      if (!isPlaying) {
-        music.play();
-        button.textContent = "⏸";
-        button.classList.add("playing");
-      } else {
+    button.onclick = () => {
+      if (playing) {
         music.pause();
         button.textContent = "▶";
-        button.classList.remove("playing");
+      } else {
+        music.play();
+        button.textContent = "⏸";
       }
-      isPlaying = !isPlaying;
-    });
+      playing = !playing;
+    };
   </script>
 
 </body>
