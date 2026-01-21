@@ -15,7 +15,6 @@
       --science-soft: #7de5c8;
       --text-main: #e6f4f1;
       --text-muted: #9fbfb7;
-
       --glass-bg: rgba(20, 40, 35, 0.45);
       --border-light: rgba(120, 255, 220, 0.15);
       --grid-line: rgba(255,255,255,0.04);
@@ -28,15 +27,12 @@
       font-family: 'Inter', sans-serif;
     }
 
-    html {
-      scroll-behavior: smooth;
-    }
+    html { scroll-behavior: smooth; }
 
     body {
       min-height: 100vh;
       background: var(--bg-gradient);
       color: var(--text-main);
-      line-height: 1.6;
     }
 
     body::before {
@@ -55,24 +51,19 @@
       text-align: center;
     }
 
-    /* MAIN TITLE */
     header h1 {
       font-family: 'Playfair Display', serif;
       font-size: 3.2rem;
-      font-weight: 700;
       color: var(--science-soft);
-      letter-spacing: 1px;
     }
 
     header p {
+      color: var(--text-muted);
       max-width: 620px;
       margin: 1.2rem auto 0;
-      color: var(--text-muted);
     }
 
-    main {
-      padding: 2rem;
-    }
+    main { padding: 2rem; }
 
     .cards {
       display: grid;
@@ -82,30 +73,18 @@
       margin: auto;
     }
 
-    .card-link {
-      text-decoration: none;
-      color: inherit;
-    }
-
     .card {
       background: var(--glass-bg);
-      backdrop-filter: blur(14px);
-      border: 1px solid var(--border-light);
       border-radius: 22px;
       padding: 2.2rem;
-      transition: transform 0.35s ease;
+      transition: transform 0.3s ease;
     }
 
-    .card:hover {
-      transform: translateY(-8px);
-    }
+    .card:hover { transform: translateY(-8px); }
 
-    /* CARD TITLES */
     .card h3 {
       font-family: 'Playfair Display', serif;
       color: var(--science-accent);
-      font-size: 1.35rem;
-      font-weight: 600;
     }
 
     .highlight {
@@ -114,27 +93,23 @@
       text-align: center;
     }
 
-    /* SECTION TITLES */
     .highlight h2 {
       font-family: 'Playfair Display', serif;
       font-size: 2.4rem;
-      font-weight: 700;
       color: var(--science-soft);
-      margin-bottom: 1.5rem;
-      letter-spacing: 0.8px;
+      margin-bottom: 2rem;
     }
 
     .content-box {
       max-width: 1000px;
-      margin: 3rem auto 0;
+      margin: auto;
       display: grid;
       gap: 2.5rem;
     }
 
     .text-group p {
-      margin-bottom: 1rem;
       color: var(--text-muted);
-      font-size: 0.95rem;
+      margin-bottom: 1rem;
     }
 
     .image-grid {
@@ -156,12 +131,10 @@
       width: 56px;
       height: 56px;
       border-radius: 50%;
-      background: rgba(20, 40, 35, 0.55);
-      border: 1px solid rgba(120, 255, 220, 0.25);
+      background: rgba(20,40,35,0.55);
       color: var(--science-soft);
       font-size: 1.4rem;
       cursor: pointer;
-      z-index: 1000;
     }
 
     .top-btn {
@@ -171,15 +144,11 @@
       width: 56px;
       height: 56px;
       border-radius: 50%;
-      background: rgba(20, 40, 35, 0.55);
-      border: 1px solid rgba(120, 255, 220, 0.25);
+      background: rgba(20,40,35,0.55);
       color: var(--science-soft);
       font-size: 1.2rem;
       cursor: pointer;
       display: none;
-      align-items: center;
-      justify-content: center;
-      z-index: 1000;
     }
   </style>
 </head>
@@ -194,52 +163,54 @@
 <main>
 
 <section class="cards">
-  <a href="#reproductive" class="card-link"><div class="card"><h3>Reproductive System</h3></div></a>
-  <a href="#anekdota" class="card-link"><div class="card"><h3>Anekdota</h3></div></a>
-  <a href="#cat" class="card-link"><div class="card"><h3>CAT</h3></div></a>
+  <div class="card"><h3>Reproductive System</h3></div>
+  <div class="card"><h3>Anekdota</h3></div>
+  <div class="card"><h3>CAT</h3></div>
 </section>
 
-<section id="reproductive" class="highlight">
+<!-- REPRODUCTIVE -->
+<section class="highlight">
   <h2>Reproductive System</h2>
-  <!-- content unchanged -->
+  <div class="content-box">
+    <div class="text-group">
+      <p>BLAH BLAH BLAH</p><p>BLAH BLAH BLAH</p><p>BLAH BLAH BLAH</p><p>BLAH BLAH BLAH</p><p>BLAH BLAH BLAH</p>
+    </div>
+    <div class="image-grid">
+      <img src="crok.jpg"><img src="crok.jpg"><img src="crok.jpg"><img src="crok.jpg"><img src="crok.jpg">
+    </div>
+  </div>
 </section>
 
-<section id="anekdota" class="highlight">
+<!-- ANEKDOTA -->
+<section class="highlight">
   <h2>Anekdota</h2>
+  <div class="content-box">
+    <div class="text-group">
+      <p>BLAH BLAH BLAH</p><p>BLAH BLAH BLAH</p><p>BLAH BLAH BLAH</p><p>BLAH BLAH BLAH</p><p>BLAH BLAH BLAH</p>
+    </div>
+    <div class="image-grid">
+      <img src="huh.jpg"><img src="huh.jpg"><img src="huh.jpg"><img src="huh.jpg"><img src="huh.jpg">
+    </div>
+  </div>
 </section>
 
-<section id="cat" class="highlight">
+<!-- CAT -->
+<section class="highlight">
   <h2>CAT – Map Reading</h2>
+  <div class="content-box">
+    <div class="text-group">
+      <p>BLAH BLAH BLAH</p><p>BLAH BLAH BLAH</p><p>BLAH BLAH BLAH</p><p>BLAH BLAH BLAH</p><p>BLAH BLAH BLAH</p>
+    </div>
+    <div class="image-grid">
+      <img src="struggling-cat.jpg"><img src="struggling-cat.jpg"><img src="struggling-cat.jpg"><img src="struggling-cat.jpg"><img src="struggling-cat.jpg">
+    </div>
+  </div>
 </section>
 
 </main>
 
-<audio id="bgMusic" src="Naiilang.mp3" loop></audio>
 <button class="music-btn" id="musicToggle">▶</button>
 <button class="top-btn" id="topBtn">↑</button>
 
-<script>
-const music = document.getElementById("bgMusic");
-const btn = document.getElementById("musicToggle");
-const topBtn = document.getElementById("topBtn");
-let play = false;
-
-btn.onclick = () => {
-  play ? music.pause() : music.play();
-  btn.textContent = play ? "▶" : "⏸";
-  play = !play;
-};
-
-window.addEventListener("scroll", () => {
-  topBtn.style.display = window.scrollY > 300 ? "flex" : "none";
-});
-
-topBtn.onclick = () => {
-  window.scrollTo({ top: 0, behavior: "smooth" });
-};
-</script>
-
 </body>
 </html>
-
-
