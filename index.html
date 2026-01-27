@@ -229,14 +229,19 @@ main { padding: 2rem; }
 <section class="cards reveal">
   <a href="#reproductive" class="card-link"><div class="card"><h3>Reproductive System</h3></div></a>
   <a href="#anekdota" class="card-link"><div class="card"><h3>Anekdota</h3></div></a>
-  <a href="#cat" class="card-link"><div class="card"><h3>CAT</h3></div></a>
+  <a href="#hydroponics" class="card-link"><div class="card"><h3>Hydroponics</h3></div></a>
 </section>
 
+<!-- REPRODUCTIVE -->
 <section id="reproductive" class="section reveal">
   <h2>Reproductive System</h2>
   <div class="content-box">
     <div class="text-group">
-      <p>BLAH BLAH BLAH</p><p>BLAH BLAH BLAH</p><p>BLAH BLAH BLAH</p><p>BLAH BLAH BLAH</p><p>BLAH BLAH BLAH</p>
+      <p>BLAH BLAH BLAH</p>
+      <p>BLAH BLAH BLAH</p>
+      <p>BLAH BLAH BLAH</p>
+      <p>BLAH BLAH BLAH</p>
+      <p>BLAH BLAH BLAH</p>
     </div>
     <div class="image-grid">
       <img src="crok.jpg"><img src="crok.jpg"><img src="crok.jpg"><img src="crok.jpg"><img src="crok.jpg">
@@ -244,11 +249,16 @@ main { padding: 2rem; }
   </div>
 </section>
 
+<!-- ANEKDOTA -->
 <section id="anekdota" class="section reveal">
   <h2>Anekdota</h2>
   <div class="content-box">
     <div class="text-group">
-      <p>BLAH BLAH BLAH</p><p>BLAH BLAH BLAH</p><p>BLAH BLAH BLAH</p><p>BLAH BLAH BLAH</p><p>BLAH BLAH BLAH</p>
+      <p>BLAH BLAH BLAH</p>
+      <p>BLAH BLAH BLAH</p>
+      <p>BLAH BLAH BLAH</p>
+      <p>BLAH BLAH BLAH</p>
+      <p>BLAH BLAH BLAH</p>
     </div>
     <div class="image-grid">
       <img src="huh.jpg"><img src="huh.jpg"><img src="huh.jpg"><img src="huh.jpg"><img src="huh.jpg">
@@ -256,14 +266,18 @@ main { padding: 2rem; }
   </div>
 </section>
 
-<section id="cat" class="section reveal">
-  <h2>CAT</h2>
+<!-- HYDROPONICS -->
+<section id="hydroponics" class="section reveal">
+  <h2>Hydroponics</h2>
   <div class="content-box">
     <div class="text-group">
-      <p>BLAH BLAH BLAH</p><p>BLAH BLAH BLAH</p><p>BLAH BLAH BLAH</p><p>BLAH BLAH BLAH</p><p>BLAH BLAH BLAH</p>
+      <p>Hydroponics is a method of growing plants without soil, using mineral nutrient solutions in water. It allows for faster growth, higher yields, and can be done indoors or in areas with poor soil.</p>
+      <p>This method is environmentally friendly as it uses less water and reduces the need for pesticides. It’s perfect for sustainable agriculture and urban farming projects.</p>
     </div>
     <div class="image-grid">
-      <img src="struggling-cat.jpg"><img src="struggling-cat.jpg"><img src="struggling-cat.jpg"><img src="struggling-cat.jpg"><img src="struggling-cat.jpg">
+      <img src="hydroponics1.jpg">
+      <img src="hydroponics2.jpg">
+      <img src="hydroponics3.jpg">
     </div>
   </div>
 </section>
@@ -297,11 +311,9 @@ const revealOnScroll = () => {
   reveals.forEach(el => {
     const rect = el.getBoundingClientRect();
     if (rect.top < h && rect.bottom > 0) {
-      // in viewport → fade in
       el.classList.add("visible");
       el.classList.remove("hidden");
     } else {
-      // out of viewport → fade out
       el.classList.remove("visible");
       el.classList.add("hidden");
     }
@@ -316,6 +328,7 @@ topBtn.onclick = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
 </body>
 </html>
+
 
 
 
