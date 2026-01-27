@@ -1,237 +1,196 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>TITLE HERE</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>TITLE HERE</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
 
-  <style>
-    :root {
-      --bg-gradient: radial-gradient(circle at top, #1e3a2f, #0b1411 70%);
-      --science-accent: #7ccf9a;
-      --science-soft: #b6e6c8;
-      --text-main: #eef7f1;
-      --text-muted: #b7cfc2;
+<style>
+/* =========================
+   🌿 PURE NATURE THEME
+   ========================= */
+:root {
+  --bg-main: linear-gradient(180deg, #eef7f1 0%, #d7eadf 100%);
+  --green-main: #3e7c59;
+  --green-soft: #7fbf9b;
+  --earth-dark: #1f2f26;
+  --earth-muted: #4e6b5c;
 
-      --glass-bg: rgba(30, 60, 45, 0.55);
-      --border-light: rgba(160, 220, 190, 0.25);
-      --grid-line: rgba(255,255,255,0.03);
-    }
+  --card-bg: rgba(255, 255, 255, 0.7);
+  --card-border: rgba(62, 124, 89, 0.25);
+}
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Inter', sans-serif;
-    }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    html {
-      scroll-behavior: smooth;
-    }
+html { scroll-behavior: smooth; }
 
-    body {
-      min-height: 100vh;
-      background: var(--bg-gradient);
-      color: var(--text-main);
-      line-height: 1.7;
-    }
+body {
+  min-height: 100vh;
+  background: var(--bg-main);
+  color: var(--earth-dark);
+  font-family: 'Inter', sans-serif;
+  line-height: 1.7;
+}
 
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      background-image:
-        linear-gradient(var(--grid-line) 1px, transparent 1px),
-        linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
-      background-size: 56px 56px;
-      z-index: -1;
-    }
+/* =========================
+   HEADER
+   ========================= */
+header {
+  padding: 6rem 2rem 4rem;
+  text-align: center;
+}
 
-    /* HEADER */
-    header {
-      padding: 5rem 2rem 4rem;
-      text-align: center;
-    }
+header h1 {
+  font-size: clamp(2.6rem, 5vw, 3.4rem);
+  font-weight: 600;
+  color: var(--green-main);
+}
 
-    header h1 {
-      font-size: 3.2rem;
-      font-weight: 600;
-      color: var(--science-soft);
-    }
+header p {
+  max-width: 640px;
+  margin: 1.5rem auto 0;
+  color: var(--earth-muted);
+}
 
-    header p {
-      max-width: 620px;
-      margin: 1.2rem auto 0;
-      color: var(--text-muted);
-    }
+/* =========================
+   MAIN / CARDS
+   ========================= */
+main { padding: 2rem; }
 
-    main {
-      padding: 2rem;
-    }
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  max-width: 1100px;
+  margin: auto;
+}
 
-    /* CARDS */
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 2.2rem;
-      max-width: 1100px;
-      margin: auto;
-    }
+.card-link {
+  text-decoration: none;
+  color: inherit;
+}
 
-    .card-link {
-      text-decoration: none;
-      color: inherit;
-    }
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 26px;
+  padding: 2.4rem;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
 
-    .card {
-      background: var(--glass-bg);
-      backdrop-filter: blur(14px);
-      border: 1px solid var(--border-light);
-      border-radius: 22px;
-      padding: 2.2rem;
-      transition: transform 0.35s ease, box-shadow 0.35s ease;
-    }
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+}
 
-    .card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 18px 40px rgba(0,0,0,0.35);
-    }
+.card h3 {
+  color: var(--green-main);
+  font-size: 1.25rem;
+}
 
-    .card h3 {
-      color: var(--science-accent);
-    }
+/* =========================
+   SECTIONS
+   ========================= */
+.section {
+  margin-top: 6rem;
+  padding: 4.5rem 2rem;
+  text-align: center;
+  font-family: 'Merriweather', serif;
+}
 
-    /* SECTIONS */
-    .highlight {
-      margin-top: 5rem;
-      padding: 4rem 2rem;
-      text-align: center;
-      font-family: 'Roboto Slab', serif;
-    }
+.section h2 {
+  font-size: 2.4rem;
+  color: var(--green-main);
+  margin-bottom: 1.2rem;
+}
 
-    .highlight h2 {
-      font-size: 2.3rem;
-      color: var(--science-soft);
-      margin-bottom: 1rem;
-    }
+.content-box {
+  max-width: 1000px;
+  margin: 3rem auto 0;
+  display: grid;
+  gap: 3rem;
+}
 
-    .content-box {
-      max-width: 1000px;
-      margin: 3rem auto 0;
-      display: grid;
-      gap: 2.5rem;
-    }
+.text-group p {
+  margin-bottom: 1rem;
+  color: var(--earth-muted);
+  font-size: 1rem;
+}
 
-    .text-group p {
-      margin-bottom: 1rem;
-      color: var(--text-muted);
-      font-size: 0.95rem;
-    }
+/* =========================
+   IMAGES
+   ========================= */
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1.2rem;
+}
 
-    /* IMAGES */
-    .image-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-      gap: 1rem;
-    }
+.image-grid img {
+  width: 100%;
+  border-radius: 20px;
+  border: 2px solid var(--card-border);
+  transition: transform 0.35s ease;
+}
 
-    .image-grid img {
-      width: 100%;
-      border-radius: 14px;
-      border: 3px solid var(--science-accent);
-      padding: 2px;
-      transition: transform 0.3s ease;
-    }
+.image-grid img:hover {
+  transform: scale(1.05);
+}
 
-    .image-grid img:hover {
-      transform: scale(1.04);
-    }
+/* =========================
+   FLOATING BUTTONS
+   ========================= */
+.music-btn,
+.top-btn {
+  position: fixed;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.85);
+  border: 1px solid var(--card-border);
+  color: var(--green-main);
+  font-size: 1.3rem;
+  cursor: pointer;
+  z-index: 1000;
+}
 
-    /* FLOATING BUTTONS */
-    .music-btn,
-    .top-btn {
-      position: fixed;
-      width: 56px;
-      height: 56px;
-      border-radius: 50%;
-      background: rgba(20, 40, 35, 0.55);
-      border: 1px solid rgba(120, 255, 220, 0.25);
-      color: var(--science-soft);
-      font-size: 1.4rem;
-      cursor: pointer;
-      z-index: 1000;
-    }
+.music-btn { bottom: 24px; right: 24px; }
+.top-btn { bottom: 24px; left: 24px; display: none; }
 
-    .music-btn {
-      bottom: 24px;
-      right: 24px;
-    }
+/* =========================
+   🌿 SCROLL ANIMATIONS
+   ========================= */
+.reveal {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
 
-    .top-btn {
-      bottom: 24px;
-      left: 24px;
-      display: none;
-      align-items: center;
-      justify-content: center;
-    }
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
 
-    /* 🌿 SCROLL ANIMATION */
-    .reveal {
-      opacity: 0;
-      transform: translateY(40px);
-      transition: opacity 0.8s ease, transform 0.8s ease;
-    }
+/* =========================
+   📱 MOBILE
+   ========================= */
+@media (max-width: 768px) {
+  header { padding: 4.5rem 1.5rem 3rem; }
+  .section { padding: 3.5rem 1.5rem; }
+  .section h2 { font-size: 2rem; }
+  .image-grid { grid-template-columns: repeat(2, 1fr); }
+}
 
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* 📱 MOBILE OPTIMIZATION */
-    @media (max-width: 768px) {
-      header {
-        padding: 4rem 1.5rem 3rem;
-      }
-
-      header h1 {
-        font-size: 2.4rem;
-      }
-
-      .cards {
-        gap: 1.4rem;
-      }
-
-      .highlight {
-        padding: 3.5rem 1.5rem;
-      }
-
-      .highlight h2 {
-        font-size: 1.9rem;
-      }
-
-      .image-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .music-btn {
-        bottom: 18px;
-        right: 18px;
-      }
-
-      .top-btn {
-        bottom: 18px;
-        left: 18px;
-      }
-    }
-
-    @media (max-width: 420px) {
-      .image-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
+@media (max-width: 420px) {
+  .image-grid { grid-template-columns: 1fr; }
+}
+</style>
 </head>
 
 <body>
@@ -249,41 +208,42 @@
   <a href="#cat" class="card-link"><div class="card"><h3>CAT</h3></div></a>
 </section>
 
-<!-- REPRODUCTIVE -->
-<section id="reproductive" class="highlight reveal">
+<section id="reproductive" class="section reveal">
   <h2>Reproductive System</h2>
   <div class="content-box">
     <div class="text-group">
-      <p>BLAH BLAH BLAH</p><p>BLAH BLAH BLAH</p><p>BLAH BLAH BLAH</p>
-    </div>
-    <div class="image-grid">
-      <img src="crok.jpg"><img src="crok.jpg"><img src="crok.jpg">
-    </div>
-  </div>
-</section>
-
-<!-- ANEKDOTA -->
-<section id="anekdota" class="highlight reveal">
-  <h2>Anekdota</h2>
-  <div class="content-box">
-    <div class="text-group">
-      <p>BLAH BLAH BLAH</p><p>BLAH BLAH BLAH</p>
-    </div>
-    <div class="image-grid">
-      <img src="huh.jpg"><img src="huh.jpg"><img src="huh.jpg">
-    </div>
-  </div>
-</section>
-
-<!-- CAT -->
-<section id="cat" class="highlight reveal">
-  <h2>CAT</h2>
-  <div class="content-box">
-    <div class="text-group">
+      <p>BLAH BLAH BLAH</p>
+      <p>BLAH BLAH BLAH</p>
+      <p>BLAH BLAH BLAH</p>
+      <p>BLAH BLAH BLAH</p>
       <p>BLAH BLAH BLAH</p>
     </div>
     <div class="image-grid">
-      <img src="struggling-cat.jpg"><img src="struggling-cat.jpg">
+      <img src="crok.jpg"><img src="crok.jpg"><img src="crok.jpg"><img src="crok.jpg"><img src="crok.jpg">
+    </div>
+  </div>
+</section>
+
+<section id="anekdota" class="section reveal">
+  <h2>Anekdota</h2>
+  <div class="content-box">
+    <div class="text-group">
+      <p>BLAH BLAH BLAH</p><p>BLAH BLAH BLAH</p><p>BLAH BLAH BLAH</p><p>BLAH BLAH BLAH</p><p>BLAH BLAH BLAH</p>
+    </div>
+    <div class="image-grid">
+      <img src="huh.jpg"><img src="huh.jpg"><img src="huh.jpg"><img src="huh.jpg"><img src="huh.jpg">
+    </div>
+  </div>
+</section>
+
+<section id="cat" class="section reveal">
+  <h2>CAT</h2>
+  <div class="content-box">
+    <div class="text-group">
+      <p>BLAH BLAH BLAH</p><p>BLAH BLAH BLAH</p><p>BLAH BLAH BLAH</p><p>BLAH BLAH BLAH</p><p>BLAH BLAH BLAH</p>
+    </div>
+    <div class="image-grid">
+      <img src="struggling-cat.jpg"><img src="struggling-cat.jpg"><img src="struggling-cat.jpg"><img src="struggling-cat.jpg"><img src="struggling-cat.jpg">
     </div>
   </div>
 </section>
@@ -298,26 +258,23 @@
 const music = document.getElementById("bgMusic");
 const btn = document.getElementById("musicToggle");
 const topBtn = document.getElementById("topBtn");
-let play = false;
+let playing = false;
 
 btn.onclick = () => {
-  play ? music.pause() : music.play();
-  btn.textContent = play ? "▶" : "⏸";
-  play = !play;
+  playing ? music.pause() : music.play();
+  btn.textContent = playing ? "▶" : "⏸";
+  playing = !playing;
 };
 
 window.addEventListener("scroll", () => {
-  topBtn.style.display = window.scrollY > 300 ? "flex" : "none";
+  topBtn.style.display = window.scrollY > 300 ? "block" : "none";
 });
 
-/* 🌿 Reveal on Scroll */
 const reveals = document.querySelectorAll(".reveal");
-
 const revealOnScroll = () => {
-  const windowHeight = window.innerHeight;
+  const h = window.innerHeight;
   reveals.forEach(el => {
-    const top = el.getBoundingClientRect().top;
-    if (top < windowHeight - 100) {
+    if (el.getBoundingClientRect().top < h - 120) {
       el.classList.add("visible");
     }
   });
@@ -326,10 +283,9 @@ const revealOnScroll = () => {
 window.addEventListener("scroll", revealOnScroll);
 window.addEventListener("load", revealOnScroll);
 
-topBtn.onclick = () => {
-  window.scrollTo({ top: 0, behavior: "smooth" });
-};
+topBtn.onclick = () => window.scrollTo({ top: 0, behavior: "smooth" });
 </script>
 
 </body>
 </html>
+
