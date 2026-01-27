@@ -8,9 +8,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
-/* =========================
-   🌿 FOREST NATURE THEME
-   ========================= */
 :root {
   --leaf-main: #9bd6b4;
   --leaf-accent: #6fbf92;
@@ -22,17 +19,9 @@
   --overlay-dark: rgba(10, 25, 18, 0.65);
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
+* { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 
-/* =========================
-   🌄 BACKGROUND IMAGE
-   ========================= */
 body {
   min-height: 100vh;
   font-family: 'Inter', sans-serif;
@@ -46,7 +35,6 @@ body {
   background-attachment: fixed;
 }
 
-/* Dark forest overlay */
 body::before {
   content: "";
   position: fixed;
@@ -55,9 +43,6 @@ body::before {
   z-index: -1;
 }
 
-/* =========================
-   HEADER
-   ========================= */
 header {
   padding: 6rem 2rem 4rem;
   text-align: center;
@@ -75,9 +60,6 @@ header p {
   color: var(--earth-muted);
 }
 
-/* =========================
-   MAIN / CARDS
-   ========================= */
 main { padding: 2rem; }
 
 .cards {
@@ -88,10 +70,7 @@ main { padding: 2rem; }
   margin: auto;
 }
 
-.card-link {
-  text-decoration: none;
-  color: inherit;
-}
+.card-link { text-decoration: none; color: inherit; }
 
 .card {
   background: var(--card-bg);
@@ -112,9 +91,6 @@ main { padding: 2rem; }
   font-size: 1.25rem;
 }
 
-/* =========================
-   SECTIONS
-   ========================= */
 .section {
   margin-top: 6rem;
   padding: 4.5rem 2rem;
@@ -141,9 +117,6 @@ main { padding: 2rem; }
   font-size: 1rem;
 }
 
-/* =========================
-   IMAGES
-   ========================= */
 .image-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
@@ -157,13 +130,8 @@ main { padding: 2rem; }
   transition: transform 0.35s ease;
 }
 
-.image-grid img:hover {
-  transform: scale(1.05);
-}
+.image-grid img:hover { transform: scale(1.05); }
 
-/* =========================
-   FLOATING BUTTONS
-   ========================= */
 .music-btn,
 .top-btn {
   position: fixed;
@@ -181,9 +149,6 @@ main { padding: 2rem; }
 .music-btn { bottom: 24px; right: 24px; }
 .top-btn { bottom: 24px; left: 24px; display: none; }
 
-/* =========================
-   🌿 SCROLL ANIMATIONS (fade in/out)
-   ========================= */
 .reveal {
   opacity: 0;
   transform: translateY(50px);
@@ -200,9 +165,6 @@ main { padding: 2rem; }
   transform: translateY(-50px);
 }
 
-/* =========================
-   📱 MOBILE
-   ========================= */
 @media (max-width: 768px) {
   body { background-attachment: scroll; }
   header { padding: 4.5rem 1.5rem 3rem; }
@@ -257,7 +219,9 @@ main { padding: 2rem; }
       <p>This method is environmentally friendly as it uses less water and reduces the need for pesticides. It’s perfect for sustainable agriculture and urban farming projects.</p>
     </div>
     <div class="image-grid">
-      <img src="struggling-cat.jpg"><img src="struggling-cat.jpg"><img src="struggling-cat.jpg"><img src="struggling-cat.jpg"><img src="struggling-cat.jpg">
+      <img src="hydroponics1.jpg">
+      <img src="hydroponics2.jpg">
+      <img src="hydroponics3.jpg">
     </div>
   </div>
 </section>
@@ -284,7 +248,6 @@ window.addEventListener("scroll", () => {
   topBtn.style.display = window.scrollY > 300 ? "block" : "none";
 });
 
-// 🌿 Fade in/out scroll
 const reveals = document.querySelectorAll(".reveal");
 const revealOnScroll = () => {
   const h = window.innerHeight;
@@ -308,13 +271,3 @@ topBtn.onclick = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
