@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>TITLE HERE</title>
+<title>Nature & Hydroponics</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
 
@@ -17,6 +17,7 @@
   --card-bg: rgba(18, 40, 30, 0.55);
   --card-border: rgba(155, 214, 180, 0.25);
   --overlay-dark: rgba(10, 25, 18, 0.65);
+  --header-overlay: rgba(10, 25, 18, 0.5);
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -46,6 +47,9 @@ body::before {
 header {
   padding: 6rem 2rem 4rem;
   text-align: center;
+  position: relative;
+  background: var(--header-overlay);
+  border-radius: 0 0 20px 20px;
 }
 
 header h1 {
@@ -56,8 +60,47 @@ header h1 {
 
 header p {
   max-width: 640px;
-  margin: 1.5rem auto 0;
+  margin: 1.2rem auto 1.5rem;
+  font-size: 1.1rem;
   color: var(--earth-muted);
+}
+
+header .cta-btn {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  background-color: var(--leaf-accent);
+  border: none;
+  border-radius: 12px;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+header .cta-btn:hover {
+  background-color: var(--leaf-main);
+}
+
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(18, 40, 30, 0.8);
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 1rem 0;
+  font-weight: 500;
+  border-bottom: 1px solid var(--card-border);
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--earth-light);
+  transition: color 0.3s;
+}
+
+nav a:hover, nav a.active {
+  color: var(--leaf-accent);
 }
 
 main { padding: 2rem; }
@@ -149,6 +192,7 @@ main { padding: 2rem; }
 .music-btn { bottom: 24px; right: 24px; }
 .top-btn { bottom: 24px; left: 24px; display: none; }
 
+/* Scroll-trigger visibility for sections */
 .reveal {
   opacity: 0;
   transform: translateY(50px);
@@ -165,6 +209,7 @@ main { padding: 2rem; }
   transform: translateY(-50px);
 }
 
+/* Mobile Optimization */
 @media (max-width: 768px) {
   body { background-attachment: scroll; }
   header { padding: 4.5rem 1.5rem 3rem; }
@@ -175,15 +220,22 @@ main { padding: 2rem; }
 
 @media (max-width: 420px) {
   .image-grid { grid-template-columns: 1fr; }
+  .cta-btn { padding: 0.85rem 1.8rem; font-size: 1.1rem; }
 }
 </style>
 </head>
 
 <body>
 
+<nav>
+  <a href="#reproductive" class="nav-link">Reproductive System</a>
+  <a href="#hydroponics" class="nav-link">Hydroponics</a>
+</nav>
+
 <header class="reveal">
-  <h1>something here</h1>
-  <p>description</p>
+  <h1>Explore Nature and Science</h1>
+  <p>Discover the wonders of plants, hydroponics, and natural systems through interactive content.</p>
+  <button class="cta-btn" onclick="document.getElementById('hydroponics').scrollIntoView({behavior:'smooth'})">Learn About Hydroponics</button>
 </header>
 
 <main>
@@ -205,7 +257,11 @@ main { padding: 2rem; }
       <p>BLAH BLAH BLAH</p>
     </div>
     <div class="image-grid">
-      <img src="crok.jpg"><img src="crok.jpg"><img src="crok.jpg"><img src="crok.jpg"><img src="crok.jpg">
+      <img src="crok.jpg" loading="lazy">
+      <img src="crok.jpg" loading="lazy">
+      <img src="crok.jpg" loading="lazy">
+      <img src="crok.jpg" loading="lazy">
+      <img src="crok.jpg" loading="lazy">
     </div>
   </div>
 </section>
@@ -215,18 +271,15 @@ main { padding: 2rem; }
   <h2>Hydroponics</h2>
   <div class="content-box">
     <div class="text-group">
-     <p>BLAH BLAH BLAH</p>
-      <p>BLAH BLAH BLAH</p>
-      <p>BLAH BLAH BLAH</p>
-      <p>BLAH BLAH BLAH</p>
-      <p>BLAH BLAH BLAH</p>
+      <p>Hydroponics is a method of growing plants without soil, using mineral nutrient solutions in water. It allows for faster growth, higher yields, and can be done indoors or in areas with poor soil.</p>
+      <p>This method is environmentally friendly as it uses less water and reduces the need for pesticides. It’s perfect for sustainable agriculture and urban farming projects.</p>
     </div>
     <div class="image-grid">
-      <img src="struggling-cat.jpg">
-      <img src="struggling-cat.jpg">
-      <img src="struggling-cat.jpg">
-      <img src="struggling-cat.jpg">
-      <img src="struggling-cat.jpg">
+      <img src="struggling-cat.jpg" loading="lazy">
+      <img src="struggling-cat.jpg" loading="lazy">
+      <img src="struggling-cat.jpg" loading="lazy">
+      <img src="struggling-cat.jpg" loading="lazy">
+      <img src="struggling-cat.jpg" loading="lazy">
     </div>
   </div>
 </section>
@@ -249,32 +302,48 @@ btn.onclick = () => {
   playing = !playing;
 };
 
+topBtn.onclick = () => window.scrollTo({ top: 0, behavior: "smooth" });
+
 window.addEventListener("scroll", () => {
+  // Top button
   topBtn.style.display = window.scrollY > 300 ? "block" : "none";
+
+  // Highlight nav links
+  const sections = document.querySelectorAll("section");
+  const scrollPos = window.scrollY + window.innerHeight / 3;
+  sections.forEach(sec => {
+    const id = sec.getAttribute("id");
+    const link = document.querySelector(`nav a[href="#${id}"]`);
+    if (sec.offsetTop <= scrollPos && (sec.offsetTop + sec.offsetHeight) > scrollPos) {
+      link.classList.add("active");
+    } else {
+      link.classList.remove("active");
+    }
+  });
+
+  // Scroll-trigger visibility
+  revealSections();
 });
 
 const reveals = document.querySelectorAll(".reveal");
-const revealOnScroll = () => {
-  const h = window.innerHeight;
-  reveals.forEach(el => {
-    const rect = el.getBoundingClientRect();
-    if (rect.top < h && rect.bottom > 0) {
-      el.classList.add("visible");
-      el.classList.remove("hidden");
+const revealSections = () => {
+  const windowHeight = window.innerHeight;
+
+  reveals.forEach(section => {
+    const rect = section.getBoundingClientRect();
+    if (rect.top < windowHeight && rect.bottom > 0) {
+      section.classList.add("visible");
+      section.classList.remove("hidden");
     } else {
-      el.classList.remove("visible");
-      el.classList.add("hidden");
+      section.classList.remove("visible");
+      section.classList.add("hidden");
     }
   });
 };
 
-window.addEventListener("scroll", revealOnScroll);
-window.addEventListener("load", revealOnScroll);
-
-topBtn.onclick = () => window.scrollTo({ top: 0, behavior: "smooth" });
+window.addEventListener("load", revealSections);
 </script>
 
 </body>
 </html>
-
 
