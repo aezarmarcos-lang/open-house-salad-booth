@@ -213,11 +213,6 @@ main { padding: 2rem; }
   transform: translateY(0);
 }
 
-.reveal.hidden {
-  opacity: 0;
-  transform: translateY(-50px);
-}
-
 @media (max-width: 768px) {
   body { background-attachment: scroll; }
   header { padding: 4.5rem 1.5rem 3rem; }
@@ -332,23 +327,20 @@ window.addEventListener("scroll", () => {
   revealSections();
 });
 
+// Scroll Reveal
 const reveals = document.querySelectorAll(".reveal");
 const revealSections = () => {
   const windowHeight = window.innerHeight;
-
   reveals.forEach(section => {
     const rect = section.getBoundingClientRect();
-    if (rect.top < windowHeight && rect.bottom > 0) {
+    if (rect.top < windowHeight * 0.85) { // trigger a bit before fully visible
       section.classList.add("visible");
-      section.classList.remove("hidden");
-    } else {
-      section.classList.remove("visible");
-      section.classList.add("hidden");
     }
   });
 };
 
 window.addEventListener("load", revealSections);
+window.addEventListener("scroll", revealSections);
 </script>
 
 </body>
