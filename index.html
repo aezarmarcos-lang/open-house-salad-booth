@@ -66,24 +66,6 @@ header p {
   text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
 }
 
-header .cta-btn {
-  padding: 0.85rem 2rem;
-  font-size: 1.1rem;
-  font-weight: 600;
-  background: linear-gradient(135deg, var(--leaf-accent), var(--leaf-main));
-  border: none;
-  border-radius: 30px;
-  color: #fff;
-  cursor: pointer;
-  transition: all 0.4s ease;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-}
-
-header .cta-btn:hover {
-  transform: translateY(-3px) scale(1.05);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
-}
-
 nav {
   position: sticky;
   top: 0;
@@ -114,35 +96,6 @@ nav a:hover, nav a.active {
 }
 
 main { padding: 2rem; }
-
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 2rem;
-  max-width: 1100px;
-  margin: auto;
-}
-
-.card-link { text-decoration: none; color: inherit; }
-
-.card {
-  background: var(--card-bg);
-  border: 1px solid var(--card-border);
-  border-radius: 26px;
-  padding: 2.4rem;
-  backdrop-filter: blur(10px);
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
-}
-
-.card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.45);
-}
-
-.card h3 {
-  color: var(--leaf-accent);
-  font-size: 1.25rem;
-}
 
 .section {
   margin-top: 6rem;
@@ -223,7 +176,6 @@ main { padding: 2rem; }
 
 @media (max-width: 420px) {
   .image-grid { grid-template-columns: 1fr; }
-  .cta-btn { padding: 0.85rem 1.8rem; font-size: 1.1rem; }
   nav a { padding: 0.4rem 1rem; font-size: 0.9rem; }
 }
 </style>
@@ -239,16 +191,9 @@ main { padding: 2rem; }
 <header class="reveal">
   <h1>Explore Nature and Science</h1>
   <p>Discover the wonders of plants, hydroponics, and natural systems through interactive content.</p>
-  <button class="cta-btn" onclick="document.getElementById('hydroponics').scrollIntoView({behavior:'smooth'})">Learn About Hydroponics</button>
 </header>
 
 <main>
-
-<!-- Cards Section -->
-<section class="cards reveal">
-  <a href="#reproductive" class="card-link"><div class="card"><h3>Reproductive System</h3></div></a>
-  <a href="#hydroponics" class="card-link"><div class="card"><h3>Hydroponics</h3></div></a>
-</section>
 
 <!-- REPRODUCTIVE -->
 <section id="reproductive" class="section reveal">
@@ -333,7 +278,7 @@ const revealSections = () => {
   const windowHeight = window.innerHeight;
   reveals.forEach(section => {
     const rect = section.getBoundingClientRect();
-    if (rect.top < windowHeight * 0.85) { // trigger a bit before fully visible
+    if (rect.top < windowHeight * 0.85) {
       section.classList.add("visible");
     }
   });
@@ -345,3 +290,4 @@ window.addEventListener("scroll", revealSections);
 
 </body>
 </html>
+
