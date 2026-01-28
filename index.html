@@ -44,14 +44,7 @@ header {
   text-align: center;
   background: var(--header-overlay);
   border-radius: 0 0 20px 20px;
-  opacity: 0;
-  transform: translateY(50px);
   transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-header.visible {
-  opacity: 1;
-  transform: translateY(0);
 }
 
 header h1 {
@@ -99,14 +92,7 @@ main { padding: 2rem; }
   padding: 4.5rem 2rem;
   text-align: center;
   font-family: 'Merriweather', serif;
-  opacity: 0;
-  transform: translateY(50px);
   transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-.section.visible {
-  opacity: 1;
-  transform: translateY(0);
 }
 
 .section h2 {
@@ -114,20 +100,19 @@ main { padding: 2rem; }
   color: var(--leaf-main);
 }
 
+/* CONTENT BOX + TEXT GROUP */
 .content-box {
   max-width: 1000px;
   margin: 3rem auto 0;
   display: grid;
   gap: 2.5rem;
-  text-align: left;
 }
 
-/* TEXT + ICON LIST */
 .text-group ul {
   list-style: none;
   max-width: 650px;
   margin: 0 auto;
-  padding: 0;
+  text-align: left;
 }
 
 .text-group li {
@@ -141,32 +126,27 @@ main { padding: 2rem; }
   color: var(--leaf-main);
 }
 
-/* ICONS WITH SUBTLE BACKGROUND + HOVER EFFECT */
-.icon-wrapper {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
+/* NVG ICONS */
+.icon {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+  background: rgba(111, 191, 146, 0.15);
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-shrink: 0;
-  transition: transform 0.25s ease;
+  transition: transform 0.3s ease;
 }
 
-.icon-wrapper:hover {
-  transform: scale(1.2);
-}
-
-.icon-wrapper.triangle { background: rgba(155, 214, 180, 0.2); }
-.icon-wrapper.square { background: rgba(111, 191, 146, 0.2); }
-.icon-wrapper.rectangle { background: rgba(155, 214, 180, 0.15); }
-.icon-wrapper.pentagon { background: rgba(111, 191, 146, 0.15); }
-.icon-wrapper.hexagon { background: rgba(155, 214, 180, 0.1); }
-
-.icon {
-  width: 20px;
-  height: 20px;
+.icon svg {
+  width: 16px;
+  height: 16px;
   fill: var(--leaf-accent);
+}
+
+.icon:hover {
+  transform: scale(1.2);
+  background: rgba(111, 191, 146, 0.25);
 }
 
 /* BUTTONS */
@@ -203,7 +183,7 @@ main { padding: 2rem; }
   <a href="#reproductive" class="nav-link">Reproductive System</a>
 </nav>
 
-<header id="mainHeader">
+<header class="reveal">
   <h1>GREEN HOUSE GOODNESS</h1>
   <p>Eat Fresh. Plant the Future</p>
 </header>
@@ -211,40 +191,34 @@ main { padding: 2rem; }
 <main>
 
 <!-- OUR BOOTH -->
-<section id="hydroponics" class="section">
+<section id="hydroponics" class="section reveal">
   <h2>Our Booth</h2>
   <div class="content-box">
     <div class="text-group">
       <ul>
         <li>
-          <div class="icon-wrapper triangle">
-            <svg class="icon" viewBox="0 0 24 24"><polygon points="12,2 22,20 2,20"/></svg>
+          <div class="icon">
+            <svg viewBox="0 0 24 24"><polygon points="12,2 2,12 22,12"/></svg>
           </div>
-          <span><strong>Fresh Salads:</strong> Healthy and delicious salads for everyone.</span>
+          <span><strong>Fresh Salads:</strong> A variety of crisp, healthy greens and veggies.</span>
         </li>
         <li>
-          <div class="icon-wrapper square">
-            <svg class="icon" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="3"/></svg>
+          <div class="icon">
+            <svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16"/></svg>
           </div>
-          <span><strong>Plantable Pencils:</strong> Each pencil contains seeds for planting.</span>
+          <span><strong>Seed Pencils:</strong> Eco-friendly pencils with seeds to plant at home.</span>
         </li>
         <li>
-          <div class="icon-wrapper rectangle">
-            <svg class="icon" viewBox="0 0 24 24"><rect width="20" height="12" x="2" y="6"/></svg>
+          <div class="icon">
+            <svg viewBox="0 0 24 24"><polygon points="2,12 12,2 22,12 12,22"/></svg>
           </div>
-          <span><strong>Educational Experience:</strong> Learn about hydroponics and sustainability.</span>
+          <span><strong>Interactive Experience:</strong> Learn about hydroponics and sustainable gardening.</span>
         </li>
         <li>
-          <div class="icon-wrapper pentagon">
-            <svg class="icon" viewBox="0 0 24 24"><polygon points="12,2 22,9 18,22 6,22 2,9"/></svg>
+          <div class="icon">
+            <svg viewBox="0 0 24 24"><polygon points="12,2 2,7 7,22 17,22 22,7"/></svg>
           </div>
-          <span><strong>Interactive Booth:</strong> Fun activities and hands-on demonstrations.</span>
-        </li>
-        <li>
-          <div class="icon-wrapper hexagon">
-            <svg class="icon" viewBox="0 0 24 24"><polygon points="12,2 20,7 20,17 12,22 4,17 4,7"/></svg>
-          </div>
-          <span><strong>Visit Us:</strong> Make sure to come visit us at room 205 at Gerrero Building!</span>
+          <span><strong>Join Us:</strong> Make sure to come visit us at <strong>Room 205 at Guerrero Building</strong>.</span>
         </li>
       </ul>
     </div>
@@ -252,38 +226,38 @@ main { padding: 2rem; }
 </section>
 
 <!-- REPRODUCTIVE SYSTEM -->
-<section id="reproductive" class="section">
+<section id="reproductive" class="section reveal">
   <h2>Reproductive System</h2>
   <div class="content-box">
     <div class="text-group">
       <ul>
         <li>
-          <div class="icon-wrapper triangle">
-            <svg class="icon" viewBox="0 0 24 24"><polygon points="12,2 22,20 2,20"/></svg>
+          <div class="icon">
+            <svg viewBox="0 0 24 24"><polygon points="12,2 3,21 21,21"/></svg>
           </div>
           <span><strong>Rich in Folate:</strong> Supports <strong>healthy reproductive functions</strong>.</span>
         </li>
         <li>
-          <div class="icon-wrapper square">
-            <svg class="icon" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="3"/></svg>
+          <div class="icon">
+            <svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16"/></svg>
           </div>
           <span><strong>Antioxidants:</strong> Protect <strong>reproductive cells</strong>.</span>
         </li>
         <li>
-          <div class="icon-wrapper rectangle">
-            <svg class="icon" viewBox="0 0 24 24"><rect width="20" height="12" x="2" y="6"/></svg>
+          <div class="icon">
+            <svg viewBox="0 0 24 24"><polygon points="12,4 20,8 16,20 8,20 4,8"/></svg>
           </div>
           <span><strong>Hormone Balance:</strong> Fiber helps regulate <strong>hormone levels</strong>.</span>
         </li>
         <li>
-          <div class="icon-wrapper pentagon">
-            <svg class="icon" viewBox="0 0 24 24"><polygon points="12,2 22,9 18,22 6,22 2,9"/></svg>
+          <div class="icon">
+            <svg viewBox="0 0 24 24"><polygon points="12,2 2,7 7,22 17,22 22,7"/></svg>
           </div>
           <span><strong>Better Circulation:</strong> Supports <strong>reproductive organs</strong>.</span>
         </li>
         <li>
-          <div class="icon-wrapper hexagon">
-            <svg class="icon" viewBox="0 0 24 24"><polygon points="12,2 20,7 20,17 12,22 4,17 4,7"/></svg>
+          <div class="icon">
+            <svg viewBox="0 0 24 24"><polygon points="12,2 4,12 12,22 20,12"/></svg>
           </div>
           <span><strong>Reduced Inflammation:</strong> Promotes <strong>overall reproductive health</strong>.</span>
         </li>
@@ -294,7 +268,6 @@ main { padding: 2rem; }
 
 </main>
 
-<!-- MUSIC + TOP BUTTON -->
 <audio id="bgMusic" src="burnout.mp3" loop></audio>
 <button class="music-btn" id="musicToggle">▶</button>
 <button class="top-btn" id="topBtn">↑</button>
@@ -310,12 +283,12 @@ function fade(target) {
   const step = 0.05;
   const interval = setInterval(() => {
     music.volume = Math.max(0, Math.min(1, music.volume + target));
-    if (music.volume <= 0 || music.volume >= 1) clearInterval(interval);
+    if(music.volume === 0 || music.volume === 1) clearInterval(interval);
   }, 60);
 }
 
 musicBtn.onclick = () => {
-  if (!playing) {
+  if(!playing){
     music.play();
     fade(0.05);
     musicBtn.textContent = "⏸";
@@ -331,30 +304,27 @@ musicBtn.onclick = () => {
 const topBtn = document.getElementById("topBtn");
 topBtn.onclick = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
-/* SCROLL REVEAL + HIDE ON SCROLL OUT */
+/* SCROLL + VISIBILITY */
 const sections = document.querySelectorAll(".section");
-const header = document.getElementById("mainHeader");
+const header = document.querySelector("header");
 
 function checkVisibility() {
-  const triggerTop = window.innerHeight * 0.85;
-  const triggerBottom = 0;
+  const viewportHeight = window.innerHeight;
 
   // Header
   const rectHeader = header.getBoundingClientRect();
-  if(rectHeader.top < triggerTop && rectHeader.bottom > triggerBottom) {
-    header.classList.add("visible");
-  } else {
-    header.classList.remove("visible");
-  }
+  header.classList.toggle(
+    "visible",
+    rectHeader.top < viewportHeight*0.85 && rectHeader.bottom > 0
+  );
 
   // Sections
   sections.forEach(sec => {
     const rect = sec.getBoundingClientRect();
-    if (rect.top < triggerTop && rect.bottom > triggerBottom) {
-      sec.classList.add("visible");
-    } else {
-      sec.classList.remove("visible");
-    }
+    sec.classList.toggle(
+      "visible",
+      rect.top < viewportHeight*0.85 && rect.bottom > 0
+    );
   });
 }
 
@@ -362,12 +332,8 @@ window.addEventListener("scroll", () => {
   checkVisibility();
   topBtn.style.display = window.scrollY > 300 ? "block" : "none";
 });
-
-window.addEventListener("load", () => {
-  checkVisibility();
-});
+window.addEventListener("load", checkVisibility);
 </script>
 
 </body>
 </html>
-
