@@ -77,10 +77,6 @@ nav a:hover, nav button:hover {
   background: linear-gradient(135deg, var(--leaf-accent), var(--leaf-main));
 }
 
-nav a.active {
-  background: linear-gradient(135deg, var(--leaf-accent), var(--leaf-main));
-}
-
 #langToggle {
   padding: 0.5rem 1rem;
   border-radius: 20px;
@@ -388,7 +384,7 @@ musicBtn.onclick = () => {
   playing = !playing;
 };
 
-/* SCROLL + NAV */
+/* SCROLL + NAV - REVEAL ONLY (NO NAV HIGHLIGHT) */
 const reveals = document.querySelectorAll(".reveal");
 const topBtn = document.getElementById("topBtn");
 
@@ -399,12 +395,6 @@ function handleReveal() {
   reveals.forEach(sec => {
     const r = sec.getBoundingClientRect();
     sec.classList.toggle("visible", r.top < h && r.bottom > 0);
-
-    // ONLY toggle 'active' for normal nav links (exclude Feedback button)
-    const link = document.querySelector(`nav a[href="#${sec.id}"]`);
-    if (link) {
-      link.classList.toggle("active", r.top < h/2 && r.bottom > h/2);
-    }
   });
 
   topBtn.classList.toggle("show", window.scrollY > 300);
