@@ -16,11 +16,9 @@
   --overlay-dark: rgba(10, 25, 18, 0.65);
 }
 
-/* RESET */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 
-/* BODY */
 body {
   min-height: 100vh;
   font-family: 'Inter', sans-serif;
@@ -37,7 +35,6 @@ body::before {
   z-index: -1;
 }
 
-/* HEADER */
 header {
   padding: 6rem 2rem 4rem;
   text-align: center;
@@ -55,7 +52,6 @@ header p {
   font-size: 1.15rem;
 }
 
-/* NAV */
 nav {
   position: sticky;
   top: 0;
@@ -92,10 +88,8 @@ nav a.active {
   font-weight: 600;
 }
 
-/* MAIN */
 main { padding: 2rem; }
 
-/* SECTIONS */
 .section {
   margin-top: 6rem;
   padding: 4.5rem 2rem;
@@ -108,7 +102,6 @@ main { padding: 2rem; }
   color: var(--leaf-main);
 }
 
-/* CONTENT BOX */
 .content-box {
   max-width: 1000px;
   margin: 3rem auto 0;
@@ -116,7 +109,6 @@ main { padding: 2rem; }
   gap: 2.5rem;
 }
 
-/* REVEAL */
 .reveal {
   opacity: 0;
   transform: translateY(50px);
@@ -128,7 +120,6 @@ main { padding: 2rem; }
   transform: translateY(0);
 }
 
-/* TEXT LIST */
 .text-group ul {
   list-style: none;
   max-width: 650px;
@@ -147,7 +138,6 @@ main { padding: 2rem; }
   color: var(--leaf-main);
 }
 
-/* ICONS */
 .icon {
   width: 26px;
   height: 26px;
@@ -160,7 +150,6 @@ main { padding: 2rem; }
   transform: rotate(15deg) scale(1.15);
 }
 
-/* BUTTONS */
 .music-btn,
 .top-btn {
   position: fixed;
@@ -218,7 +207,6 @@ main { padding: 2rem; }
 
 <main>
 
-<!-- OUR BOOTH -->
 <section id="hydroponics" class="section reveal">
   <h2 data-en="Our Booth" data-ja="私たちのブース">Our Booth</h2>
   <div class="content-box">
@@ -260,21 +248,55 @@ main { padding: 2rem; }
   </div>
 </section>
 
-<!-- BENEFITS -->
 <section id="benefits" class="section reveal">
   <h2 data-en="Benefits of Our Salad" data-ja="サラダの健康効果">
     Benefits of Our Salad
   </h2>
+
   <div class="content-box">
     <div class="text-group">
       <ul>
+
         <li>
           <svg class="icon" viewBox="0 0 24 24"><polygon points="12,2 22,22 2,22"/></svg>
-          <span data-en="<strong>Rich in Nutrients:</strong> Packed with vitamins and minerals."
-                data-ja="<strong>栄養豊富:</strong> ビタミンとミネラルがたっぷり。">
-            <strong>Rich in Nutrients:</strong> Packed with vitamins and minerals.
+          <span data-en="<strong>Rich in Nutrients:</strong> Packed with vitamins and minerals for overall wellness."
+                data-ja="<strong>栄養豊富:</strong> 健康を支えるビタミンとミネラルがたっぷり。">
+            <strong>Rich in Nutrients:</strong> Packed with vitamins and minerals for overall wellness.
           </span>
         </li>
+
+        <li>
+          <svg class="icon" viewBox="0 0 24 24"><polygon points="2,2 22,2 22,22 2,22"/></svg>
+          <span data-en="<strong>High in Fiber:</strong> Supports healthy digestion and keeps you full longer."
+                data-ja="<strong>食物繊維が豊富:</strong> 消化を助け、満腹感が長持ちします。">
+            <strong>High in Fiber:</strong> Supports healthy digestion and keeps you full longer.
+          </span>
+        </li>
+
+        <li>
+          <svg class="icon" viewBox="0 0 24 24"><polygon points="12,2 22,9 18,22 6,22 2,9"/></svg>
+          <span data-en="<strong>Antioxidants:</strong> Protects your cells and boosts your immune system."
+                data-ja="<strong>抗酸化作用:</strong> 細胞を守り、免疫力を高めます。">
+            <strong>Antioxidants:</strong> Protects your cells and boosts your immune system.
+          </span>
+        </li>
+
+        <li>
+          <svg class="icon" viewBox="0 0 24 24"><polygon points="12,2 20,7 20,17 12,22 4,17 4,7"/></svg>
+          <span data-en="<strong>Supports Heart Health:</strong> Helps lower cholesterol and improves circulation."
+                data-ja="<strong>心臓の健康をサポート:</strong> コレステロールを抑え、血流を改善します。">
+            <strong>Supports Heart Health:</strong> Helps lower cholesterol and improves circulation.
+          </span>
+        </li>
+
+        <li>
+          <svg class="icon" viewBox="0 0 24 24"><polygon points="12,2 20,6 22,14 16,22 8,22 2,14 4,6"/></svg>
+          <span data-en="<strong>Boosts Energy:</strong> Natural ingredients provide long-lasting energy."
+                data-ja="<strong>エネルギー補給:</strong> 自然な食材で一日中元気に。">
+            <strong>Boosts Energy:</strong> Natural ingredients provide long-lasting energy.
+          </span>
+        </li>
+
       </ul>
     </div>
   </div>
@@ -287,7 +309,6 @@ main { padding: 2rem; }
 <button class="top-btn" id="topBtn">↑</button>
 
 <script>
-/* LANGUAGE TOGGLE */
 let currentLang = "en";
 document.getElementById("langToggle").onclick = () => {
   currentLang = currentLang === "en" ? "ja" : "en";
@@ -299,7 +320,6 @@ document.getElementById("langToggle").onclick = () => {
   });
 };
 
-/* MUSIC */
 const music = document.getElementById("bgMusic");
 const musicBtn = document.getElementById("musicToggle");
 let playing = false;
@@ -325,9 +345,7 @@ musicBtn.onclick = () => {
   playing = !playing;
 };
 
-/* SCROLL + NAV */
 const reveals = document.querySelectorAll(".reveal");
-const navLinks = document.querySelectorAll(".nav-link");
 const topBtn = document.getElementById("topBtn");
 
 topBtn.onclick = () => window.scrollTo({ top: 0, behavior: "smooth" });
