@@ -91,6 +91,14 @@ main { padding: 2rem; }
   padding: 4.5rem 2rem;
   text-align: center;
   font-family: 'Merriweather', serif;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.section.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .section h2 {
@@ -99,22 +107,11 @@ main { padding: 2rem; }
 }
 
 .content-box {
-  max-width: 800px;
+  max-width: 1000px;
   margin: 3rem auto 0;
   display: grid;
   gap: 2.5rem;
-}
-
-/* REVEAL ANIMATION */
-.reveal {
-  opacity: 0;
-  transform: translateY(50px);
-  transition: opacity 0.9s ease, transform 0.9s ease;
-}
-
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
+  text-align: left;
 }
 
 /* TEXT + ICON LIST */
@@ -122,11 +119,12 @@ main { padding: 2rem; }
   list-style: none;
   max-width: 650px;
   margin: 0 auto;
-  text-align: left;
+  padding: 0;
 }
 
 .text-group li {
   display: flex;
+  align-items: center;
   gap: 1rem;
   margin-bottom: 1.3rem;
 }
@@ -135,17 +133,32 @@ main { padding: 2rem; }
   color: var(--leaf-main);
 }
 
-.icon {
-  width: 26px;
-  height: 26px;
-  fill: var(--leaf-accent);
+/* ICONS WITH SUBTLE BACKGROUND + HOVER EFFECT */
+.icon-wrapper {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   flex-shrink: 0;
-  margin-top: 2px;
-  transition: transform 0.3s ease;
+  transition: transform 0.25s ease;
 }
 
-.icon:hover {
-  transform: scale(1.2) rotate(15deg);
+.icon-wrapper:hover {
+  transform: scale(1.2);
+}
+
+.icon-wrapper.triangle { background: rgba(155, 214, 180, 0.2); }
+.icon-wrapper.square { background: rgba(111, 191, 146, 0.2); }
+.icon-wrapper.rectangle { background: rgba(155, 214, 180, 0.15); }
+.icon-wrapper.pentagon { background: rgba(111, 191, 146, 0.15); }
+.icon-wrapper.hexagon { background: rgba(155, 214, 180, 0.1); }
+
+.icon {
+  width: 20px;
+  height: 20px;
+  fill: var(--leaf-accent);
 }
 
 /* BUTTONS */
@@ -182,106 +195,88 @@ main { padding: 2rem; }
   <a href="#reproductive" class="nav-link">Reproductive System</a>
 </nav>
 
-<header class="reveal">
+<header>
   <h1>GREEN HOUSE GOODNESS</h1>
   <p>Eat Fresh. Plant the Future</p>
 </header>
 
 <main>
 
-<!-- OUR BOOTH FIRST -->
-<section id="hydroponics" class="section reveal">
+<!-- OUR BOOTH -->
+<section id="hydroponics" class="section">
   <h2>Our Booth</h2>
   <div class="content-box">
     <div class="text-group">
       <ul>
-        <!-- Triangle -->
         <li>
-          <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <polygon points="12,2 22,20 2,20"/>
-          </svg>
-          <span><strong>Fresh Salads:</strong> Enjoy delicious, healthy salads made from fresh greens grown with care.</span>
+          <div class="icon-wrapper triangle">
+            <svg class="icon" viewBox="0 0 24 24"><polygon points="12,2 22,20 2,20"/></svg>
+          </div>
+          <span><strong>Fresh Salads:</strong> Healthy and delicious salads for everyone.</span>
         </li>
-
-        <!-- Square -->
         <li>
-          <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <rect x="4" y="4" width="16" height="16"/>
-          </svg>
-          <span><strong>Seed Pencils:</strong> Take home pencils embedded with seeds to plant your own greens.</span>
+          <div class="icon-wrapper square">
+            <svg class="icon" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="3"/></svg>
+          </div>
+          <span><strong>Plantable Pencils:</strong> Each pencil contains seeds for planting.</span>
         </li>
-
-        <!-- Rectangle -->
         <li>
-          <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <rect x="3" y="6" width="18" height="12"/>
-          </svg>
-          <span><strong>Eco-Friendly:</strong> Learn sustainable practices and the benefits of hydroponic growing.</span>
+          <div class="icon-wrapper rectangle">
+            <svg class="icon" viewBox="0 0 24 24"><rect width="20" height="12" x="2" y="6"/></svg>
+          </div>
+          <span><strong>Educational Experience:</strong> Learn about hydroponics and sustainability.</span>
         </li>
-
-        <!-- Pentagon -->
         <li>
-          <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <polygon points="12,2 22,9 18,22 6,22 2,9"/>
-          </svg>
-          <span><strong>Interactive Demos:</strong> Engage in fun, hands-on activities and plant-growing tips.</span>
+          <div class="icon-wrapper pentagon">
+            <svg class="icon" viewBox="0 0 24 24"><polygon points="12,2 22,9 18,22 6,22 2,9"/></svg>
+          </div>
+          <span><strong>Interactive Booth:</strong> Fun activities and hands-on demonstrations.</span>
         </li>
-
-        <!-- Hexagon -->
         <li>
-          <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <polygon points="12,2 21,7 21,17 12,22 3,17 3,7"/>
-          </svg>
-          <span><strong>Visit Us:</strong> Make sure to come visit us at <strong>Room 205 at Guerrero Building</strong>.</span>
+          <div class="icon-wrapper hexagon">
+            <svg class="icon" viewBox="0 0 24 24"><polygon points="12,2 20,7 20,17 12,22 4,17 4,7"/></svg>
+          </div>
+          <span><strong>Visit Us:</strong> Make sure to come visit us at room 205 at Gerrero Building!</span>
         </li>
       </ul>
     </div>
   </div>
 </section>
 
-<!-- REPRODUCTIVE SYSTEM SECOND -->
-<section id="reproductive" class="section reveal">
+<!-- REPRODUCTIVE SYSTEM -->
+<section id="reproductive" class="section">
   <h2>Reproductive System</h2>
   <div class="content-box">
     <div class="text-group">
       <ul>
-        <!-- Triangle -->
         <li>
-          <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <polygon points="12,2 22,20 2,20"/>
-          </svg>
+          <div class="icon-wrapper triangle">
+            <svg class="icon" viewBox="0 0 24 24"><polygon points="12,2 22,20 2,20"/></svg>
+          </div>
           <span><strong>Rich in Folate:</strong> Supports <strong>healthy reproductive functions</strong>.</span>
         </li>
-
-        <!-- Square -->
         <li>
-          <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <rect x="4" y="4" width="16" height="16"/>
-          </svg>
+          <div class="icon-wrapper square">
+            <svg class="icon" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="3"/></svg>
+          </div>
           <span><strong>Antioxidants:</strong> Protect <strong>reproductive cells</strong>.</span>
         </li>
-
-        <!-- Rectangle -->
         <li>
-          <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <rect x="3" y="6" width="18" height="12"/>
-          </svg>
+          <div class="icon-wrapper rectangle">
+            <svg class="icon" viewBox="0 0 24 24"><rect width="20" height="12" x="2" y="6"/></svg>
+          </div>
           <span><strong>Hormone Balance:</strong> Fiber helps regulate <strong>hormone levels</strong>.</span>
         </li>
-
-        <!-- Pentagon -->
         <li>
-          <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <polygon points="12,2 22,9 18,22 6,22 2,9"/>
-          </svg>
+          <div class="icon-wrapper pentagon">
+            <svg class="icon" viewBox="0 0 24 24"><polygon points="12,2 22,9 18,22 6,22 2,9"/></svg>
+          </div>
           <span><strong>Better Circulation:</strong> Supports <strong>reproductive organs</strong>.</span>
         </li>
-
-        <!-- Hexagon -->
         <li>
-          <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <polygon points="12,2 21,7 21,17 12,22 3,17 3,7"/>
-          </svg>
+          <div class="icon-wrapper hexagon">
+            <svg class="icon" viewBox="0 0 24 24"><polygon points="12,2 20,7 20,17 12,22 4,17 4,7"/></svg>
+          </div>
           <span><strong>Reduced Inflammation:</strong> Promotes <strong>overall reproductive health</strong>.</span>
         </li>
       </ul>
@@ -291,6 +286,7 @@ main { padding: 2rem; }
 
 </main>
 
+<!-- MUSIC + TOP BUTTON -->
 <audio id="bgMusic" src="burnout.mp3" loop></audio>
 <button class="music-btn" id="musicToggle">▶</button>
 <button class="top-btn" id="topBtn">↑</button>
@@ -303,9 +299,10 @@ let playing = false;
 music.volume = 0;
 
 function fade(target) {
+  const step = 0.05;
   const interval = setInterval(() => {
     music.volume = Math.max(0, Math.min(1, music.volume + target));
-    if (music.volume === 0 || music.volume === 1) clearInterval(interval);
+    if (music.volume <= 0 || music.volume >= 1) clearInterval(interval);
   }, 60);
 }
 
@@ -326,37 +323,30 @@ musicBtn.onclick = () => {
 const topBtn = document.getElementById("topBtn");
 topBtn.onclick = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
-/* SCROLL + NAV + REVEAL */
-const reveals = document.querySelectorAll(".reveal");
-const navLinks = document.querySelectorAll(".nav-link");
+/* SCROLL REVEAL + HIDE ON SCROLL OUT */
+const sections = document.querySelectorAll(".section");
 
-function revealSections() {
-  const trigger = window.innerHeight * 0.85;
-  reveals.forEach(el => {
-    if (el.getBoundingClientRect().top < trigger) {
-      el.classList.add("visible");
+function checkSections() {
+  const triggerTop = window.innerHeight * 0.85;
+  const triggerBottom = 0;
+  sections.forEach(sec => {
+    const rect = sec.getBoundingClientRect();
+    if (rect.top < triggerTop && rect.bottom > triggerBottom) {
+      sec.classList.add("visible");
+    } else {
+      sec.classList.remove("visible");
     }
   });
 }
 
 window.addEventListener("scroll", () => {
-  revealSections();
+  checkSections();
   topBtn.style.display = window.scrollY > 300 ? "block" : "none";
-
-  // Highlight nav links
-  const scrollPos = window.scrollY + window.innerHeight / 3;
-  reveals.forEach(sec => {
-    const id = sec.getAttribute("id");
-    const link = document.querySelector(`nav a[href="#${id}"]`);
-    if (sec.offsetTop <= scrollPos && (sec.offsetTop + sec.offsetHeight) > scrollPos) {
-      link.classList.add("active");
-    } else {
-      link.classList.remove("active");
-    }
-  });
 });
 
-window.addEventListener("load", revealSections);
+window.addEventListener("load", () => {
+  checkSections();
+});
 </script>
 
 </body>
