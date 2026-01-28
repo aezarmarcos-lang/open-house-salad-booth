@@ -63,7 +63,7 @@ nav {
   padding: 1rem 0;
 }
 
-nav a {
+nav a, nav button {
   text-decoration: none;
   color: var(--earth-light);
   padding: 0.5rem 1.2rem;
@@ -71,10 +71,13 @@ nav a {
   background: rgba(18, 40, 30, 0.7);
   font-weight: 600;
   transition: all 0.35s ease;
+  cursor: pointer;
+  border: none;
 }
 
 nav a:hover,
-nav a.active {
+nav a.active,
+nav button:hover {
   background: linear-gradient(135deg, var(--leaf-accent), var(--leaf-main));
 }
 
@@ -86,21 +89,6 @@ nav a.active {
   background: rgba(18, 40, 30, 0.7);
   color: var(--earth-light);
   font-weight: 600;
-}
-
-/* NEW FEEDBACK NAV BUTTON */
-#feedbackNavBtn {
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
-  border: none;
-  cursor: pointer;
-  background: rgba(18, 40, 30, 0.7);
-  color: var(--earth-light);
-  font-weight: 600;
-}
-
-#feedbackNavBtn:hover {
-  background: linear-gradient(135deg, var(--leaf-accent), var(--leaf-main));
 }
 
 main { padding: 2rem; }
@@ -216,16 +204,16 @@ main { padding: 2rem; }
 <body>
 
 <nav>
-  <a href="#hydroponics" class="nav-link"
-     data-en="Our Booth"
-     data-ja="私たちのブース">Our Booth</a>
-
-  <!-- NEW FEEDBACK NAV BUTTON -->
+  <!-- FEEDBACK NAV BUTTON ON LEFT -->
   <button id="feedbackNavBtn"
           data-en="Feedback"
           data-ja="フィードバック">
     Feedback
   </button>
+
+  <a href="#hydroponics" class="nav-link"
+     data-en="Our Booth"
+     data-ja="私たちのブース">Our Booth</a>
 
   <a href="#benefits" class="nav-link"
      data-en="Benefits of Our Salad"
@@ -374,6 +362,11 @@ document.getElementById("langToggle").onclick = () => {
   });
 };
 
+/* FEEDBACK NAV BUTTON SCROLL */
+document.getElementById("feedbackNavBtn").onclick = () => {
+  document.getElementById("feedback").scrollIntoView({ behavior: "smooth" });
+};
+
 /* MUSIC */
 const music = document.getElementById("bgMusic");
 const musicBtn = document.getElementById("musicToggle");
@@ -423,12 +416,6 @@ function handleReveal() {
 
 window.addEventListener("scroll", handleReveal);
 window.addEventListener("load", handleReveal);
-
-/* FEEDBACK NAV SCROLL */
-document.getElementById("feedbackNavBtn").onclick = () => {
-  document.getElementById("feedback")
-    .scrollIntoView({ behavior: "smooth" });
-};
 </script>
 
 </body>
