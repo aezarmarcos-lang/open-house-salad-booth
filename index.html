@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -107,7 +108,6 @@ main { padding: 2rem; }
   margin: 3rem auto 0;
   display: grid;
   gap: 2.5rem;
-  justify-items: center;
 }
 
 .reveal {
@@ -180,8 +180,8 @@ main { padding: 2rem; }
   pointer-events: auto;
 }
 
-/* FEEDBACK BUTTONS */
-.feedback-btn, .detailed-feedback-btn {
+/* FEEDBACK BUTTON */
+.feedback-btn {
   display: inline-block;
   padding: 0.8rem 1.5rem;
   background: var(--leaf-accent);
@@ -190,10 +190,9 @@ main { padding: 2rem; }
   font-weight: 600;
   text-decoration: none;
   transition: all 0.35s ease;
-  margin: 0.5rem;
 }
 
-.feedback-btn:hover, .detailed-feedback-btn:hover {
+.feedback-btn:hover {
   background: linear-gradient(135deg, var(--leaf-main), var(--leaf-accent));
   transform: scale(1.05);
 }
@@ -331,11 +330,6 @@ main { padding: 2rem; }
        target="_blank" 
        class="feedback-btn">
       <span data-en="Share Feedback" data-ja="フィードバックを送る">Share Feedback</span>
-    </a>
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSf30L0rc9_Sb0h1ce1mFuNPPFRQDpNXgotEoYXjIRJEhkwx8g/viewform?usp=publish-editor" 
-       target="_blank" 
-       class="detailed-feedback-btn">
-      <span data-en="Give Detailed Feedback" data-ja="詳細なフィードバック">Give Detailed Feedback</span>
     </a>
   </div>
 </section>
