@@ -35,7 +35,6 @@ body::before {
   z-index: -1;
 }
 
-/* HEADER */
 header {
   padding: 6rem 2rem 4rem;
   text-align: center;
@@ -53,7 +52,6 @@ header p {
   font-size: 1.15rem;
 }
 
-/* NAV */
 nav {
   position: sticky;
   top: 0;
@@ -90,10 +88,8 @@ nav a.active {
   font-weight: 600;
 }
 
-/* MAIN */
 main { padding: 2rem; }
 
-/* SECTIONS */
 .section {
   margin-top: 6rem;
   padding: 4.5rem 2rem;
@@ -109,6 +105,8 @@ main { padding: 2rem; }
 .content-box {
   max-width: 1000px;
   margin: 3rem auto 0;
+  display: grid;
+  gap: 2.5rem;
 }
 
 .reveal {
@@ -152,7 +150,6 @@ main { padding: 2rem; }
   transform: rotate(15deg) scale(1.15);
 }
 
-/* BUTTONS */
 .music-btn,
 .top-btn {
   position: fixed;
@@ -174,12 +171,29 @@ main { padding: 2rem; }
   left: 24px;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.4s ease;
+  transition: opacity 0.6s ease;
 }
 
 .top-btn.show {
   opacity: 1;
   pointer-events: auto;
+}
+
+.feedback-btn {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 30px;
+  background: linear-gradient(135deg, var(--leaf-accent), var(--leaf-main));
+  color: var(--earth-light);
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feedback-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
 }
 </style>
 </head>
@@ -187,21 +201,32 @@ main { padding: 2rem; }
 <body>
 
 <nav>
-  <a href="#hydroponics" class="nav-link" data-en="Our Booth" data-ja="私たちのブース">Our Booth</a>
-  <a href="#benefits" class="nav-link" data-en="Benefits of Our Salad" data-ja="サラダの健康効果">Benefits of Our Salad</a>
-  <button id="langToggle">JAP</button>
+  <a href="#hydroponics" class="nav-link"
+     data-en="Our Booth"
+     data-ja="私たちのブース">Our Booth</a>
+
+  <a href="#benefits" class="nav-link"
+     data-en="Benefits of Our Salad"
+     data-ja="サラダの健康効果">Benefits of Our Salad</a>
+
+  <a href="#feedback" class="nav-link" data-en="Feedback" data-ja="フィードバック">Feedback</a>
+
+  <button id="langToggle">日本語</button>
 </nav>
 
 <header class="reveal">
-  <h1 data-en="GREEN HOUSE GOODNESS" data-ja="グリーンハウス・グッドネス">GREEN HOUSE GOODNESS</h1>
-  <p data-en="Eat Fresh. Plant the Future" data-ja="新鮮に食べよう。未来を育てよう">
+  <h1 data-en="GREEN HOUSE GOODNESS"
+      data-ja="グリーンハウス・グッドネス">
+    GREEN HOUSE GOODNESS
+  </h1>
+  <p data-en="Eat Fresh. Plant the Future"
+     data-ja="新鮮に食べよう。未来を育てよう">
     Eat Fresh. Plant the Future
   </p>
 </header>
 
 <main>
 
-<!-- OUR BOOTH -->
 <section id="hydroponics" class="section reveal">
   <h2 data-en="Our Booth" data-ja="私たちのブース">Our Booth</h2>
   <div class="content-box">
@@ -243,9 +268,11 @@ main { padding: 2rem; }
   </div>
 </section>
 
-<!-- BENEFITS -->
 <section id="benefits" class="section reveal">
-  <h2 data-en="Benefits of Our Salad" data-ja="サラダの健康効果">Benefits of Our Salad</h2>
+  <h2 data-en="Benefits of Our Salad" data-ja="サラダの健康効果">
+    Benefits of Our Salad
+  </h2>
+
   <div class="content-box">
     <div class="text-group">
       <ul>
@@ -290,6 +317,19 @@ main { padding: 2rem; }
         </li>
       </ul>
     </div>
+  </div>
+</section>
+
+<!-- FEEDBACK SECTION -->
+<section id="feedback" class="section reveal">
+  <h2 data-en="Give Us Your Feedback" data-ja="ご意見をお聞かせください">Give Us Your Feedback</h2>
+  <div class="content-box">
+    <p data-en="We value your thoughts! Click below to share your likes and dislikes."
+       data-ja="皆様のご意見をお待ちしています。下のリンクから好き・嫌いを教えてください。">
+       We value your thoughts! Click below to share your likes and dislikes.
+    </p>
+    <a href="https://forms.gle/YOUR_GOOGLE_FORM_LINK" target="_blank" class="feedback-btn" 
+       data-en="Share Feedback" data-ja="フィードバックを送る">Share Feedback</a>
   </div>
 </section>
 
@@ -362,4 +402,3 @@ window.addEventListener("load", handleReveal);
 
 </body>
 </html>
-
