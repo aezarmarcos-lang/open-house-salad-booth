@@ -1,3 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Green House Goodness</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --leaf-main: #9bd6b4;
+  --leaf-accent: #6fbf92;
+  --earth-light: #eef6f1;
+  --card-border: rgba(155, 214, 180, 0.25);
+  --overlay-dark: rgba(10, 25, 18, 0.65);
+  --header-overlay: rgba(10, 25, 18, 0.5);
+}
+
+/* RESET */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+/* BODY */
+body {
+  min-height: 100vh;
+  font-family: 'Inter', sans-serif;
+  line-height: 1.7;
+  color: var(--earth-light);
+  background: url("nature.jpg") center / cover fixed no-repeat;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: var(--overlay-dark);
+  z-index: -1;
+}
+
+/* HEADER */
+header {
+  padding: 6rem 2rem 4rem;
+  text-align: center;
+  background: var(--header-overlay);
+  border-radius: 0 0 20px 20px;
+}
+
+header h1 {
+  font-size: clamp(2.6rem, 5vw, 3.4rem);
+  color: var(--leaf-main);
+}
+
+header p {
+  margin-top: 1rem;
+  font-size: 1.15rem;
+}
+
+/* NAV */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem 0;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--earth-light);
+  padding: 0.5rem 1.2rem;
+  border-radius: 30px;
+  background: rgba(18, 40, 30, 0.7);
+  font-weight: 600;
+  transition: all 0.35s ease;
+}
+
+nav a:hover,
+nav a.active {
+  background: linear-gradient(135deg, var(--leaf-accent), var(--leaf-main));
+}
+
+/* MAIN */
+main { padding: 2rem; }
+
+/* SECTIONS */
+.section {
+  margin-top: 6rem;
+  padding: 4.5rem 2rem;
+  text-align: center;
+  font-family: 'Merriweather', serif;
+}
+
+.section h2 {
+  font-size: 2.4rem;
+  color: var(--leaf-main);
+}
+
+.content-box {
+  max-width: 1000px;
+  margin: 3rem auto 0;
+  display: grid;
+  gap: 3rem;
+}
+
+/* REVEAL ANIMATION */
+.reveal {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* TEXT + ICON LIST */
+.text-group ul {
+  list-style: none;
+  max-width: 650px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.text-group li {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.3rem;
+}
+
+.text-group strong {
+  color: var(--leaf-main);
+}
+
+.icon {
+  width: 26px;
+  height: 26px;
+  fill: var(--leaf-accent);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* IMAGES */
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1.2rem;
+}
+
+.image-grid img {
+  width: 100%;
+  border-radius: 20px;
+  border: 1px solid var(--card-border);
+  transition: transform 0.35s ease;
+}
+
+.image-grid img:hover {
+  transform: scale(1.05);
+}
+
+/* BUTTONS */
+.music-btn,
+.top-btn {
+  position: fixed;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: rgba(18, 40, 30, 0.7);
+  border: 1px solid var(--card-border);
+  color: var(--leaf-main);
+  font-size: 1.3rem;
+  cursor: pointer;
+  z-index: 1000;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.music-btn:hover,
+.top-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.4);
+}
+
+.music-btn { bottom: 24px; right: 24px; }
+.top-btn { bottom: 24px; left: 24px; display: none; }
+</style>
+</head>
+
+<body>
+
+<nav>
+  <a href="#hydroponics" class="nav-link">Our Booth</a>
+  <a href="#reproductive" class="nav-link">Reproductive System</a>
+</nav>
+
+<header class="reveal">
+  <h1>GREEN HOUSE GOODNESS</h1>
+  <p>Eat Fresh. Plant the Future</p>
+</header>
+
+<main>
+
+<!-- OUR BOOTH FIRST -->
+<section id="hydroponics" class="section reveal">
+  <h2>Our Booth</h2>
+  <div class="content-box">
+    <div class="text-group">
+      <p>Visit our booth to discover fresh, delicious salads and take home seed pencils to plant your own greens! Experience the joy of eating healthy while nurturing nature.</p>
+      <p>Our hydroponic setup ensures the freshest produce with minimal environmental impact.</p>
+      <p>Interactive demos and tips for growing your own plants make the experience fun for everyone.</p>
+    </div>
+  </div>
+</section>
+
+<!-- REPRODUCTIVE SYSTEM SECOND -->
 <section id="reproductive" class="section reveal">
   <h2>Reproductive System</h2>
   <div class="content-box">
@@ -54,3 +271,77 @@
     </div>
   </div>
 </section>
+
+</main>
+
+<audio id="bgMusic" src="burnout.mp3" loop></audio>
+<button class="music-btn" id="musicToggle">▶</button>
+<button class="top-btn" id="topBtn">↑</button>
+
+<script>
+/* MUSIC FADE */
+const music = document.getElementById("bgMusic");
+const musicBtn = document.getElementById("musicToggle");
+let playing = false;
+music.volume = 0;
+
+function fade(target) {
+  const step = 0.05;
+  const interval = setInterval(() => {
+    music.volume = Math.max(0, Math.min(1, music.volume + target));
+    if (music.volume === 0 || music.volume === 1) clearInterval(interval);
+  }, 60);
+}
+
+musicBtn.onclick = () => {
+  if (!playing) {
+    music.play();
+    fade(0.05);
+    musicBtn.textContent = "⏸";
+  } else {
+    fade(-0.05);
+    setTimeout(() => music.pause(), 1200);
+    musicBtn.textContent = "▶";
+  }
+  playing = !playing;
+};
+
+/* TOP BUTTON */
+const topBtn = document.getElementById("topBtn");
+topBtn.onclick = () => window.scrollTo({ top: 0, behavior: "smooth" });
+
+/* SCROLL + NAV + REVEAL */
+const reveals = document.querySelectorAll(".reveal");
+const navLinks = document.querySelectorAll(".nav-link");
+
+function revealSections() {
+  const trigger = window.innerHeight * 0.85;
+  reveals.forEach(el => {
+    if (el.getBoundingClientRect().top < trigger) {
+      el.classList.add("visible");
+    }
+  });
+}
+
+window.addEventListener("scroll", () => {
+  revealSections();
+  topBtn.style.display = window.scrollY > 300 ? "block" : "none";
+
+  // Highlight nav links
+  const scrollPos = window.scrollY + window.innerHeight / 3;
+  reveals.forEach(sec => {
+    const id = sec.getAttribute("id");
+    const link = document.querySelector(`nav a[href="#${id}"]`);
+    if (sec.offsetTop <= scrollPos && (sec.offsetTop + sec.offsetHeight) > scrollPos) {
+      link.classList.add("active");
+    } else {
+      link.classList.remove("active");
+    }
+  });
+});
+
+window.addEventListener("load", revealSections);
+</script>
+
+</body>
+</html>
