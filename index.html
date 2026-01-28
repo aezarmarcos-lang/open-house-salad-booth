@@ -16,11 +16,9 @@
   --overlay-dark: rgba(10, 25, 18, 0.65);
 }
 
-/* RESET */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 
-/* BODY */
 body {
   min-height: 100vh;
   font-family: 'Inter', sans-serif;
@@ -37,7 +35,6 @@ body::before {
   z-index: -1;
 }
 
-/* HEADER */
 header {
   padding: 6rem 2rem 4rem;
   text-align: center;
@@ -55,13 +52,13 @@ header p {
   font-size: 1.15rem;
 }
 
-/* NAV */
 nav {
   position: sticky;
   top: 0;
   z-index: 1000;
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 1rem;
   padding: 1rem 0;
 }
@@ -81,10 +78,18 @@ nav a.active {
   background: linear-gradient(135deg, var(--leaf-accent), var(--leaf-main));
 }
 
-/* MAIN */
+#langToggle {
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  background: rgba(18, 40, 30, 0.7);
+  color: var(--earth-light);
+  font-weight: 600;
+}
+
 main { padding: 2rem; }
 
-/* SECTIONS */
 .section {
   margin-top: 6rem;
   padding: 4.5rem 2rem;
@@ -92,13 +97,11 @@ main { padding: 2rem; }
   font-family: 'Merriweather', serif;
 }
 
-/* SECTION HEADINGS */
 .section h2 {
   font-size: 2.4rem;
   color: var(--leaf-main);
 }
 
-/* CONTENT BOX */
 .content-box {
   max-width: 1000px;
   margin: 3rem auto 0;
@@ -106,7 +109,6 @@ main { padding: 2rem; }
   gap: 2.5rem;
 }
 
-/* REVEAL ANIMATION */
 .reveal {
   opacity: 0;
   transform: translateY(50px);
@@ -118,7 +120,6 @@ main { padding: 2rem; }
   transform: translateY(0);
 }
 
-/* TEXT + ICON LIST */
 .text-group ul {
   list-style: none;
   max-width: 650px;
@@ -137,20 +138,13 @@ main { padding: 2rem; }
   color: var(--leaf-main);
 }
 
-/* ICONS */
 .icon {
   width: 26px;
   height: 26px;
   fill: var(--leaf-accent);
   flex-shrink: 0;
-  transition: transform 0.25s ease;
 }
 
-.text-group li:hover .icon {
-  transform: rotate(15deg) scale(1.15);
-}
-
-/* BUTTONS */
 .music-btn,
 .top-btn {
   position: fixed;
@@ -163,108 +157,84 @@ main { padding: 2rem; }
   font-size: 1.3rem;
   cursor: pointer;
   z-index: 1000;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.music-btn:hover,
-.top-btn:hover {
-  transform: scale(1.1);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.4);
 }
 
 .music-btn { bottom: 24px; right: 24px; }
 
-/* Fading top button */
 .top-btn {
   bottom: 24px;
   left: 24px;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.4s ease;
 }
 
 .top-btn.show {
   opacity: 1;
   pointer-events: auto;
 }
-
 </style>
 </head>
 
 <body>
 
 <nav>
-  <a href="#hydroponics" class="nav-link">Our Booth</a>
-  <a href="#benefits" class="nav-link">Benefits of Our Salad</a>
+  <a href="#hydroponics" class="nav-link"
+     data-en="Our Booth"
+     data-ja="私たちのブース">Our Booth</a>
+
+  <a href="#benefits" class="nav-link"
+     data-en="Benefits of Our Salad"
+     data-ja="サラダの健康効果">Benefits of Our Salad</a>
+
+  <button id="langToggle">日本語</button>
 </nav>
 
 <header class="reveal">
-  <h1>GREEN HOUSE GOODNESS</h1>
-  <p>Eat Fresh. Plant the Future</p>
+  <h1 data-en="GREEN HOUSE GOODNESS"
+      data-ja="グリーンハウス・グッドネス">
+      GREEN HOUSE GOODNESS
+  </h1>
+
+  <p data-en="Eat Fresh. Plant the Future"
+     data-ja="新鮮に食べよう。未来を育てよう">
+     Eat Fresh. Plant the Future
+  </p>
 </header>
 
 <main>
 
-<!-- OUR BOOTH -->
 <section id="hydroponics" class="section reveal">
-  <h2>Our Booth</h2>
-  <div class="content-box">
-    <div class="text-group">
-      <ul>
-        <li>
-          <svg class="icon" viewBox="0 0 24 24"><polygon points="12,2 22,22 2,22"/></svg>
-          <span><strong>Fresh Salads:</strong> Our greens are handpicked daily for maximum nutrition.</span>
-        </li>
-        <li>
-          <svg class="icon" viewBox="0 0 24 24"><polygon points="2,2 22,2 22,22 2,22"/></svg>
-          <span><strong>Seed Pencils:</strong> Plantable pencils provided with every salad order.</span>
-        </li>
-        <li>
-          <svg class="icon" viewBox="0 0 24 24"><polygon points="12,2 22,9 18,22 6,22 2,9"/></svg>
-          <span><strong>Eco-Friendly:</strong> Encouraging sustainable habits and a green lifestyle.</span>
-        </li>
-        <li>
-          <svg class="icon" viewBox="0 0 24 24"><polygon points="12,2 20,7 20,17 12,22 4,17 4,7"/></svg>
-          <span><strong>Interactive Booth:</strong> Learn about hydroponics and healthy eating.</span>
-        </li>
-        <li>
-          <svg class="icon" viewBox="0 0 24 24"><polygon points="12,2 20,6 22,14 16,22 8,22 2,14 4,6"/></svg>
-          <span><strong>Fun & Educational:</strong> Hands-on experience for all ages.</span>
-        </li>
-        <li>
-          <svg class="icon" viewBox="0 0 24 24"><polygon points="6,2 18,2 22,6 22,18 18,22 6,22 2,18 2,6"/></svg>
-          <span><strong>Make sure to come visit us at room 205 at Gerrero Building.</strong></span>
-        </li>
-      </ul>
-    </div>
-  </div>
-</section>
+  <h2 data-en="Our Booth" data-ja="私たちのブース">Our Booth</h2>
 
-<!-- BENEFITS OF OUR SALAD -->
-<section id="benefits" class="section reveal">
-  <h2>Benefits of Our Salad</h2>
   <div class="content-box">
     <div class="text-group">
       <ul>
         <li>
-          <svg class="icon" viewBox="0 0 24 24"><polygon points="12,2 22,22 2,22"/></svg>
-          <span><strong>Rich in Nutrients:</strong> Packed with vitamins and minerals for overall wellness.</span>
+          <span data-en="<strong>Fresh Salads:</strong> Our greens are handpicked daily for maximum nutrition."
+                data-ja="<strong>新鮮なサラダ:</strong> 毎日手摘みされた栄養豊富な野菜を使用しています。">
+            <strong>Fresh Salads:</strong> Our greens are handpicked daily for maximum nutrition.
+          </span>
         </li>
+
         <li>
-          <svg class="icon" viewBox="0 0 24 24"><polygon points="2,2 22,2 22,22 2,22"/></svg>
-          <span><strong>High in Fiber:</strong> Supports <strong>healthy digestion</strong> and satiety.</span>
+          <span data-en="<strong>Seed Pencils:</strong> Plantable pencils with every salad order."
+                data-ja="<strong>シード鉛筆:</strong> サラダ購入ごとに植えられる鉛筆を提供。">
+            <strong>Seed Pencils:</strong> Plantable pencils with every salad order.
+          </span>
         </li>
+
         <li>
-          <svg class="icon" viewBox="0 0 24 24"><polygon points="12,2 22,9 18,22 6,22 2,9"/></svg>
-          <span><strong>Antioxidants:</strong> Protects your <strong>cells</strong> and boosts immunity.</span>
+          <span data-en="<strong>Eco-Friendly:</strong> Encouraging sustainable habits."
+                data-ja="<strong>環境に優しい:</strong> 持続可能なライフスタイルを推進。">
+            <strong>Eco-Friendly:</strong> Encouraging sustainable habits.
+          </span>
         </li>
+
         <li>
-          <svg class="icon" viewBox="0 0 24 24"><polygon points="12,2 20,7 20,17 12,22 4,17 4,7"/></svg>
-          <span><strong>Supports Heart Health:</strong> Lowers cholesterol and promotes <strong>healthy circulation</strong>.</span>
-        </li>
-        <li>
-          <svg class="icon" viewBox="0 0 24 24"><polygon points="12,2 20,6 22,14 16,22 8,22 2,14 4,6"/></svg>
-          <span><strong>Boosts Energy:</strong> Natural ingredients provide sustained energy throughout the day.</span>
+          <span data-en="<strong>Visit us:</strong> Room 205, Gerrero Building."
+                data-ja="<strong>ぜひお越しください:</strong> ゲレロビル205号室。">
+            <strong>Visit us:</strong> Room 205, Gerrero Building.
+          </span>
         </li>
       </ul>
     </div>
@@ -273,73 +243,22 @@ main { padding: 2rem; }
 
 </main>
 
-<audio id="bgMusic" src="burnout.mp3" loop></audio>
 <button class="music-btn" id="musicToggle">▶</button>
 <button class="top-btn" id="topBtn">↑</button>
 
 <script>
-/* MUSIC FADE */
-const music = document.getElementById("bgMusic");
-const musicBtn = document.getElementById("musicToggle");
-let playing = false;
-music.volume = 0;
+/* LANGUAGE TOGGLE */
+let currentLang = "en";
+const langBtn = document.getElementById("langToggle");
 
-function fade(target) {
-  const step = 0.05;
-  const interval = setInterval(() => {
-    music.volume = Math.max(0, Math.min(1, music.volume + target));
-    if (music.volume === 0 || music.volume === 1) clearInterval(interval);
-  }, 60);
-}
+langBtn.onclick = () => {
+  currentLang = currentLang === "en" ? "ja" : "en";
+  langBtn.textContent = currentLang === "en" ? "日本語" : "EN";
 
-musicBtn.onclick = () => {
-  if (!playing) {
-    music.play();
-    fade(0.05);
-    musicBtn.textContent = "⏸";
-  } else {
-    fade(-0.05);
-    setTimeout(() => music.pause(), 1200);
-    musicBtn.textContent = "▶";
-  }
-  playing = !playing;
+  document.querySelectorAll("[data-en]").forEach(el => {
+    el.innerHTML = el.dataset[currentLang];
+  });
 };
-
-/* TOP BUTTON */
-const topBtn = document.getElementById("topBtn");
-topBtn.onclick = () => window.scrollTo({ top: 0, behavior: "smooth" });
-
-/* SCROLL REVEAL IN/OUT */
-const reveals = document.querySelectorAll(".reveal");
-const navLinks = document.querySelectorAll(".nav-link");
-
-function handleReveal() {
-  const windowHeight = window.innerHeight;
-  reveals.forEach(el => {
-    const rect = el.getBoundingClientRect();
-    if(rect.top < windowHeight && rect.bottom > 0){
-      el.classList.add("visible");
-    } else {
-      el.classList.remove("visible");
-    }
-  });
-
-  // Fade top button in/out
-  topBtn.classList.toggle("show", window.scrollY > 300);
-
-  reveals.forEach(sec => {
-    const id = sec.getAttribute("id");
-    const link = document.querySelector(`nav a[href="#${id}"]`);
-    if(sec.getBoundingClientRect().top < windowHeight/2 && sec.getBoundingClientRect().bottom > windowHeight/2){
-      link.classList.add("active");
-    } else {
-      link.classList.remove("active");
-    }
-  });
-}
-
-window.addEventListener("scroll", handleReveal);
-window.addEventListener("load", handleReveal);
 </script>
 
 </body>
