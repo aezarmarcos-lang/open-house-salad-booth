@@ -13,8 +13,6 @@
   --leaf-accent: #6fbf92;
   --earth-light: #eef6f1;
   --earth-muted: #c7ded3;
-
-  --card-bg: rgba(18, 40, 30, 0.55);
   --card-border: rgba(155, 214, 180, 0.25);
   --overlay-dark: rgba(10, 25, 18, 0.65);
   --header-overlay: rgba(10, 25, 18, 0.5);
@@ -28,12 +26,7 @@ body {
   font-family: 'Inter', sans-serif;
   line-height: 1.7;
   color: var(--earth-light);
-
-  background-image: url("nature.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+  background: url("nature.jpg") center / cover fixed no-repeat;
 }
 
 body::before {
@@ -47,7 +40,6 @@ body::before {
 header {
   padding: 6rem 2rem 4rem;
   text-align: center;
-  position: relative;
   background: var(--header-overlay);
   border-radius: 0 0 20px 20px;
 }
@@ -59,11 +51,8 @@ header h1 {
 }
 
 header p {
-  max-width: 640px;
-  margin: 1.2rem auto 1.5rem;
+  margin-top: 1rem;
   font-size: 1.15rem;
-  color: var(--earth-light);
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
 }
 
 nav {
@@ -74,7 +63,6 @@ nav {
   justify-content: center;
   gap: 1rem;
   padding: 1rem 0;
-  font-weight: 500;
 }
 
 nav a {
@@ -83,16 +71,13 @@ nav a {
   padding: 0.5rem 1.2rem;
   border-radius: 30px;
   background: rgba(18, 40, 30, 0.7);
-  transition: all 0.35s ease;
   font-weight: 600;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: 0.35s;
 }
 
-nav a:hover, nav a.active {
+nav a:hover,
+nav a.active {
   background: linear-gradient(135deg, var(--leaf-accent), var(--leaf-main));
-  color: #fff;
-  transform: scale(1.05);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.35);
 }
 
 main { padding: 2rem; }
@@ -107,7 +92,6 @@ main { padding: 2rem; }
 .section h2 {
   font-size: 2.4rem;
   color: var(--leaf-main);
-  margin-bottom: 1.2rem;
 }
 
 .content-box {
@@ -117,10 +101,32 @@ main { padding: 2rem; }
   gap: 3rem;
 }
 
-.text-group p {
-  margin-bottom: 1rem;
-  color: var(--earth-light);
+.text-group ul {
+  list-style: none;
+  max-width: 650px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.text-group li {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1.3rem;
   font-size: 1rem;
+}
+
+.text-group strong {
+  color: var(--leaf-main);
+  font-weight: 700;
+}
+
+.icon {
+  width: 26px;
+  height: 26px;
+  flex-shrink: 0;
+  fill: var(--leaf-accent);
+  margin-top: 2px;
 }
 
 .image-grid {
@@ -133,50 +139,6 @@ main { padding: 2rem; }
   width: 100%;
   border-radius: 20px;
   border: 1px solid var(--card-border);
-  transition: transform 0.35s ease;
-}
-
-.image-grid img:hover { transform: scale(1.05); }
-
-.music-btn,
-.top-btn {
-  position: fixed;
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  background: rgba(18, 40, 30, 0.7);
-  border: 1px solid var(--card-border);
-  color: var(--leaf-main);
-  font-size: 1.3rem;
-  cursor: pointer;
-  z-index: 1000;
-}
-
-.music-btn { bottom: 24px; right: 24px; }
-.top-btn { bottom: 24px; left: 24px; display: none; }
-
-.reveal {
-  opacity: 0;
-  transform: translateY(50px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-@media (max-width: 768px) {
-  body { background-attachment: scroll; }
-  header { padding: 4.5rem 1.5rem 3rem; }
-  .section { padding: 3.5rem 1.5rem; }
-  .section h2 { font-size: 2rem; }
-  .image-grid { grid-template-columns: repeat(2, 1fr); }
-}
-
-@media (max-width: 420px) {
-  .image-grid { grid-template-columns: 1fr; }
-  nav a { padding: 0.4rem 1rem; font-size: 0.9rem; }
 }
 </style>
 </head>
@@ -184,28 +146,63 @@ main { padding: 2rem; }
 <body>
 
 <nav>
-  <a href="#reproductive" class="nav-link">Reproductive System</a>
-  <a href="#hydroponics" class="nav-link">Our booth</a>
+  <a href="#reproductive">Reproductive System</a>
+  <a href="#hydroponics">Our Booth</a>
 </nav>
 
-<header class="reveal">
+<header>
   <h1>GREEN HOUSE GOODNESS</h1>
   <p>Eat Fresh. Plant the Future</p>
 </header>
 
 <main>
 
-<!-- REPRODUCTIVE -->
-<section id="reproductive" class="section reveal">
+<!-- REPRODUCTIVE SYSTEM -->
+<section id="reproductive" class="section">
   <h2>Reproductive System</h2>
   <div class="content-box">
+
     <div class="text-group">
-      <p>BLAH BLAH BLAH</p>
-      <p>BLAH BLAH BLAH</p>
-      <p>BLAH BLAH BLAH</p>
-      <p>BLAH BLAH BLAH</p>
-      <p>BLAH BLAH BLAH</p>
+      <ul>
+
+        <li>
+          <svg class="icon" viewBox="0 0 24 24">
+            <path d="M12 2L3 9l9 13 9-13z"/>
+          </svg>
+          <span><strong>Rich in Folate:</strong> Leafy greens in our salads provide <strong>folate</strong>, an essential nutrient that supports <strong>healthy reproductive functions</strong> in both males and females.</span>
+        </li>
+
+        <li>
+          <svg class="icon" viewBox="0 0 24 24">
+            <path d="M12 2l7 4v6c0 5-3.5 8-7 10-3.5-2-7-5-7-10V6z"/>
+          </svg>
+          <span><strong>Antioxidant Protection:</strong> Fresh vegetables contain <strong>vitamin C</strong> and <strong>beta-carotene</strong>, which help <strong>protect reproductive cells</strong> from damage.</span>
+        </li>
+
+        <li>
+          <svg class="icon" viewBox="0 0 24 24">
+            <path d="M12 4a8 8 0 100 16 8 8 0 000-16z"/>
+          </svg>
+          <span><strong>Hormone Balance:</strong> The <strong>high fiber content</strong> supports digestion and helps maintain <strong>balanced hormone levels</strong> in the body.</span>
+        </li>
+
+        <li>
+          <svg class="icon" viewBox="0 0 24 24">
+            <path d="M12 21s-8-6-8-11a8 8 0 0116 0c0 5-8 11-8 11z"/>
+          </svg>
+          <span><strong>Improved Circulation:</strong> Nutrients in fresh vegetables improve <strong>blood flow</strong>, supporting <strong>healthy reproductive organs</strong>.</span>
+        </li>
+
+        <li>
+          <svg class="icon" viewBox="0 0 24 24">
+            <path d="M4 12h16M12 4v16"/>
+          </svg>
+          <span><strong>Reduced Inflammation:</strong> Eating fresh salads helps maintain a <strong>healthy body weight</strong> and reduce <strong>inflammation</strong>, creating ideal conditions for reproductive health.</span>
+        </li>
+
+      </ul>
     </div>
+
     <div class="image-grid">
       <img src="crok.jpg" loading="lazy">
       <img src="crok.jpg" loading="lazy">
@@ -213,90 +210,25 @@ main { padding: 2rem; }
       <img src="crok.jpg" loading="lazy">
       <img src="crok.jpg" loading="lazy">
     </div>
+
   </div>
 </section>
 
 <!-- HYDROPONICS -->
-<section id="hydroponics" class="section reveal">
+<section id="hydroponics" class="section">
   <h2>Hydroponics</h2>
   <div class="content-box">
     <div class="text-group">
-        <p>BLAH BLAH BLAH</p>
       <p>BLAH BLAH BLAH</p>
       <p>BLAH BLAH BLAH</p>
       <p>BLAH BLAH BLAH</p>
       <p>BLAH BLAH BLAH</p>
-    </div>
-    <div class="image-grid">
-      <img src="struggling-cat.jpg" loading="lazy">
-      <img src="struggling-cat.jpg" loading="lazy">
-      <img src="struggling-cat.jpg" loading="lazy">
-      <img src="struggling-cat.jpg" loading="lazy">
-      <img src="struggling-cat.jpg" loading="lazy">
+      <p>BLAH BLAH BLAH</p>
     </div>
   </div>
 </section>
 
 </main>
 
-<audio id="bgMusic" src="burnout.mp3" loop></audio>
-<button class="music-btn" id="musicToggle">▶</button>
-<button class="top-btn" id="topBtn">↑</button>
-
-<script>
-const music = document.getElementById("bgMusic");
-const btn = document.getElementById("musicToggle");
-const topBtn = document.getElementById("topBtn");
-let playing = false;
-
-btn.onclick = () => {
-  playing ? music.pause() : music.play();
-  btn.textContent = playing ? "▶" : "⏸";
-  playing = !playing;
-};
-
-topBtn.onclick = () => window.scrollTo({ top: 0, behavior: "smooth" });
-
-window.addEventListener("scroll", () => {
-  topBtn.style.display = window.scrollY > 300 ? "block" : "none";
-
-  const sections = document.querySelectorAll("section");
-  const scrollPos = window.scrollY + window.innerHeight / 3;
-  sections.forEach(sec => {
-    const id = sec.getAttribute("id");
-    const link = document.querySelector(`nav a[href="#${id}"]`);
-    if (sec.offsetTop <= scrollPos && (sec.offsetTop + sec.offsetHeight) > scrollPos) {
-      link.classList.add("active");
-    } else {
-      link.classList.remove("active");
-    }
-  });
-
-  revealSections();
-});
-
-// Scroll Reveal
-const reveals = document.querySelectorAll(".reveal");
-const revealSections = () => {
-  const windowHeight = window.innerHeight;
-  reveals.forEach(section => {
-    const rect = section.getBoundingClientRect();
-    if (rect.top < windowHeight * 0.85) {
-      section.classList.add("visible");
-    }
-  });
-};
-
-window.addEventListener("load", revealSections);
-window.addEventListener("scroll", revealSections);
-</script>
-
 </body>
 </html>
-
-
-
-
-
-
-
