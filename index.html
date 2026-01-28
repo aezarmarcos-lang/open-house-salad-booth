@@ -71,13 +71,13 @@ nav a, nav button {
   background: rgba(18, 40, 30, 0.7);
   font-weight: 600;
   transition: all 0.35s ease;
-  cursor: pointer;
-  border: none;
 }
 
-nav a:hover,
-nav a.active,
-nav button:hover {
+nav a:hover, nav button:hover {
+  background: linear-gradient(135deg, var(--leaf-accent), var(--leaf-main));
+}
+
+nav a.active {
   background: linear-gradient(135deg, var(--leaf-accent), var(--leaf-main));
 }
 
@@ -204,12 +204,7 @@ main { padding: 2rem; }
 <body>
 
 <nav>
-  <!-- FEEDBACK NAV BUTTON ON LEFT -->
-  <button id="feedbackNavBtn"
-          data-en="Feedback"
-          data-ja="フィードバック">
-    Feedback
-  </button>
+  <button id="feedbackNavBtn" data-en="Feedback" data-ja="フィードバック">Feedback</button>
 
   <a href="#hydroponics" class="nav-link"
      data-en="Our Booth"
@@ -405,6 +400,7 @@ function handleReveal() {
     const r = sec.getBoundingClientRect();
     sec.classList.toggle("visible", r.top < h && r.bottom > 0);
 
+    // ONLY toggle 'active' for normal nav links (exclude Feedback button)
     const link = document.querySelector(`nav a[href="#${sec.id}"]`);
     if (link) {
       link.classList.toggle("active", r.top < h/2 && r.bottom > h/2);
