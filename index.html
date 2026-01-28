@@ -182,7 +182,7 @@ main { padding: 2rem; }
 
 <nav>
   <a href="#hydroponics" class="nav-link">Our Booth</a>
-  <a href="#reproductive" class="nav-link">Reproductive System</a>
+  <a href="#benefits" class="nav-link">Benefits of Our Salad</a>
 </nav>
 
 <header class="reveal">
@@ -223,31 +223,31 @@ main { padding: 2rem; }
   </div>
 </section>
 
-<!-- REPRODUCTIVE SYSTEM -->
-<section id="reproductive" class="section reveal">
-  <h2>Reproductive System</h2>
+<!-- BENEFITS OF OUR SALAD -->
+<section id="benefits" class="section reveal">
+  <h2>Benefits of Our Salad</h2>
   <div class="content-box">
     <div class="text-group">
       <ul>
         <li>
           <svg class="icon" viewBox="0 0 24 24"><polygon points="12,2 3,21 21,21"/></svg>
-          <span><strong>Rich in Folate:</strong> Supports <strong>healthy reproductive functions</strong>.</span>
+          <span><strong>Rich in Nutrients:</strong> Packed with vitamins and minerals for overall wellness.</span>
         </li>
         <li>
           <svg class="icon" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16"/></svg>
-          <span><strong>Antioxidants:</strong> Protect <strong>reproductive cells</strong>.</span>
+          <span><strong>High in Fiber:</strong> Supports <strong>healthy digestion</strong> and satiety.</span>
         </li>
         <li>
           <svg class="icon" viewBox="0 0 24 24"><polygon points="12,2 22,12 12,22 2,12"/></svg>
-          <span><strong>Hormone Balance:</strong> Fiber helps regulate <strong>hormone levels</strong>.</span>
+          <span><strong>Antioxidants:</strong> Protects your <strong>cells</strong> and boosts immunity.</span>
         </li>
         <li>
           <svg class="icon" viewBox="0 0 24 24"><polygon points="12,2 19,7 16,19 8,19 5,7"/></svg>
-          <span><strong>Better Circulation:</strong> Supports <strong>reproductive organs</strong>.</span>
+          <span><strong>Supports Heart Health:</strong> Lowers cholesterol and promotes <strong>healthy circulation</strong>.</span>
         </li>
         <li>
           <svg class="icon" viewBox="0 0 24 24"><polygon points="2,7 22,7 22,17 2,17"/></svg>
-          <span><strong>Reduced Inflammation:</strong> Promotes <strong>overall reproductive health</strong>.</span>
+          <span><strong>Boosts Energy:</strong> Natural ingredients provide sustained energy throughout the day.</span>
         </li>
       </ul>
     </div>
@@ -300,15 +300,14 @@ function handleReveal() {
   const windowHeight = window.innerHeight;
   reveals.forEach(el => {
     const rect = el.getBoundingClientRect();
-    // Add visible if section is in view
-    if(rect.top < windowHeight && rect.bottom > 0) {
+    if(rect.top < windowHeight && rect.bottom > 0){
       el.classList.add("visible");
     } else {
       el.classList.remove("visible");
     }
   });
   topBtn.style.display = window.scrollY > 300 ? "block" : "none";
-  // Highlight nav links
+  
   reveals.forEach(sec => {
     const id = sec.getAttribute("id");
     const link = document.querySelector(`nav a[href="#${id}"]`);
