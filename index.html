@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -58,25 +59,34 @@ nav {
   z-index: 1000;
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 1rem;
   padding: 1rem 0;
 }
 
-nav a,
-#langToggle {
+nav a {
   text-decoration: none;
   color: var(--earth-light);
   padding: 0.5rem 1.2rem;
   border-radius: 30px;
   background: rgba(18, 40, 30, 0.7);
   font-weight: 600;
-  border: none;
-  cursor: pointer;
+  transition: all 0.35s ease;
 }
 
 nav a:hover,
 nav a.active {
   background: linear-gradient(135deg, var(--leaf-accent), var(--leaf-main));
+}
+
+#langToggle {
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  background: rgba(18, 40, 30, 0.7);
+  color: var(--earth-light);
+  font-weight: 600;
 }
 
 main { padding: 2rem; }
@@ -155,6 +165,7 @@ main { padding: 2rem; }
   font-size: 1.3rem;
   cursor: pointer;
   z-index: 1100;
+  transition: transform 0.3s ease, background 0.3s ease;
 }
 
 .music-btn { bottom: 24px; right: 24px; }
@@ -175,6 +186,12 @@ main { padding: 2rem; }
 #feedbackScrollBtn {
   top: 24px;
   right: 24px;
+}
+
+.music-btn:hover,
+#feedbackScrollBtn:hover {
+  background: linear-gradient(135deg, var(--leaf-main), var(--leaf-accent));
+  transform: scale(1.1);
 }
 
 /* FEEDBACK BUTTON */
@@ -198,116 +215,37 @@ main { padding: 2rem; }
 
 <body>
 
-<!-- SCROLL TO FEEDBACK -->
+<!-- SCROLL TO FEEDBACK BUTTON -->
 <button id="feedbackScrollBtn" title="Go to feedback">💬</button>
 
 <nav>
-  <a href="#hydroponics" data-en="Our Booth" data-ja="私たちのブース">Our Booth</a>
-  <a href="#benefits" data-en="Benefits of Our Salad" data-ja="サラダの健康効果">Benefits of Our Salad</a>
-  <button id="langToggle">日本語</button>
+  <a href="#hydroponics" class="nav-link">Our Booth</a>
+  <a href="#benefits" class="nav-link">Benefits of Our Salad</a>
+  <button id="langToggle">JAP</button>
 </nav>
 
 <header class="reveal">
-  <h1 data-en="GREEN HOUSE GOODNESS" data-ja="グリーンハウス・グッドネス">
-    GREEN HOUSE GOODNESS
-  </h1>
-  <p data-en="Eat Fresh. Plant the Future" data-ja="新鮮に食べよう。未来を育てよう">
-    Eat Fresh. Plant the Future
-  </p>
+  <h1>GREEN HOUSE GOODNESS</h1>
+  <p>Eat Fresh. Plant the Future</p>
 </header>
 
 <main>
 
-<!-- OUR BOOTH -->
 <section id="hydroponics" class="section reveal">
-  <h2 data-en="Our Booth" data-ja="私たちのブース">Our Booth</h2>
-  <div class="content-box">
-    <div class="text-group">
-      <ul>
-        <li>
-          <svg class="icon" viewBox="0 0 24 24"><polygon points="12,2 22,22 2,22"/></svg>
-          <span data-en="<strong>Fresh Salads:</strong> Our greens are handpicked daily for maximum nutrition."
-                data-ja="<strong>新鮮なサラダ:</strong> 毎日手摘みされた栄養豊富な野菜を使用しています。">
-            <strong>Fresh Salads:</strong> Our greens are handpicked daily for maximum nutrition.
-          </span>
-        </li>
-
-        <li>
-          <svg class="icon" viewBox="0 0 24 24"><polygon points="2,2 22,2 22,22 2,22"/></svg>
-          <span data-en="<strong>Seed Pencils:</strong> Plantable pencils provided with every salad order."
-                data-ja="<strong>シード鉛筆:</strong> サラダ購入ごとに植えられる鉛筆を提供。">
-            <strong>Seed Pencils:</strong> Plantable pencils provided with every salad order.
-          </span>
-        </li>
-
-        <li>
-          <svg class="icon" viewBox="0 0 24 24"><polygon points="12,2 22,9 18,22 6,22 2,9"/></svg>
-          <span data-en="<strong>Eco-Friendly:</strong> Encouraging sustainable habits and a green lifestyle."
-                data-ja="<strong>環境に優しい:</strong> 持続可能な習慣とエコな生活を推進。">
-            <strong>Eco-Friendly:</strong> Encouraging sustainable habits and a green lifestyle.
-          </span>
-        </li>
-
-        <li>
-          <svg class="icon" viewBox="0 0 24 24"><polygon points="6,2 18,2 22,6 22,18 18,22 6,22 2,18 2,6"/></svg>
-          <span data-en="<strong>Visit us:</strong> Room 205 at Gerrero Building."
-                data-ja="<strong>ぜひお越しください:</strong> ゲレロビル205号室。">
-            <strong>Visit us:</strong> Room 205 at Gerrero Building.
-          </span>
-        </li>
-      </ul>
-    </div>
-  </div>
+  <h2>Our Booth</h2>
 </section>
 
-<!-- BENEFITS -->
 <section id="benefits" class="section reveal">
-  <h2 data-en="Benefits of Our Salad" data-ja="サラダの健康効果">
-    Benefits of Our Salad
-  </h2>
-  <div class="content-box">
-    <div class="text-group">
-      <ul>
-        <li>
-          <svg class="icon" viewBox="0 0 24 24"><polygon points="12,2 22,22 2,22"/></svg>
-          <span data-en="<strong>Rich in Nutrients:</strong> Packed with vitamins and minerals for overall wellness."
-                data-ja="<strong>栄養豊富:</strong> 健康を支えるビタミンとミネラルがたっぷり。">
-            <strong>Rich in Nutrients:</strong> Packed with vitamins and minerals for overall wellness.
-          </span>
-        </li>
-
-        <li>
-          <svg class="icon" viewBox="0 0 24 24"><polygon points="2,2 22,2 22,22 2,22"/></svg>
-          <span data-en="<strong>High in Fiber:</strong> Supports healthy digestion and keeps you full longer."
-                data-ja="<strong>食物繊維が豊富:</strong> 消化を助け、満腹感が長持ちします。">
-            <strong>High in Fiber:</strong> Supports healthy digestion and keeps you full longer.
-          </span>
-        </li>
-
-        <li>
-          <svg class="icon" viewBox="0 0 24 24"><polygon points="12,2 22,9 18,22 6,22 2,9"/></svg>
-          <span data-en="<strong>Antioxidants:</strong> Protects your cells and boosts your immune system."
-                data-ja="<strong>抗酸化作用:</strong> 細胞を守り、免疫力を高めます。">
-            <strong>Antioxidants:</strong> Protects your cells and boosts your immune system.
-          </span>
-        </li>
-      </ul>
-    </div>
-  </div>
+  <h2>Benefits of Our Salad</h2>
 </section>
 
-<!-- FEEDBACK -->
 <section id="feedback" class="section reveal">
-  <h2 data-en="We value your feedback" data-ja="フィードバックをお待ちしています">
-    We value your feedback
-  </h2>
+  <h2>We value your feedback</h2>
   <div class="content-box">
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSf30L0rc9_Sb0h1ce1mFuNPPFRQDpNXgotEoYXjIRJEhkwx8g/viewform"
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSf30L0rc9_Sb0h1ce1mFuNPPFRQDpNXgotEoYXjIRJEhkwx8g/viewform?usp=publish-editor"
        target="_blank"
        class="feedback-btn">
-      <span data-en="Share Feedback" data-ja="フィードバックを送る">
-        Share Feedback
-      </span>
+      Share Feedback
     </a>
   </div>
 </section>
@@ -319,18 +257,6 @@ main { padding: 2rem; }
 <button class="top-btn" id="topBtn">↑</button>
 
 <script>
-/* LANGUAGE TOGGLE */
-let currentLang = "en";
-document.getElementById("langToggle").onclick = () => {
-  currentLang = currentLang === "en" ? "ja" : "en";
-  document.getElementById("langToggle").textContent =
-    currentLang === "en" ? "日本語" : "EN";
-
-  document.querySelectorAll("[data-en]").forEach(el => {
-    el.innerHTML = el.dataset[currentLang];
-  });
-};
-
 /* MUSIC */
 const music = document.getElementById("bgMusic");
 const musicBtn = document.getElementById("musicToggle");
@@ -369,6 +295,7 @@ function handleReveal() {
     const r = sec.getBoundingClientRect();
     sec.classList.toggle("visible", r.top < h && r.bottom > 0);
   });
+
   topBtn.classList.toggle("show", window.scrollY > 300);
 }
 
@@ -383,5 +310,3 @@ document.getElementById("feedbackScrollBtn").onclick = () => {
 
 </body>
 </html>
-
-
