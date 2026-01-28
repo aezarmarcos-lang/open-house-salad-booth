@@ -173,7 +173,20 @@ main { padding: 2rem; }
 }
 
 .music-btn { bottom: 24px; right: 24px; }
-.top-btn { bottom: 24px; left: 24px; display: none; }
+
+/* Fading top button */
+.top-btn {
+  bottom: 24px;
+  left: 24px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+
+.top-btn.show {
+  opacity: 1;
+  pointer-events: auto;
+}
 
 </style>
 </head>
@@ -199,32 +212,26 @@ main { padding: 2rem; }
     <div class="text-group">
       <ul>
         <li>
-          <!-- Triangle -->
           <svg class="icon" viewBox="0 0 24 24"><polygon points="12,2 22,22 2,22"/></svg>
           <span><strong>Fresh Salads:</strong> Our greens are handpicked daily for maximum nutrition.</span>
         </li>
         <li>
-          <!-- Quadrilateral -->
           <svg class="icon" viewBox="0 0 24 24"><polygon points="2,2 22,2 22,22 2,22"/></svg>
           <span><strong>Seed Pencils:</strong> Plantable pencils provided with every salad order.</span>
         </li>
         <li>
-          <!-- Pentagon -->
           <svg class="icon" viewBox="0 0 24 24"><polygon points="12,2 22,9 18,22 6,22 2,9"/></svg>
           <span><strong>Eco-Friendly:</strong> Encouraging sustainable habits and a green lifestyle.</span>
         </li>
         <li>
-          <!-- Hexagon -->
           <svg class="icon" viewBox="0 0 24 24"><polygon points="12,2 20,7 20,17 12,22 4,17 4,7"/></svg>
           <span><strong>Interactive Booth:</strong> Learn about hydroponics and healthy eating.</span>
         </li>
         <li>
-          <!-- Heptagon -->
           <svg class="icon" viewBox="0 0 24 24"><polygon points="12,2 20,6 22,14 16,22 8,22 2,14 4,6"/></svg>
           <span><strong>Fun & Educational:</strong> Hands-on experience for all ages.</span>
         </li>
         <li>
-          <!-- Octagon -->
           <svg class="icon" viewBox="0 0 24 24"><polygon points="6,2 18,2 22,6 22,18 18,22 6,22 2,18 2,6"/></svg>
           <span><strong>Make sure to come visit us at room 205 at Gerrero Building.</strong></span>
         </li>
@@ -240,27 +247,22 @@ main { padding: 2rem; }
     <div class="text-group">
       <ul>
         <li>
-          <!-- Triangle -->
           <svg class="icon" viewBox="0 0 24 24"><polygon points="12,2 22,22 2,22"/></svg>
           <span><strong>Rich in Nutrients:</strong> Packed with vitamins and minerals for overall wellness.</span>
         </li>
         <li>
-          <!-- Quadrilateral -->
           <svg class="icon" viewBox="0 0 24 24"><polygon points="2,2 22,2 22,22 2,22"/></svg>
           <span><strong>High in Fiber:</strong> Supports <strong>healthy digestion</strong> and satiety.</span>
         </li>
         <li>
-          <!-- Pentagon -->
           <svg class="icon" viewBox="0 0 24 24"><polygon points="12,2 22,9 18,22 6,22 2,9"/></svg>
           <span><strong>Antioxidants:</strong> Protects your <strong>cells</strong> and boosts immunity.</span>
         </li>
         <li>
-          <!-- Hexagon -->
           <svg class="icon" viewBox="0 0 24 24"><polygon points="12,2 20,7 20,17 12,22 4,17 4,7"/></svg>
           <span><strong>Supports Heart Health:</strong> Lowers cholesterol and promotes <strong>healthy circulation</strong>.</span>
         </li>
         <li>
-          <!-- Heptagon -->
           <svg class="icon" viewBox="0 0 24 24"><polygon points="12,2 20,6 22,14 16,22 8,22 2,14 4,6"/></svg>
           <span><strong>Boosts Energy:</strong> Natural ingredients provide sustained energy throughout the day.</span>
         </li>
@@ -321,8 +323,10 @@ function handleReveal() {
       el.classList.remove("visible");
     }
   });
-  topBtn.style.display = window.scrollY > 300 ? "block" : "none";
-  
+
+  // Fade top button in/out
+  topBtn.classList.toggle("show", window.scrollY > 300);
+
   reveals.forEach(sec => {
     const id = sec.getAttribute("id");
     const link = document.querySelector(`nav a[href="#${id}"]`);
