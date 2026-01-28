@@ -44,6 +44,14 @@ header {
   text-align: center;
   background: var(--header-overlay);
   border-radius: 0 0 20px 20px;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+header.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 header h1 {
@@ -195,7 +203,7 @@ main { padding: 2rem; }
   <a href="#reproductive" class="nav-link">Reproductive System</a>
 </nav>
 
-<header>
+<header id="mainHeader">
   <h1>GREEN HOUSE GOODNESS</h1>
   <p>Eat Fresh. Plant the Future</p>
 </header>
@@ -325,10 +333,21 @@ topBtn.onclick = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
 /* SCROLL REVEAL + HIDE ON SCROLL OUT */
 const sections = document.querySelectorAll(".section");
+const header = document.getElementById("mainHeader");
 
-function checkSections() {
+function checkVisibility() {
   const triggerTop = window.innerHeight * 0.85;
   const triggerBottom = 0;
+
+  // Header
+  const rectHeader = header.getBoundingClientRect();
+  if(rectHeader.top < triggerTop && rectHeader.bottom > triggerBottom) {
+    header.classList.add("visible");
+  } else {
+    header.classList.remove("visible");
+  }
+
+  // Sections
   sections.forEach(sec => {
     const rect = sec.getBoundingClientRect();
     if (rect.top < triggerTop && rect.bottom > triggerBottom) {
@@ -340,14 +359,15 @@ function checkSections() {
 }
 
 window.addEventListener("scroll", () => {
-  checkSections();
+  checkVisibility();
   topBtn.style.display = window.scrollY > 300 ? "block" : "none";
 });
 
 window.addEventListener("load", () => {
-  checkSections();
+  checkVisibility();
 });
 </script>
 
 </body>
 </html>
+
