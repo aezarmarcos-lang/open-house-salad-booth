@@ -16,9 +16,11 @@
   --overlay-dark: rgba(10, 25, 18, 0.65);
 }
 
+/* RESET */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 
+/* BODY */
 body {
   min-height: 100vh;
   font-family: 'Inter', sans-serif;
@@ -35,6 +37,7 @@ body::before {
   z-index: -1;
 }
 
+/* HEADER */
 header {
   padding: 6rem 2rem 4rem;
   text-align: center;
@@ -52,6 +55,7 @@ header p {
   font-size: 1.15rem;
 }
 
+/* NAV */
 nav {
   position: sticky;
   top: 0;
@@ -88,8 +92,10 @@ nav a.active {
   font-weight: 600;
 }
 
+/* MAIN */
 main { padding: 2rem; }
 
+/* SECTIONS */
 .section {
   margin-top: 6rem;
   padding: 4.5rem 2rem;
@@ -102,6 +108,7 @@ main { padding: 2rem; }
   color: var(--leaf-main);
 }
 
+/* CONTENT BOX */
 .content-box {
   max-width: 1000px;
   margin: 3rem auto 0;
@@ -109,6 +116,7 @@ main { padding: 2rem; }
   gap: 2.5rem;
 }
 
+/* REVEAL */
 .reveal {
   opacity: 0;
   transform: translateY(50px);
@@ -120,6 +128,7 @@ main { padding: 2rem; }
   transform: translateY(0);
 }
 
+/* TEXT LIST */
 .text-group ul {
   list-style: none;
   max-width: 650px;
@@ -138,13 +147,20 @@ main { padding: 2rem; }
   color: var(--leaf-main);
 }
 
+/* ICONS */
 .icon {
   width: 26px;
   height: 26px;
   fill: var(--leaf-accent);
   flex-shrink: 0;
+  transition: transform 0.25s ease;
 }
 
+.text-group li:hover .icon {
+  transform: rotate(15deg) scale(1.15);
+}
+
+/* BUTTONS */
 .music-btn,
 .top-btn {
   position: fixed;
@@ -192,24 +208,24 @@ main { padding: 2rem; }
 <header class="reveal">
   <h1 data-en="GREEN HOUSE GOODNESS"
       data-ja="グリーンハウス・グッドネス">
-      GREEN HOUSE GOODNESS
+    GREEN HOUSE GOODNESS
   </h1>
-
   <p data-en="Eat Fresh. Plant the Future"
      data-ja="新鮮に食べよう。未来を育てよう">
-     Eat Fresh. Plant the Future
+    Eat Fresh. Plant the Future
   </p>
 </header>
 
 <main>
 
+<!-- OUR BOOTH -->
 <section id="hydroponics" class="section reveal">
   <h2 data-en="Our Booth" data-ja="私たちのブース">Our Booth</h2>
-
   <div class="content-box">
     <div class="text-group">
       <ul>
         <li>
+          <svg class="icon" viewBox="0 0 24 24"><polygon points="12,2 22,22 2,22"/></svg>
           <span data-en="<strong>Fresh Salads:</strong> Our greens are handpicked daily for maximum nutrition."
                 data-ja="<strong>新鮮なサラダ:</strong> 毎日手摘みされた栄養豊富な野菜を使用しています。">
             <strong>Fresh Salads:</strong> Our greens are handpicked daily for maximum nutrition.
@@ -217,23 +233,46 @@ main { padding: 2rem; }
         </li>
 
         <li>
-          <span data-en="<strong>Seed Pencils:</strong> Plantable pencils with every salad order."
+          <svg class="icon" viewBox="0 0 24 24"><polygon points="2,2 22,2 22,22 2,22"/></svg>
+          <span data-en="<strong>Seed Pencils:</strong> Plantable pencils provided with every salad order."
                 data-ja="<strong>シード鉛筆:</strong> サラダ購入ごとに植えられる鉛筆を提供。">
-            <strong>Seed Pencils:</strong> Plantable pencils with every salad order.
+            <strong>Seed Pencils:</strong> Plantable pencils provided with every salad order.
           </span>
         </li>
 
         <li>
-          <span data-en="<strong>Eco-Friendly:</strong> Encouraging sustainable habits."
-                data-ja="<strong>環境に優しい:</strong> 持続可能なライフスタイルを推進。">
-            <strong>Eco-Friendly:</strong> Encouraging sustainable habits.
+          <svg class="icon" viewBox="0 0 24 24"><polygon points="12,2 22,9 18,22 6,22 2,9"/></svg>
+          <span data-en="<strong>Eco-Friendly:</strong> Encouraging sustainable habits and a green lifestyle."
+                data-ja="<strong>環境に優しい:</strong> 持続可能な習慣とエコな生活を推進。">
+            <strong>Eco-Friendly:</strong> Encouraging sustainable habits and a green lifestyle.
           </span>
         </li>
 
         <li>
-          <span data-en="<strong>Visit us:</strong> Room 205, Gerrero Building."
+          <svg class="icon" viewBox="0 0 24 24"><polygon points="6,2 18,2 22,6 22,18 18,22 6,22 2,18 2,6"/></svg>
+          <span data-en="<strong>Visit us:</strong> Room 205 at Gerrero Building."
                 data-ja="<strong>ぜひお越しください:</strong> ゲレロビル205号室。">
-            <strong>Visit us:</strong> Room 205, Gerrero Building.
+            <strong>Visit us:</strong> Room 205 at Gerrero Building.
+          </span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFITS -->
+<section id="benefits" class="section reveal">
+  <h2 data-en="Benefits of Our Salad" data-ja="サラダの健康効果">
+    Benefits of Our Salad
+  </h2>
+  <div class="content-box">
+    <div class="text-group">
+      <ul>
+        <li>
+          <svg class="icon" viewBox="0 0 24 24"><polygon points="12,2 22,22 2,22"/></svg>
+          <span data-en="<strong>Rich in Nutrients:</strong> Packed with vitamins and minerals."
+                data-ja="<strong>栄養豊富:</strong> ビタミンとミネラルがたっぷり。">
+            <strong>Rich in Nutrients:</strong> Packed with vitamins and minerals.
           </span>
         </li>
       </ul>
@@ -243,22 +282,73 @@ main { padding: 2rem; }
 
 </main>
 
+<audio id="bgMusic" src="burnout.mp3" loop></audio>
 <button class="music-btn" id="musicToggle">▶</button>
 <button class="top-btn" id="topBtn">↑</button>
 
 <script>
 /* LANGUAGE TOGGLE */
 let currentLang = "en";
-const langBtn = document.getElementById("langToggle");
-
-langBtn.onclick = () => {
+document.getElementById("langToggle").onclick = () => {
   currentLang = currentLang === "en" ? "ja" : "en";
-  langBtn.textContent = currentLang === "en" ? "日本語" : "EN";
+  document.getElementById("langToggle").textContent =
+    currentLang === "en" ? "日本語" : "EN";
 
   document.querySelectorAll("[data-en]").forEach(el => {
     el.innerHTML = el.dataset[currentLang];
   });
 };
+
+/* MUSIC */
+const music = document.getElementById("bgMusic");
+const musicBtn = document.getElementById("musicToggle");
+let playing = false;
+music.volume = 0;
+
+function fade(step) {
+  const i = setInterval(() => {
+    music.volume = Math.max(0, Math.min(1, music.volume + step));
+    if (music.volume === 0 || music.volume === 1) clearInterval(i);
+  }, 60);
+}
+
+musicBtn.onclick = () => {
+  if (!playing) {
+    music.play();
+    fade(0.05);
+    musicBtn.textContent = "⏸";
+  } else {
+    fade(-0.05);
+    setTimeout(() => music.pause(), 1200);
+    musicBtn.textContent = "▶";
+  }
+  playing = !playing;
+};
+
+/* SCROLL + NAV */
+const reveals = document.querySelectorAll(".reveal");
+const navLinks = document.querySelectorAll(".nav-link");
+const topBtn = document.getElementById("topBtn");
+
+topBtn.onclick = () => window.scrollTo({ top: 0, behavior: "smooth" });
+
+function handleReveal() {
+  const h = window.innerHeight;
+  reveals.forEach(sec => {
+    const r = sec.getBoundingClientRect();
+    sec.classList.toggle("visible", r.top < h && r.bottom > 0);
+
+    const link = document.querySelector(`nav a[href="#${sec.id}"]`);
+    if (link) {
+      link.classList.toggle("active", r.top < h/2 && r.bottom > h/2);
+    }
+  });
+
+  topBtn.classList.toggle("show", window.scrollY > 300);
+}
+
+window.addEventListener("scroll", handleReveal);
+window.addEventListener("load", handleReveal);
 </script>
 
 </body>
