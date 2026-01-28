@@ -29,7 +29,6 @@ body {
   color: var(--earth-light);
   background: url("nature.jpg") center / cover fixed no-repeat;
 }
-
 body::before {
   content: "";
   position: fixed;
@@ -45,12 +44,10 @@ header {
   background: var(--header-overlay);
   border-radius: 0 0 20px 20px;
 }
-
 header h1 {
   font-size: clamp(2.6rem, 5vw, 3.4rem);
   color: var(--leaf-main);
 }
-
 header p {
   margin-top: 1rem;
   font-size: 1.15rem;
@@ -66,7 +63,6 @@ nav {
   gap: 1rem;
   padding: 1rem 0;
 }
-
 nav a {
   text-decoration: none;
   color: var(--earth-light);
@@ -76,7 +72,6 @@ nav a {
   font-weight: 600;
   transition: all 0.35s ease;
 }
-
 nav a:hover,
 nav a.active {
   background: linear-gradient(135deg, var(--leaf-accent), var(--leaf-main));
@@ -92,12 +87,10 @@ main { padding: 2rem; }
   text-align: center;
   font-family: 'Merriweather', serif;
 }
-
 .section h2 {
   font-size: 2.4rem;
   color: var(--leaf-main);
 }
-
 .content-box {
   max-width: 1000px;
   margin: 3rem auto 0;
@@ -111,7 +104,6 @@ main { padding: 2rem; }
   transform: translateY(50px);
   transition: opacity 0.9s ease, transform 0.9s ease;
 }
-
 .reveal.visible {
   opacity: 1;
   transform: translateY(0);
@@ -124,17 +116,14 @@ main { padding: 2rem; }
   margin: 0 auto;
   text-align: left;
 }
-
 .text-group li {
   display: flex;
   gap: 1rem;
   margin-bottom: 1.3rem;
 }
-
 .text-group strong {
   color: var(--leaf-main);
 }
-
 .icon {
   width: 26px;
   height: 26px;
@@ -149,17 +138,13 @@ main { padding: 2rem; }
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
   gap: 1.2rem;
 }
-
 .image-grid img {
   width: 100%;
   border-radius: 20px;
   border: 1px solid var(--card-border);
   transition: transform 0.35s ease;
 }
-
-.image-grid img:hover {
-  transform: scale(1.05);
-}
+.image-grid img:hover { transform: scale(1.05); }
 
 /* BUTTONS */
 .music-btn,
@@ -176,13 +161,11 @@ main { padding: 2rem; }
   z-index: 1000;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
 .music-btn:hover,
 .top-btn:hover {
   transform: scale(1.1);
   box-shadow: 0 6px 16px rgba(0,0,0,0.4);
 }
-
 .music-btn { bottom: 24px; right: 24px; }
 .top-btn { bottom: 24px; left: 24px; display: none; }
 </style>
@@ -191,8 +174,8 @@ main { padding: 2rem; }
 <body>
 
 <nav>
-  <a href="#reproductive" class="nav-link">Reproductive System</a>
   <a href="#hydroponics" class="nav-link">Our Booth</a>
+  <a href="#reproductive" class="nav-link">Reproductive System</a>
 </nav>
 
 <header class="reveal">
@@ -202,6 +185,19 @@ main { padding: 2rem; }
 
 <main>
 
+<!-- OUR BOOTH FIRST -->
+<section id="hydroponics" class="section reveal">
+  <h2>Our Booth</h2>
+  <div class="content-box">
+    <div class="text-group">
+      <p>BLAH BLAH BLAH</p>
+      <p>BLAH BLAH BLAH</p>
+      <p>BLAH BLAH BLAH</p>
+    </div>
+  </div>
+</section>
+
+<!-- REPRODUCTIVE SYSTEM SECOND -->
 <section id="reproductive" class="section reveal">
   <h2>Reproductive System</h2>
   <div class="content-box">
@@ -242,17 +238,6 @@ main { padding: 2rem; }
   </div>
 </section>
 
-<section id="hydroponics" class="section reveal">
-  <h2>Our booth</h2>
-  <div class="content-box">
-    <div class="text-group">
-      <p>BLAH BLAH BLAH</p>
-      <p>BLAH BLAH BLAH</p>
-      <p>BLAH BLAH BLAH</p>
-    </div>
-  </div>
-</section>
-
 </main>
 
 <audio id="bgMusic" src="burnout.mp3" loop></audio>
@@ -264,7 +249,6 @@ main { padding: 2rem; }
 const music = document.getElementById("bgMusic");
 const musicBtn = document.getElementById("musicToggle");
 let playing = false;
-
 music.volume = 0;
 
 function fade(target) {
@@ -315,4 +299,3 @@ window.addEventListener("load", revealSections);
 
 </body>
 </html>
-
