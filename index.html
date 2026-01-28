@@ -14,7 +14,6 @@
   --earth-light: #eef6f1;
   --card-border: rgba(155, 214, 180, 0.25);
   --overlay-dark: rgba(10, 25, 18, 0.65);
-  --header-overlay: rgba(10, 25, 18, 0.5);
 }
 
 /* RESET */
@@ -42,9 +41,8 @@ body::before {
 header {
   padding: 6rem 2rem 4rem;
   text-align: center;
-  background: var(--header-overlay);
+  background: rgba(10, 25, 18, 0.5);
   border-radius: 0 0 20px 20px;
-  transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
 header h1 {
@@ -92,15 +90,15 @@ main { padding: 2rem; }
   padding: 4.5rem 2rem;
   text-align: center;
   font-family: 'Merriweather', serif;
-  transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
+/* SECTION HEADINGS */
 .section h2 {
   font-size: 2.4rem;
   color: var(--leaf-main);
 }
 
-/* CONTENT BOX + TEXT GROUP */
+/* CONTENT BOX */
 .content-box {
   max-width: 1000px;
   margin: 3rem auto 0;
@@ -108,6 +106,19 @@ main { padding: 2rem; }
   gap: 2.5rem;
 }
 
+/* REVEAL ANIMATION */
+.reveal {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* TEXT + ICON LIST */
 .text-group ul {
   list-style: none;
   max-width: 650px;
@@ -126,27 +137,17 @@ main { padding: 2rem; }
   color: var(--leaf-main);
 }
 
-/* NVG ICONS */
+/* ICONS */
 .icon {
-  width: 28px;
-  height: 28px;
-  flex-shrink: 0;
-  background: rgba(111, 191, 146, 0.15);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: transform 0.3s ease;
-}
-
-.icon svg {
-  width: 16px;
-  height: 16px;
+  width: 26px;
+  height: 26px;
   fill: var(--leaf-accent);
+  flex-shrink: 0;
+  transition: transform 0.25s ease;
 }
 
-.icon:hover {
-  transform: scale(1.2);
-  background: rgba(111, 191, 146, 0.25);
+.text-group li:hover .icon {
+  transform: rotate(15deg) scale(1.15);
 }
 
 /* BUTTONS */
@@ -173,6 +174,7 @@ main { padding: 2rem; }
 
 .music-btn { bottom: 24px; right: 24px; }
 .top-btn { bottom: 24px; left: 24px; display: none; }
+
 </style>
 </head>
 
@@ -197,28 +199,24 @@ main { padding: 2rem; }
     <div class="text-group">
       <ul>
         <li>
-          <div class="icon">
-            <svg viewBox="0 0 24 24"><polygon points="12,2 2,12 22,12"/></svg>
-          </div>
-          <span><strong>Fresh Salads:</strong> A variety of crisp, healthy greens and veggies.</span>
+          <svg class="icon" viewBox="0 0 24 24"><polygon points="12,2 22,22 2,22"/></svg>
+          <span><strong>Fresh Salads:</strong> Our greens are handpicked daily for maximum nutrition. <strong>Make sure to come visit us at room 205 at Gerrero Building.</strong></span>
         </li>
         <li>
-          <div class="icon">
-            <svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16"/></svg>
-          </div>
-          <span><strong>Seed Pencils:</strong> Eco-friendly pencils with seeds to plant at home.</span>
+          <svg class="icon" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16"/></svg>
+          <span><strong>Seed Pencils:</strong> Plantable pencils provided with every salad order.</span>
         </li>
         <li>
-          <div class="icon">
-            <svg viewBox="0 0 24 24"><polygon points="2,12 12,2 22,12 12,22"/></svg>
-          </div>
-          <span><strong>Interactive Experience:</strong> Learn about hydroponics and sustainable gardening.</span>
+          <svg class="icon" viewBox="0 0 24 24"><polygon points="2,7 22,7 22,17 2,17"/></svg>
+          <span><strong>Eco-Friendly:</strong> Encouraging sustainable habits and a green lifestyle.</span>
         </li>
         <li>
-          <div class="icon">
-            <svg viewBox="0 0 24 24"><polygon points="12,2 2,7 7,22 17,22 22,7"/></svg>
-          </div>
-          <span><strong>Join Us:</strong> Make sure to come visit us at <strong>Room 205 at Guerrero Building</strong>.</span>
+          <svg class="icon" viewBox="0 0 24 24"><polygon points="12,2 22,9 18,22 6,22 2,9"/></svg>
+          <span><strong>Interactive Booth:</strong> Learn about hydroponics and healthy eating.</span>
+        </li>
+        <li>
+          <svg class="icon" viewBox="0 0 24 24"><polygon points="12,2 19,7 16,19 8,19 5,7"/></svg>
+          <span><strong>Fun & Educational:</strong> Hands-on experience for all ages.</span>
         </li>
       </ul>
     </div>
@@ -232,33 +230,23 @@ main { padding: 2rem; }
     <div class="text-group">
       <ul>
         <li>
-          <div class="icon">
-            <svg viewBox="0 0 24 24"><polygon points="12,2 3,21 21,21"/></svg>
-          </div>
+          <svg class="icon" viewBox="0 0 24 24"><polygon points="12,2 3,21 21,21"/></svg>
           <span><strong>Rich in Folate:</strong> Supports <strong>healthy reproductive functions</strong>.</span>
         </li>
         <li>
-          <div class="icon">
-            <svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16"/></svg>
-          </div>
+          <svg class="icon" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16"/></svg>
           <span><strong>Antioxidants:</strong> Protect <strong>reproductive cells</strong>.</span>
         </li>
         <li>
-          <div class="icon">
-            <svg viewBox="0 0 24 24"><polygon points="12,4 20,8 16,20 8,20 4,8"/></svg>
-          </div>
+          <svg class="icon" viewBox="0 0 24 24"><polygon points="12,2 22,12 12,22 2,12"/></svg>
           <span><strong>Hormone Balance:</strong> Fiber helps regulate <strong>hormone levels</strong>.</span>
         </li>
         <li>
-          <div class="icon">
-            <svg viewBox="0 0 24 24"><polygon points="12,2 2,7 7,22 17,22 22,7"/></svg>
-          </div>
+          <svg class="icon" viewBox="0 0 24 24"><polygon points="12,2 19,7 16,19 8,19 5,7"/></svg>
           <span><strong>Better Circulation:</strong> Supports <strong>reproductive organs</strong>.</span>
         </li>
         <li>
-          <div class="icon">
-            <svg viewBox="0 0 24 24"><polygon points="12,2 4,12 12,22 20,12"/></svg>
-          </div>
+          <svg class="icon" viewBox="0 0 24 24"><polygon points="2,7 22,7 22,17 2,17"/></svg>
           <span><strong>Reduced Inflammation:</strong> Promotes <strong>overall reproductive health</strong>.</span>
         </li>
       </ul>
@@ -283,12 +271,12 @@ function fade(target) {
   const step = 0.05;
   const interval = setInterval(() => {
     music.volume = Math.max(0, Math.min(1, music.volume + target));
-    if(music.volume === 0 || music.volume === 1) clearInterval(interval);
+    if (music.volume === 0 || music.volume === 1) clearInterval(interval);
   }, 60);
 }
 
 musicBtn.onclick = () => {
-  if(!playing){
+  if (!playing) {
     music.play();
     fade(0.05);
     musicBtn.textContent = "⏸";
@@ -304,35 +292,36 @@ musicBtn.onclick = () => {
 const topBtn = document.getElementById("topBtn");
 topBtn.onclick = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
-/* SCROLL + VISIBILITY */
-const sections = document.querySelectorAll(".section");
-const header = document.querySelector("header");
+/* SCROLL REVEAL IN/OUT */
+const reveals = document.querySelectorAll(".reveal");
+const navLinks = document.querySelectorAll(".nav-link");
 
-function checkVisibility() {
-  const viewportHeight = window.innerHeight;
-
-  // Header
-  const rectHeader = header.getBoundingClientRect();
-  header.classList.toggle(
-    "visible",
-    rectHeader.top < viewportHeight*0.85 && rectHeader.bottom > 0
-  );
-
-  // Sections
-  sections.forEach(sec => {
-    const rect = sec.getBoundingClientRect();
-    sec.classList.toggle(
-      "visible",
-      rect.top < viewportHeight*0.85 && rect.bottom > 0
-    );
+function handleReveal() {
+  const windowHeight = window.innerHeight;
+  reveals.forEach(el => {
+    const rect = el.getBoundingClientRect();
+    // Add visible if section is in view
+    if(rect.top < windowHeight && rect.bottom > 0) {
+      el.classList.add("visible");
+    } else {
+      el.classList.remove("visible");
+    }
+  });
+  topBtn.style.display = window.scrollY > 300 ? "block" : "none";
+  // Highlight nav links
+  reveals.forEach(sec => {
+    const id = sec.getAttribute("id");
+    const link = document.querySelector(`nav a[href="#${id}"]`);
+    if(sec.getBoundingClientRect().top < windowHeight/2 && sec.getBoundingClientRect().bottom > windowHeight/2){
+      link.classList.add("active");
+    } else {
+      link.classList.remove("active");
+    }
   });
 }
 
-window.addEventListener("scroll", () => {
-  checkVisibility();
-  topBtn.style.display = window.scrollY > 300 ? "block" : "none";
-});
-window.addEventListener("load", checkVisibility);
+window.addEventListener("scroll", handleReveal);
+window.addEventListener("load", handleReveal);
 </script>
 
 </body>
