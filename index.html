@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,7 +15,6 @@
   --earth-light: #eef6f1;
   --card-border: rgba(155, 214, 180, 0.25);
   --overlay-dark: rgba(10, 25, 18, 0.65);
-  --nav-hover-color: #1f4d2a; /* Dark green for hover text */
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -72,13 +72,10 @@ nav a, nav button {
   background: rgba(18, 40, 30, 0.7);
   font-weight: 600;
   transition: all 0.35s ease;
-  border: none;
 }
 
-/* Hover effect: text turns dark green, background unchanged */
 nav a:hover, nav button:hover {
-  color: var(--nav-hover-color);
-  background: rgba(18, 40, 30, 0.7);
+  background: linear-gradient(135deg, var(--leaf-accent), var(--leaf-main));
 }
 
 /* Remove shadow specifically from Feedback nav button */
