@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -41,6 +40,14 @@ header {
   text-align: center;
   background: rgba(10, 25, 18, 0.5);
   border-radius: 0 0 20px 20px;
+}
+
+header .pre-title {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: var(--leaf-accent);
+  margin-bottom: 0.5rem;
+  font-family: 'Inter', sans-serif;
 }
 
 header h1 {
@@ -220,6 +227,11 @@ main { padding: 2rem; }
 </nav>
 
 <header class="reveal">
+  <!-- New text above the title -->
+  <p class="pre-title" data-en="Welcome to Our Eco-Friendly World" data-ja="私たちのエコな世界へようこそ">
+    Welcome to Our Eco-Friendly World
+  </p>
+
   <h1 data-en="GREEN HOUSE GOODNESS"
       data-ja="グリーンハウス・グッドネス">
     GREEN HOUSE GOODNESS
@@ -412,3 +424,4 @@ window.addEventListener("load", handleReveal);
 
 </body>
 </html>
+
