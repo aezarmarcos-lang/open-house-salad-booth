@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,13 +9,12 @@
 
 <style>
 :root {
-  /* Philippine flag colors theme */
-  --leaf-main: #0038a8;      /* Blue */
-  --leaf-accent: #ce1126;    /* Red */
-  --leaf-sun: #ffd700;       /* Sun/Yellow */
-  --earth-light: #ffffff;    /* White */
+  --leaf-main: #0038a8;      
+  --leaf-accent: #ce1126;    
+  --leaf-sun: #ffd700;       
+  --earth-light: #ffffff;    
   --card-border: rgba(0, 56, 168, 0.25);
-  --overlay-dark: rgba(0, 0, 0, 0.4); /* subtle dark overlay for readability */
+  --overlay-dark: rgba(0, 0, 0, 0.4);
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -36,26 +34,25 @@ body::before {
   inset: 0;
   background: rgba(0, 0, 0, 0.3);
   z-index: -1;
-
 }
 
 header {
   padding: 6rem 2rem 4rem;
   text-align: center;
-  background: rgba(0, 56, 168, 0.6); /* Blue header */
+  background: rgba(0, 56, 168, 0.6);
   border-radius: 0 0 28px 28px;
 }
 
 header .pre-title {
   font-size: 1.2rem;
   font-weight: 500;
-  color: var(--leaf-accent); /* Red accent for pre-title */
+  color: var(--leaf-accent);
   margin-bottom: 0.5rem;
 }
 
 header h1 {
   font-size: clamp(2.6rem, 5vw, 3.4rem);
-  color: var(--leaf-sun); /* Yellow sun-inspired */
+  color: var(--leaf-sun);
 }
 
 header p {
@@ -86,11 +83,7 @@ nav a, nav button {
 }
 
 nav a:hover, nav button:hover {
-  background: linear-gradient(
-    135deg,
-    var(--leaf-main),
-    var(--leaf-accent)
-  );
+  background: linear-gradient(135deg, var(--leaf-main), var(--leaf-accent));
   color: var(--leaf-sun);
 }
 
@@ -117,7 +110,7 @@ main { padding: 2rem; }
 
 .section h2 {
   font-size: 2.4rem;
-  color: var(--leaf-main); /* Blue headings */
+  color: var(--leaf-main);
 }
 
 .content-box {
@@ -152,25 +145,22 @@ main { padding: 2rem; }
   margin-bottom: 1.3rem;
 }
 
-.text-group strong {
-  color: var(--leaf-sun); /* Highlight items with yellow */
-}
+.text-group strong { color: var(--leaf-sun); }
 
 .icon {
   width: 26px;
   height: 26px;
-  fill: var(--leaf-accent); /* Red icons */
+  fill: var(--leaf-accent);
   flex-shrink: 0;
   transition: transform 0.25s ease, fill 0.25s ease;
 }
 
 .text-group li:hover .icon {
   transform: rotate(12deg) scale(1.15);
-  fill: var(--leaf-sun); /* Yellow icon on hover */
+  fill: var(--leaf-sun);
 }
 
-.music-btn,
-.top-btn {
+.music-btn, .top-btn {
   position: fixed;
   width: 56px;
   height: 56px;
@@ -184,7 +174,6 @@ main { padding: 2rem; }
 }
 
 .music-btn { bottom: 24px; right: 24px; }
-
 .top-btn {
   bottom: 24px;
   left: 24px;
@@ -192,7 +181,6 @@ main { padding: 2rem; }
   pointer-events: none;
   transition: opacity 0.5s ease;
 }
-
 .top-btn.show {
   opacity: 1;
   pointer-events: auto;
@@ -201,21 +189,46 @@ main { padding: 2rem; }
 .feedback-btn {
   display: inline-block;
   padding: 0.85rem 1.8rem;
-  background: linear-gradient(
-    135deg,
-    var(--leaf-main),
-    var(--leaf-accent)
-  );
+  background: linear-gradient(135deg, var(--leaf-main), var(--leaf-accent));
   color: var(--leaf-sun);
   border-radius: 999px;
   font-weight: 700;
   text-decoration: none;
   transition: all 0.35s ease;
 }
-
 .feedback-btn:hover {
   transform: scale(1.08);
   filter: brightness(1.1);
+}
+
+/* ====== IMAGE GALLERY CSS ====== */
+.image-gallery {
+  display: flex;
+  justify-content: center;
+  gap: 0.8rem;
+  margin: 2rem 0;
+  flex-wrap: wrap;
+}
+
+.image-gallery img {
+  width: 100px;
+  height: auto;
+  border-radius: 12px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  cursor: pointer;
+}
+
+.image-gallery img:hover {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+
+@media (min-width: 768px) {
+  .image-gallery img { width: 120px; }
+}
+
+@media (min-width: 1024px) {
+  .image-gallery img { width: 140px; }
 }
 </style>
 
@@ -225,36 +238,19 @@ main { padding: 2rem; }
 
 <nav>
   <button id="feedbackNavBtn" data-en="Feedback" data-ja="フィードバック">Feedback</button>
-
-  <a href="#hydroponics" class="nav-link"
-     data-en="Our Booth"
-     data-ja="私たちのブース">Our Booth</a>
-
-  <a href="#benefits" class="nav-link"
-     data-en="Benefits of Our Salad"
-     data-ja="サラダの健康効果">Benefits of Our Salad</a>
-
+  <a href="#hydroponics" class="nav-link" data-en="Our Booth" data-ja="私たちのブース">Our Booth</a>
+  <a href="#benefits" class="nav-link" data-en="Benefits of Our Salad" data-ja="サラダの健康効果">Benefits of Our Salad</a>
   <button id="langToggle">JAP</button>
 </nav>
 
 <header class="reveal">
-  
-  <p class="pre-title" data-en="Group 6" data-ja="グループ6">
-    Group 6
-  </p>
-
-  <h1 data-en="GREEN HOUSE GOODNESS"
-      data-ja="グリーンハウス・グッドネス">
-    GREEN HOUSE GOODNESS
-  </h1>
-  <p data-en="Eat Fresh. Plant the Future"
-     data-ja="新鮮に食べよう。未来を育てよう">
-    Eat Fresh. Plant the Future
-  </p>
+  <p class="pre-title" data-en="Group 6" data-ja="グループ6">Group 6</p>
+  <h1 data-en="GREEN HOUSE GOODNESS" data-ja="グリーンハウス・グッドネス">GREEN HOUSE GOODNESS</h1>
+  <p data-en="Eat Fresh. Plant the Future" data-ja="新鮮に食べよう。未来を育てよう">Eat Fresh. Plant the Future</p>
 </header>
 
-<!-- IMAGE GALLERY -->
-<div class="image-gallery reveal">
+<!-- IMAGE GALLERY BELOW HEADER -->
+<div class="image-gallery">
   <img src="A.jpg" alt="Image A">
   <img src="B.jpg" alt="Image B">
   <img src="C.jpg" alt="Image C">
@@ -262,7 +258,6 @@ main { padding: 2rem; }
   <img src="E.jpg" alt="Image E">
 </div>
 
-  
 <main>
 
 <!-- OUR BOOTH -->
@@ -278,7 +273,6 @@ main { padding: 2rem; }
             <strong>Fresh Salads:</strong> Our greens are handpicked daily for maximum nutrition.
           </span>
         </li>
-
         <li>
           <svg class="icon" viewBox="0 0 24 24"><polygon points="2,2 22,2 22,22 2,22"/></svg>
           <span data-en="<strong>Seed Pencils:</strong> Plantable pencils provided with every salad order."
@@ -286,7 +280,6 @@ main { padding: 2rem; }
             <strong>Seed Pencils:</strong> Plantable pencils provided with every salad order.
           </span>
         </li>
-
         <li>
           <svg class="icon" viewBox="0 0 24 24"><polygon points="12,2 22,9 18,22 6,22 2,9"/></svg>
           <span data-en="<strong>Eco-Friendly:</strong> Encouraging sustainable habits and a green lifestyle."
@@ -294,7 +287,6 @@ main { padding: 2rem; }
             <strong>Eco-Friendly:</strong> Encouraging sustainable habits and a green lifestyle.
           </span>
         </li>
-
         <li>
           <svg class="icon" viewBox="0 0 24 24"><polygon points="6,2 18,2 22,6 22,18 18,22 6,22 2,18 2,6"/></svg>
           <span data-en="<strong>Visit us:</strong> Room 205 at Gerrero Building."
@@ -309,9 +301,7 @@ main { padding: 2rem; }
 
 <!-- BENEFITS -->
 <section id="benefits" class="section reveal">
-  <h2 data-en="Benefits of Our Salad" data-ja="サラダの健康効果">
-    Benefits of Our Salad
-  </h2>
+  <h2 data-en="Benefits of Our Salad" data-ja="サラダの健康効果">Benefits of Our Salad</h2>
   <div class="content-box">
     <div class="text-group">
       <ul>
@@ -322,7 +312,6 @@ main { padding: 2rem; }
             <strong>Rich in Nutrients:</strong> Packed with vitamins and minerals for overall wellness.
           </span>
         </li>
-
         <li>
           <svg class="icon" viewBox="0 0 24 24"><polygon points="2,2 22,2 22,22 2,22"/></svg>
           <span data-en="<strong>High in Fiber:</strong> Supports healthy digestion and keeps you full longer."
@@ -330,7 +319,6 @@ main { padding: 2rem; }
             <strong>High in Fiber:</strong> Supports healthy digestion and keeps you full longer.
           </span>
         </li>
-
         <li>
           <svg class="icon" viewBox="0 0 24 24"><polygon points="12,2 22,9 18,22 6,22 2,9"/></svg>
           <span data-en="<strong>Antioxidants:</strong> Protects your cells and boosts your immune system."
@@ -338,7 +326,6 @@ main { padding: 2rem; }
             <strong>Antioxidants:</strong> Protects your cells and boosts your immune system.
           </span>
         </li>
-
         <li>
           <svg class="icon" viewBox="0 0 24 24"><polygon points="12,2 20,7 20,17 12,22 4,17 4,7"/></svg>
           <span data-en="<strong>Supports Heart Health:</strong> Helps lower cholesterol and improves circulation."
@@ -346,7 +333,6 @@ main { padding: 2rem; }
             <strong>Supports Heart Health:</strong> Helps lower cholesterol and improves circulation.
           </span>
         </li>
-
         <li>
           <svg class="icon" viewBox="0 0 24 24"><polygon points="12,2 20,6 22,14 16,22 8,22 2,14 4,6"/></svg>
           <span data-en="<strong>Boosts Energy:</strong> Natural ingredients provide long-lasting energy."
@@ -361,9 +347,7 @@ main { padding: 2rem; }
 
 <!-- FEEDBACK -->
 <section id="feedback" class="section reveal">
-  <h2 data-en="We value your feedback" data-ja="フィードバックをお待ちしています">
-    We value your feedback
-  </h2>
+  <h2 data-en="We value your feedback" data-ja="フィードバックをお待ちしています">We value your feedback</h2>
   <div class="content-box">
     <a href="https://docs.google.com/forms/d/e/1FAIpQLSf30L0rc9_Sb0h1ce1mFuNPPFRQDpNXgotEoYXjIRJEhkwx8g/viewform?usp=publish-editor" 
        target="_blank" 
@@ -384,12 +368,8 @@ main { padding: 2rem; }
 let currentLang = "en";
 document.getElementById("langToggle").onclick = () => {
   currentLang = currentLang === "en" ? "ja" : "en";
-  document.getElementById("langToggle").textContent =
-    currentLang === "en" ? "日本語" : "EN";
-
-  document.querySelectorAll("[data-en]").forEach(el => {
-    el.innerHTML = el.dataset[currentLang];
-  });
+  document.getElementById("langToggle").textContent = currentLang === "en" ? "日本語" : "EN";
+  document.querySelectorAll("[data-en]").forEach(el => { el.innerHTML = el.dataset[currentLang]; });
 };
 
 /* FEEDBACK NAV BUTTON SCROLL */
@@ -402,14 +382,12 @@ const music = document.getElementById("bgMusic");
 const musicBtn = document.getElementById("musicToggle");
 let playing = false;
 music.volume = 0;
-
 function fade(step) {
   const i = setInterval(() => {
     music.volume = Math.max(0, Math.min(1, music.volume + step));
     if (music.volume === 0 || music.volume === 1) clearInterval(i);
   }, 60);
 }
-
 musicBtn.onclick = () => {
   if (!playing) {
     music.play();
@@ -426,30 +404,18 @@ musicBtn.onclick = () => {
 /* SCROLL + NAV - REVEAL ONLY (NO NAV HIGHLIGHT) */
 const reveals = document.querySelectorAll(".reveal");
 const topBtn = document.getElementById("topBtn");
-
 topBtn.onclick = () => window.scrollTo({ top: 0, behavior: "smooth" });
-
 function handleReveal() {
   const h = window.innerHeight;
   reveals.forEach(sec => {
     const r = sec.getBoundingClientRect();
     sec.classList.toggle("visible", r.top < h && r.bottom > 0);
   });
-
   topBtn.classList.toggle("show", window.scrollY > 300);
 }
-
 window.addEventListener("scroll", handleReveal);
 window.addEventListener("load", handleReveal);
 </script>
 
 </body>
 </html>
-
-
-
-
-
-
-
-
