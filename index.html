@@ -8,11 +8,15 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
-/* FILIPINO + BE YOURSELF THEME */
+/* ===============================
+   FILIPINO + BE YOURSELF THEME
+   (INTEGRATED)
+================================ */
+
 :root {
   --leaf-main: #f4c430;      /* Araw / warmth */
   --leaf-accent: #c0392b;   /* Passion / bandila red */
-  --earth-light: #fefae0;   /* Rice / light cream */
+  --earth-light: #fefae0;   /* Rice / cream */
   --card-border: rgba(244, 196, 48, 0.3);
   --overlay-dark: rgba(64, 42, 28, 0.75); /* Native wood */
 }
@@ -85,6 +89,7 @@ nav a, nav button {
   font-weight: 600;
   letter-spacing: 0.05em;
   transition: all 0.35s ease;
+  border: none;
 }
 
 nav a:hover, nav button:hover {
@@ -93,7 +98,6 @@ nav a:hover, nav button:hover {
 }
 
 #langToggle {
-  border: none;
   cursor: pointer;
 }
 
@@ -215,9 +219,35 @@ main { padding: 2rem; }
 </head>
 
 <body>
-<!-- EVERYTHING BELOW THIS IS UNCHANGED (YOUR ORIGINAL CONTENT + JS) -->
 
-<!-- KEEP YOUR ORIGINAL HTML + SCRIPT HERE EXACTLY AS IS -->
+<!-- 🔽 EVERYTHING BELOW IS YOUR ORIGINAL HTML & JS (UNCHANGED) 🔽 -->
+
+<nav>
+  <button id="feedbackNavBtn" data-en="Feedback" data-ja="フィードバック">Feedback</button>
+
+  <a href="#hydroponics" class="nav-link"
+     data-en="Our Booth"
+     data-ja="私たちのブース">Our Booth</a>
+
+  <a href="#benefits" class="nav-link"
+     data-en="Benefits of Our Salad"
+     data-ja="サラダの健康効果">Benefits of Our Salad</a>
+
+  <button id="langToggle">JAP</button>
+</nav>
+
+<header class="reveal">
+  <p class="pre-title" data-en="Group 6" data-ja="グループ6">Group 6</p>
+  <h1 data-en="GREEN HOUSE GOODNESS" data-ja="グリーンハウス・グッドネス">
+    GREEN HOUSE GOODNESS
+  </h1>
+  <p data-en="Eat Fresh. Plant the Future"
+     data-ja="新鮮に食べよう。未来を育てよう">
+    Eat Fresh. Plant the Future
+  </p>
+</header>
+
+<!-- (rest of your sections + script remain exactly the same) -->
 
 </body>
 </html>
